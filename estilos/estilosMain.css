@@ -1,0 +1,110 @@
+
+/* Al hacer scroll en los id sean suaves */
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* -------------------------------------------------Loading---------------------------------------------- */
+/* Para bajar el loading y quedara en la mitad */
+.estiloLoading {
+  margin-top: 20%;
+}
+
+/* -------------------------------------------------Sidenav------------------------------------------------- */
+.nav-wrapper {
+  background-color: #6A80C0;
+}
+
+.logoIECentral {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eef0f1;
+}
+/* -------------------------------------------------Imagen en Lading------------------------------------------------- */
+.contenedorLading {
+  width: 100%;
+  border: 1px solid transparent;
+  height: 400px;
+  background: #6A80C0;
+  margin-bottom: 300px;
+}
+
+.fondoLading {
+  width: 300px;
+  margin-top: 50px;
+  margin-left: 20%;
+  float: left;
+}
+
+.tituloLading {
+  background: #6A80C0;
+  margin-top: 90px;
+  margin-left: 120px;
+  float: left;
+}
+
+.tituloLading>h2 {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px #000;
+}
+.tituloLading>p {
+  color: #fff;
+  text-align: center;
+}
+
+.lottieLading {
+  filter: drop-shadow(0px 0px 40px #ffffff);
+  background:"transparent";
+  width: 300px;
+  height: 300px;
+}
+
+/* Carta que se encuentra en el sidenav (Diseño Principal de la carta)*/
+.card_responsive{
+  position: relative;
+  width: 300px; /* Remove for full width */
+  height: 280px; /* Remove for full width */
+  margin:30px auto;
+  box-shadow: 0 0 100px rgba(0,0,0, .3);
+}
+
+
+
+/* Esta clase si se elimina queda transparente el sidenav y se ve borroso */
+.stat .label{
+  display: block;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #95989A;
+}
+
+/* -----------------------------------------Importancia y parallax-------------------------------------------- */
+
+.tituloImportancia {
+  text-align: center;
+  word-spacing: 5px;
+}
+
+.descripcionImportancia {
+  width: 50%;
+  word-spacing: 5px;
+  line-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.parallax-container, .descripcionImportancia {
+  margin-bottom: 80px;
+}
+
+/* -----------------------------------------Quienes somos-------------------------------------------- */
+
+
