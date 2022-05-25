@@ -107,4 +107,43 @@
 
 /* -----------------------------------------Quienes somos-------------------------------------------- */
 
+.iframeUbicacion {
+  width: 40%;
+  height: 400px;
+  border: 1px solid transparent;
+  margin-bottom: 80px;
+  margin-top: 200px;
+  margin-left: 50px;
+  float: left;
+}
 
+.cardInformativa {
+  width: 40%;
+  height: 700px;
+  box-shadow: 1px 1px 50px 4px #6A80C0;
+  margin: 0px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  float: left;
+  margin: 50px auto 200px 100px;
+}
+
+.imgInstitucion {
+  width: 100%;
+  box-shadow: 1px 1px 120px 5px rgb(192, 190, 190);
+}
+
+.cardInformativa>h5 {
+  text-align: center;
+  text-shadow: 5px 1px 10px rgb(0, 0, 0);
+  margin-top: 20px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.cardInformativa>p {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+}
