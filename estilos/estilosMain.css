@@ -147,3 +147,30 @@
   margin-top: 20px;
   padding: 10px;
 }
+
+/* ------------------------------------------------Footer---------------------------------------------- */
+/*
+/* Color de fondo del footer */
+.colorFooter {
+  background: #6A80C0;  /* reserva para navegadores antiguos */
+  padding: 68px;
+  margin-top: 950px;
+}
+
+/* Logo abajo Footer */
+.logoAbajo {
+  border-radius: 20px;
+  margin-top: -30px;
+  position: relative;
+  top: -100px;
+}
+
+/* Ultima letras del footer */
+.copy {
+  margin:0;
+  height: 0px;
+  position: relative;
+  top: 22px;
+  color: #fff;
+}
+
