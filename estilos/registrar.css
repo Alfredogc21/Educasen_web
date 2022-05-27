@@ -1,0 +1,74 @@
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------------------------------Sidenav------------------------------------------------- */
+.nav-wrapper {
+  background-color: #6A80C0;
+}
+
+.logoIECentral {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eef0f1;
+}
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+.contenedor-card {
+    height: 400px;
+    background-color: #6A80C0;
+    border: 1px solid transparent;
+    margin-bottom: 400px;
+}
+
+.card-registro {
+    width: 45%;
+    height: 700px;
+    background-color: #fff;
+    margin: 50px auto 0;
+    box-shadow: 1px 1px 46px 2px #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.fondoLading {
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tituloCard {
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 4x 4px 5px #000;
+}
+
+.linkTengoCuenta {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px auto;
+    color: #000;
+}
+
+.botonRegistrar {
+    width: 50%;
+    height: 50px;
+    background-color: #6A80C0;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    cursor: pointer;
+}
