@@ -22,7 +22,7 @@ body {
 /* ----------------------------------------------------------------------------------------------------------- */
 
 .contenedor-card {
-    height: 400px;
+    height: 450px;
     background-color: #6A80C0;
     border: 1px solid transparent;
     margin-bottom: 400px;
@@ -30,7 +30,7 @@ body {
 
 .card-registro {
     width: 45%;
-    height: 700px;
+    height: 750px;
     background-color: #fff;
     margin: 50px auto 0;
     box-shadow: 1px 1px 46px 2px #000;

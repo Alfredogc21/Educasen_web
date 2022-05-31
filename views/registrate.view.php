@@ -72,11 +72,18 @@
           <label for="confiPassword">Confirmar contraseña</label>
         </div>
       </div>
-      <div class="col s10 offset-s1 center-align">
-      <i class="submit-btn fa fa-arrow-right" onclick="login.submit()"></i>
+      <div class=" row offset-s1 center-align">
+      <i class="#7986cb indigo lighten-2 btn " onclick="login.submit()">Registrar</i>
         <!-- <button class="botonRegistrar" type="submit">Registrar</button> -->
       </div>
 
+      <?php if(!empty($errores)): ?>
+        <div class="error">
+          <ul>
+            <?php echo $errores; ?>
+          </ul>
+        </div>
+      <?php endif; ?>
     </form>
     <a class="linkTengoCuenta" href="login.php">Tengo una cuenta</a>
 
