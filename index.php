@@ -1,9 +1,7 @@
-<?php
-
-session_start();
+<?php session_start();
 
 if (isset($_SESSION['usuarios'])) {
-    header('Location: views/menuPrincipal.php');
+    header('Location: menuPrincipal.php');
 } else {
     header('Location: contenido.php');
 }

@@ -63,11 +63,17 @@
         </div>
       </div>
       <div class="col s10 offset-s1 center-align">
-        <i class="submit-btn fa fa-arrow-right" onclick="login.submit()"></i>
+        <i class="#7986cb indigo lighten-2 btn" onclick="login.submit()">Iniciar sesion</i>
         <!-- <button class="botonRegistrar" type="submit">Iniciar sesion</button>
         <a class="linkTengoCuenta" href="./menuPrincipal.html">Iniciar sesion</a> -->
       </div>
-
+      <?php if(!empty($errores)): ?>
+        <div class="error">
+          <ul>
+            <?php echo $errores; ?>
+          </ul>
+        </div>
+      <?php endif; ?>
     </form>
     <a class="linkTengoCuenta" href="registrate.php">¿No tienes una cuenta? Registrate</a>
 
