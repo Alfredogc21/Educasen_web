@@ -60,19 +60,20 @@
 </ul>
 
 <!------------------------------------------------------------------------------------------------------------> 
-<div class="contenedorLading">
-    <figure class="fondoLading">
+<header class="header">
+  <div class="header__contenido">
+    <figure class="header__contenido--fondoLading">
       <lottie-player class="lottieLading" src="https://assets2.lottiefiles.com/packages/lf20_4rq0nvpt.json" speed="1" loop autoplay></lottie-player>
     </figure>
+
     <div class="tituloLading">
       <h2>Bienvenidos estudiantes</h2>
       <p>Hoy es un gran dia para reforzar tu conocimiento para el ICFES</p>
     </div>
+  </div>
 
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#6A80C0" fill-opacity="1" d="M0,128L48,128C96,128,192,128,288,149.3C384,171,480,213,576,213.3C672,213,768,171,864,165.3C960,160,1056,192,1152,218.7C1248,245,1344,267,1392,277.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-  </svg>
-</div>
+  <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-62.36,-65.61 C215.85,256.09 275.67,-55.73 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+</header>
 <!------------------------------------------------------------------------------------------------------------> 
 
 <h3 class="tituloImportancia">
@@ -88,12 +89,11 @@
   <div class="parallax"><img src="views/imagenes/imgParallax.jpg"></div>
 </div>
 <!------------------------------------------------------------------------------------------------------------> 
+<div class="div__quienessomos">
+  <h3 class="tituloImportancia" id="quienesSomos">
+    <i class="fa-solid fa-building-columns"></i> Quienes somos
+  </h3>
 
-<h3 class="tituloImportancia" id="quienesSomos">
-  <i class="fa-solid fa-building-columns"></i> Quienes somos
-</h3>
-
-<div>
   <iframe class="iframeUbicacion" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.4410658396846!2d-75.02000968255616!3d3.9290180000000072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e394b8fbba0d859%3A0x88675c1a7b436e16!2sINSTITUCION%20EDUCATIVA%20CENTRAL!5e0!3m2!1ses-419!2sco!4v1652790186490!5m2!1ses-419!2sco" 
   width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
