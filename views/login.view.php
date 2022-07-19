@@ -78,6 +78,7 @@
     <a class="linkTengoCuenta" href="registrate.php">¿No tienes una cuenta? Registrate</a>
 
   </div>
+</div>
 </body>
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
