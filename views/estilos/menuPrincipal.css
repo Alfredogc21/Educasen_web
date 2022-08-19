@@ -7,6 +7,12 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  /*---------------------------------------------Variables---------------------------------------------*/
+  :root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
 /* -------------------------------------------------Sidenav------------------------------------------------- */
 .nav-wrapper {
   background-color: #6A80C0;
@@ -21,56 +27,174 @@
   background: #eef0f1;
 }
 
-/* ------------------------------------------------carousel------------------------------------------------- */
-
-.carousel{
-  height: 600px; 
-  perspective: 250px;    
-  
-}
-
-.carousel-item {
-  text-align: center;
-  border-radius: 15px;
-}
-
-.img-area {
-width: 100px;
-height: 100px;
-margin: 0 auto;
-overflow: hidden;
-border-radius: 50%;
-border: inset 8px deepskyblue;
-
-}
-.img-area img{
-  width: 100%;
-}
-
-.testi p {
-color: #262626;
-font-size: 18px;
-line-height: 1.9;
-}
-
-.testi h5 {
-font-size: 14px;
-letter-spacing: 5px;
-margin: 7px 0;
-font-weight: bold;
-}
-
-.testi {
-  background-color: rgb(232, 232, 232);
-  width: 300px;
+.contenedorMaterias {
+  min-width: 90%;
+  max-width: 90%;
+  background-color: rgb(213, 213, 213);
   border-radius: 10px;
-  padding-bottom: 20px;
+  margin: 70px auto;
+}
+
+.botonCard {
+  background-color: #6A80C0;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.botonCard:hover {
+  background-color: #fff;
+  color: #6A80C0;
+}
+
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .card {
+    height: 350px;
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
 }
 
 
-/* ------------------------------------------------------------------------------------------------- */
+.card:nth-child(1):before {
+  background-image: url(../imagenes/lecturaCritica.webp); 
+  /* Foto de <a href="https://unsplash.com/@brandi1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brandi Redd</a> en <a href="https://unsplash.com/es?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
+}
 
-/* start welcome animation */
+.card:nth-child(2):before {
+  background-image: url(../imagenes/matematicas.jpg); 
+  /* Foto de <a href="https://unsplash.com/@antoine1003?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Antoine Dautry</a> en <a href="https://unsplash.com/es/s/fotos/n%C3%BAmeros?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */  
+}
+
+.card:nth-child(3):before {
+  background-image: url(../imagenes/socialesCiudadanas.jpg);
+  /* Foto de <a href="https://unsplash.com/@jdiegoph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Diego PH</a> en <a href="https://unsplash.com/es/s/fotos/sociales?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+}
+
+.card:nth-child(4):before {
+  background-image: url(../imagenes/naturales.jpg);
+  /* Foto de <a href="https://unsplash.com/@capunk77?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Purnomo Capunk</a> en <a href="https://unsplash.com/es/s/fotos/ciencias-naturales?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+}
+
+.card:nth-child(5):before {
+  background-image: url(../imagenes/ingles.jpg);
+  /* Foto de <a href="https://unsplash.com/@freestocks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">freestocks</a> en <a href="https://unsplash.com/es/s/fotos/ingles?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+
+  .card:hover, .card:focus-within {
+    align-items: center;
+  }
+
+  .card:hover:before, .card:focus-within:before {
+    transform: translateY(-4%);
+  }
+
+  .card:hover .content, .card:focus-within .content {
+    transform: translateY(0);
+  }
+
+  .card:hover .content > *:not(.title), .card:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+}
+
+/* ------------------------------------------------Footer---------------------------------------------- */
+/*
+/* Color de fondo del footer */
+.colorFooter {
+  background: #6A80C0;  /* reserva para navegadores antiguos */
+  padding: 68px;
+}
+
+/* Logo abajo Footer */
+.logoAbajo {
+  border-radius: 20px;
+  margin-top: -30px;
+  position: relative;
+  top: -100px;
+}
+
+/* Ultima letras del footer */
+.copy {
+  margin:0;
+  height: 0px;
+  position: relative;
+  top: 22px;
+  color: #fff;
+}
+
+
+/* ------------------------------Animacion inicial------------------------------------ */
+
+/* inicio welcome animacion */
 
 .welcome .splash {
   height: 0px;
@@ -103,7 +227,7 @@ font-weight: bold;
 }
 
 /* moveIn aqui modifico todas las etiquetas*/
-.welcome header, nav, .carousel {
+.welcome header, nav, .contenedorMaterias, .colorFooter {
   opacity: 0;
   animation: moveIn 2s 3.1s ease forwards;
 }
@@ -203,22 +327,3 @@ font-weight: bold;
     opacity: 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

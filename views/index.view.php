@@ -94,8 +94,7 @@
     <i class="fa-solid fa-building-columns"></i> Quienes somos
   </h3>
 
-  <iframe class="iframeUbicacion" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.4410658396846!2d-75.02000968255616!3d3.9290180000000072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e394b8fbba0d859%3A0x88675c1a7b436e16!2sINSTITUCION%20EDUCATIVA%20CENTRAL!5e0!3m2!1ses-419!2sco!4v1652790186490!5m2!1ses-419!2sco" 
-  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <a href="https://www.google.com/maps/place/INSTITUCION+EDUCATIVA+CENTRAL/@3.9305165,-75.0192265,17z/data=!4m5!3m4!1s0x8e394b8fbba0d859:0x88675c1a7b436e16!8m2!3d3.929018!4d-75.017821?hl=es-419" target="_blank"><img class="iframeUbicacion" src="views/imagenes/mapaUbicacion.jpg" alt="ubicacionColegio"></a>
 
   <div class="cardInformativa">
     <figure>

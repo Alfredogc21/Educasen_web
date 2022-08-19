@@ -26,8 +26,7 @@
   
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="sidenav-close" routerLink="/">Pruebas</a></li>
-          <li><a class="sidenav-close" href="cuentaInfo.html">Cuenta</a></li>
+          <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo ucwords($_SESSION['usuarios']); ?></a></li>
           <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </div>
@@ -36,8 +35,7 @@
   <!-- Cabecera menus para pantallas pequeñas  -->
   <ul class="sidenav" id="mobile-demo">
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-    <li><a class="sidenav-close" routerLink="/">Pruebas</a></li>
-    <li><a class="sidenav-close" href="cuentaInfo.html">Cuenta</a></li>
+    <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo ucwords($_SESSION['usuarios']); ?></a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
     <figure>
       <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
@@ -46,86 +44,70 @@
   
 <!------------------------------------------------------------------------------------------------------------> 
 
-<div class="carousel">
-  <a class="carousel-item" href="#">
-      <div class="testi">
-          <div class="img-area">
-              <img src="views/imagenes/lecturaCritica.jpg"> <!-- Foto de Annie Spratt en Unsplash -->
-          </div>
-          <p>"Antes de empezar a responder, es importante leer cada pregunta cuidadosamente. Por favor responde todas las preguntas de..."</p>
-          <h5>Lectura Critica</h5>
-      </div>
-  </a>
-  <a class="carousel-item" href="#">
-      <div class="testi">
-          <div class="img-area">
-              <img src="views/imagenes/cienciasNaturales.jpg"> <!-- Foto de Dave Hoefler en Unsplash -->
-          </div>
-          <p>"Antes de empezar a responder, es importante leer cada pregunta cuidadosamente. Por favor responde todas las preguntas de..."</p>
-          <h5>Ciencias Naturales</h5>
-      </div>
-  </a>
-  <a class="carousel-item" href="#">
-      <div class="testi">
-          <div class="img-area">
-              <img src="views/imagenes/competenciasCiudadanas.jpg"> <!-- Foto de Nick Night en Unsplash -->
-          </div>
-          <p>"Antes de empezar a responder, es importante leer cada pregunta cuidadosamente. Por favor responde todas las preguntas de..."</p>
-          <h5>Competencias Ciudadanas</h5>
-      </div>
-  </a>
-  <a class="carousel-item" href="#">
-      <div class="testi">
-          <div class="img-area">
-              <img src="views/imagenes/matematicas.jpg"> <!-- Foto de Annie Spratt en Unsplash -->
-          </div>
-          <p>"Antes de empezar a responder, es importante leer cada pregunta cuidadosamente. Por favor responde todas las preguntas de..."</p>
-          <h5>Matematicas</h5>
-      </div>
-  </a>
-  <a class="carousel-item" href="#">
-      <div class="testi">
-          <div class="img-area">
-              <img src="views/imagenes/ingles2.jpg"> <!-- Foto de Sigmund en Unsplash -->
-          </div>
-          <p>"Antes de empezar a responder, es importante leer cada pregunta cuidadosamente. Por favor responde todas las preguntas de..."</p>
-          <h5>Ingles</h5>
-      </div>
-  </a>
-
+<div class="contenedorMaterias">
+<main class="page-content">
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Lectura crítica</h2>
+      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="" class="botonCard">Practicar</a><br>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Matemáticas</h2>
+      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="" class="botonCard">Practicar</a><br>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Sociales y Ciudadanas</h2>
+      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="" class="botonCard">Practicar</a><br>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Ciencias Naturales</h2>
+      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="" class="botonCard">Practicar</a><br>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Inglés</h2>
+      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="" class="botonCard">Practicar</a><br>
+    </div>
+  </div>
+</main>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
+<footer class="colorFooter">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+        <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text"><strong>Redes Sociales</strong></h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#" target="_blank">Facebook</a></li>
+          <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+          <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <p class="copy">Copyright © - 2022 Alfredo Gomez Culma Derechos Reservados</p>
+    <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
+    </div>
+  </div>
+</footer>
 
 </body>
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
