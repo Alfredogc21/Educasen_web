@@ -1,0 +1,273 @@
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------------------------------------Sidenav------------------------------------------------- */
+.nav-wrapper {
+  background-color: #6A80C0;
+}
+
+.logoIECentral {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eef0f1;
+}
+/* -------------------------------------------------Contenido------------------------------------------------- */
+
+.contenedorP1 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.tituloParrafo1 {
+    font-size: 3rem;
+    color: #353e5c;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 20px #00000061;
+}
+
+.parrafo1 {
+    font-size: 1.5rem;
+    color: #353e5c;
+    text-align: center;
+}
+
+.container2{
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 0;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+.title{
+    font-size: 2.5rem;
+    text-align: left;
+    color: #000;
+}
+
+.title--border::after{
+    content: "";
+    display: block;
+    width: 100px;
+    margin-top: 20px;
+    height: 4px;
+    background-color: #6A80C0;
+}
+
+/* about */
+
+.about{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    place-items: center;
+}
+
+.about__evalua{
+    width: 90%;
+}
+
+.about__paragraph{
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+.about__picture{
+    text-align: center;
+}
+
+.about__img{
+    width: 95%;
+}
+
+.afirmacionesEvidencia{
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    border-radius: 10px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.afirmacionesEvidencia__img {
+    display: block;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.about__picture2, .about__img2 {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contenedorVideo {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorVideo__iframe {
+    display: block;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.contenedorBotones {
+    display: block;
+    width: 80%;
+    margin: 50px auto;
+    background-color: #d2d2d2;
+    padding: 50px;
+    text-align: center;
+}
+
+.botones {
+    padding: 20px;
+    background-color: #dc143c;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.botones:hover {
+    background-color: #fd1644;
+    color: #fff;
+}
+
+.botones__testIntroductorio {
+    margin-left: 150px;
+    margin-right: 20px;
+}
+
+/* ------------------------------------------------Footer---------------------------------------------- */
+/*
+/* Color de fondo del footer */
+.colorFooter {
+    background: #6A80C0;  /* reserva para navegadores antiguos */
+    padding: 68px;
+  }
+  
+  /* Logo abajo Footer */
+  .logoAbajo {
+    border-radius: 20px;
+    margin-top: -30px;
+    position: relative;
+    top: -100px;
+  }
+  
+  /* Ultima letras del footer */
+  .copy {
+    margin:0;
+    height: 0px;
+    position: relative;
+    top: 22px;
+    color: #fff;
+  }
+
+
+/* ----------------------------------------------Responsive------------------------------------------- */
+
+@media screen and (max-width:1024px){
+    .botones__testIntroductorio {
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    /* About */
+
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 80px;
+    }
+
+    .about__evalua{
+        width: 100%;
+    }
+
+    .about__img{
+        width: 100%;
+    }
+
+    .afirmacionesEvidencia__img {
+        width: 90%;
+    }
+
+    .about__picture2, .about__img2 {
+        width: 100%;
+    }
+
+    .contenedorVideo__iframe {
+        display: block;
+        width: 100%;
+        height: 300px;
+        margin: 30px auto;
+    }
+
+    .botones {
+        display: block;
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .botones__testIntroductorio {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+    
+}
+
+@media screen and (max-width: 500px){
+    :root{
+        --padding-btn: 20px 0;
+    }
+
+    /* About */
+
+    .about{
+        gap: 40px;
+    }
+
+    .about__evalua{
+        width: 100%;
+    }
+
+    .afirmacionesEvidencia__img {
+        width: 100%;
+    }
+
+    .about__picture2, .about__img2 {
+        width: 100%;
+    }
+
+    .botones__testIntroductorio {
+        margin-left: 50px;
+        margin-right: 20px;
+    }
+
+    .botones__testIntroductorio {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+}
+

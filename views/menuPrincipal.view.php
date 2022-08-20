@@ -49,8 +49,8 @@
   <div class="card">
     <div class="content">
       <h2 class="title">Lectura crítica</h2>
-      <a href="" class="botonCard">Introduccion</a><br>
-      <a href="" class="botonCard">Practicar</a><br>
+      <a href="introduccionLectura.php" class="botonCard">Introduccion</a><br>
+      <a href="examenLecturaCritica.php" class="botonCard">Practicar</a><br>
     </div>
   </div>
   <div class="card">
