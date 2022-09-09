@@ -76,8 +76,6 @@
 
       <div class="col s10 offset-s1 center-align">
         <i class="#7986cb indigo lighten-2 btn" onclick="login.submit()">Iniciar sesion</i>
-        <!-- <button class="botonRegistrar" type="submit">Iniciar sesion</button>
-        <a class="linkTengoCuenta" href="./menuPrincipal.html">Iniciar sesion</a> -->
       </div>
       <?php if(!empty($errores)): ?>
         <div class="error">

@@ -22,7 +22,7 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
         <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-          <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo ucwords($_SESSION['usuarios']); ?></a></li>
+          <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
           <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </div>
@@ -32,7 +32,7 @@
 <ul class="sidenav" id="mobile-demo">
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-    <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo ucwords($_SESSION['usuarios']); ?></a></li>
+    <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
     <figure>
       <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
