@@ -1,0 +1,100 @@
+/* Al hacer scroll en los id sean suaves */
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+/* -------------------------------------------------Sidenav------------------------------------------------- */
+.nav-wrapper {
+  background-color: #6A80C0;
+  border: 1px solid transparent;
+}
+
+.logoIECentral {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eef0f1;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #353e5c;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contenedor {
+  width: 80%;
+  margin: 0 auto 80px auto;
+  text-align: center;
+  background-color: #6A80C0;
+  padding: 0.1px;
+  border-radius: 10px;
+}
+
+.contenedor__Pregunta {
+  display: block;
+  width: 38%;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 40px auto 50px auto;
+  background-color: #eef0f1;
+  font-size: 2.5rem;
+}
+
+.contenedor__Opciones {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 40px auto 50px auto;
+  background-color: #eef0f1;
+}
+
+.contenedor__parrafo {
+  margin: 30px 0 30px 0;
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------Footer---------------------------------------------- */
+/*
+/* Color de fondo del footer */
+.colorFooter {
+  background: #6A80C0;  /* reserva para navegadores antiguos */
+  padding: 68px;
+}
+
+/* Logo abajo Footer */
+.logoAbajo {
+  border-radius: 20px;
+  margin-top: -30px;
+  position: relative;
+  top: -100px;
+}
+
+/* Ultima letras del footer */
+.copy {
+  margin:0;
+  height: 0px;
+  position: relative;
+  top: 22px;
+  color: #fff;
+}

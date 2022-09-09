@@ -10,6 +10,10 @@
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+  <!--reCaptchat-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
 </head>
 <body>
 <!------------------------------------------------------------------------------------------------------------> 
@@ -62,6 +66,14 @@
           <label for="password">Contraseña</label>
         </div>
       </div>
+
+      <br>
+      <div>
+        <div class="g-recaptcha" data-sitekey="6LfL90kgAAAAAESzVF-LUvSIl6RNVx13O3MsOD49">
+        </div>
+      </div>
+      <br>
+
       <div class="col s10 offset-s1 center-align">
         <i class="#7986cb indigo lighten-2 btn" onclick="login.submit()">Iniciar sesion</i>
         <!-- <button class="botonRegistrar" type="submit">Iniciar sesion</button>

@@ -10,6 +10,10 @@
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+  <!--reCaptchat-->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <body>
 <!------------------------------------------------------------------------------------------------------------> 
@@ -72,9 +76,28 @@
           <label for="confiPassword">Confirmar contraseña</label>
         </div>
       </div>
+
+      <div class="row">  
+        <label>Seleccione el grado</label>
+        <select class="browser-default" name="grado" required>
+          <option value="" disabled selected>Seleccione el grado</option>
+          <?php
+              foreach($resultadoGrado as $gradoCurso) {
+                echo '<option value="' . $gradoCurso['id'] . '">' . $gradoCurso['nombre_grado'] . '</option>';
+              }
+          ?>
+        </select>
+      </div>
+      <br>
+
+      <div>
+        <div class="g-recaptcha" data-sitekey="6LfL90kgAAAAAESzVF-LUvSIl6RNVx13O3MsOD49">
+        </div>
+      </div>
+      <br>
+
       <div class=" row offset-s1 center-align">
       <i class="#7986cb indigo lighten-2 btn " onclick="login.submit()">Registrar</i>
-        <!-- <button class="botonRegistrar" type="submit">Registrar</button> -->
       </div>
 
       <?php if(!empty($errores)): ?>
