@@ -11,9 +11,6 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
 
-  <!--reCaptchat-->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 </head>
 <body>
 <!------------------------------------------------------------------------------------------------------------> 
@@ -53,6 +50,7 @@
       <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jcikwtux.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
     </figure>
 
+    <!-- Formulario de registro -->
     <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login">
       <div class="row">
         <div class="input-field col s6">
@@ -82,6 +80,7 @@
         <select class="browser-default" name="grado" required>
           <option value="" disabled selected>Seleccione el grado</option>
           <?php
+              // Se recorre el array de grados
               foreach($resultadoGrado as $gradoCurso) {
                 echo '<option value="' . $gradoCurso['id'] . '">' . $gradoCurso['nombre_grado'] . '</option>';
               }
@@ -90,6 +89,7 @@
       </div>
       <br>
 
+      <!-- recaptcha -->
       <div>
         <div class="g-recaptcha" data-sitekey="6LfL90kgAAAAAESzVF-LUvSIl6RNVx13O3MsOD49">
         </div>
@@ -100,22 +100,34 @@
       <i class="#7986cb indigo lighten-2 btn " onclick="login.submit()">Registrar</i>
       </div>
 
-      <?php if(!empty($errores)): ?>
+      <?php if(!empty($errores)): ?> <!-- Si hay errores los muestra -->
         <div class="error">
           <ul>
             <?php echo $errores; ?>
           </ul>
         </div>
+        <?php elseif(!empty($success)): ?> <!-- Si no hay errores y si hay un mensaje de exito -->
+          <div class="success">
+            <ul>
+              <?php echo $success; ?>
+            </ul>
+          </div>
       <?php endif; ?>
     </form>
     <a class="linkTengoCuenta" href="login.php">Tengo una cuenta</a>
 
   </div>
 </div>
-</body>
+
+<!--reCaptchat-->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- Framework: Materialize -->
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
+<!-- Libreria: Lottie -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <!-- Links iconos font-awesome -->
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
+<!-- Script para el registrarView -->
 <script src="views/js/jsRegistrar.js"></script>
+</body>
 </html>

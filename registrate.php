@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Verificamos que los campos no esten vacios
     $errores = '';
+    $success = '';
     if (empty($nombre) or empty($correo) or empty($password) or empty($confipassword) or empty($grado)) {
         $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los datos correctamente</li>';
         $errores .= '<script>alert("Por favor rellena todos los campos")</script>';
@@ -68,12 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($errores == '') {
         $statement = $conexion->prepare('INSERT INTO usuarios (id, nombres_completos, grado_id, correo, password) VALUES (null, :nombre, :curso, :correo, :password)');
         $statement->execute(array(':nombre' => $nombre, ':curso' => $grado, ':correo' => $correo, ':password' => $password));
-        echo '<script>alert("Usuario registrado")</script>';
-        header('Location: login.php');
+        $success .= '<li class="#00e676 green accent-3">Usuario registrado exitosamente</li>';
     }
     
 }
-
 
 // Llamamos la vista
 require 'views/registrate.view.php';

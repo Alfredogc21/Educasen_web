@@ -23,7 +23,7 @@
   
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo ucwords($_SESSION['usuarios']); ?></a></li>
+          <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
           <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </div>
@@ -32,7 +32,7 @@
   <!-- Cabecera menus para pantallas pequeñas  -->
 <ul class="sidenav" id="mobile-demo">
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-    <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo ucwords($_SESSION['usuarios']); ?></a></li>
+    <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
     <figure>
       <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
@@ -42,39 +42,24 @@
 <!------------------------------------------------------------------------------------------------------------> 
 <h1 class="titulo">Examen introductorio (Lectura Critica)</h1>
 <div class="contenedor">
-    <h2 class="contenedor__Pregunta">Pregunta 1</h2>
+    <h2 class="contenedor__Pregunta">Pregunta <?php echo $azar ?></h2>
     <div class="contenedor__Opciones">
-        <h3 class="contenedor__parrafo">Para mostrar textos en la consola usamos el comando</h3>
-        <form action="#">
-
-    <p>
-      <label>
-        <input name="group1" type="radio" />
-        <span>Yellow</span>
-      </label>
-    </p>
-    <p>
-      <label>
-        <input class="with-gap" name="group1" type="radio"  />
-        <span>Green</span>
-      </label>
-    </p>
-    <p>
-      <label>
-        <input name="group1" type="radio" />
-        <span>Brown</span>
-      </label>
-    </p>
-    <p>
-      <label>
-        <input name="group1" type="radio" />
-        <span>Brown</span>
-      </label>
-    </p>
-  </form>
+        <h3 class="contenedor__parrafo"><?php echo $resultado[0]['enunciado_pregunta'] . '<br>'; ?></h3> <!-- Mostrar la pregunta -->
+        <form action="#" method="POST">
+          <?php
+          // Mostrara las opciones de respuesta
+          foreach ($resultado as $fila) {
+              echo '<p><label>
+              <input class="with-gap" name="group1" type="radio" />
+              <span>' . $fila['contenido_respuestas'] . '<br>' .'</span>
+              </label> </p>';
+          }
+          ?>
+        </form>
     </div>
 </div>
 
+<!-- Footer -->
 <footer class="colorFooter">
   <div class="container">
     <div class="row">
@@ -100,9 +85,11 @@
   </div>
 </footer>
 
-
-</body>
+<!-- Links iconos font-awesome -->
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
+<!-- Framework: Materialize -->
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
+<!-- Script para el testLecturaView -->
 <script src="views/js/introduccionLectura.js"></script>
+</body>
 </html>

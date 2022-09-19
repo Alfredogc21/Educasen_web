@@ -39,6 +39,7 @@
     </figure>
 </ul>
 
+<!-- Contenido -->
 <section class="contenedorP1">
     <h1 class="tituloParrafo1">Lectura Critica<i class="fa-solid fa-book"></i></h1>
     <p class="parrafo1">La competencia de Lectura Crítica tiene que ver, por sobretodo, con comprensión lectora, o sea, la capacidad para comprender, no solo los vocablos y oraciones sino, la globalidad de un escrito, lo cual está escrito explícitamente o la que no está escrita, pero se puede deducir.</p>
@@ -88,6 +89,7 @@
     <a href="pruebaLecturaCritica.php" class="botones botones__testIntroductorio"><i class="fa-solid fa-person-walking-arrow-right"></i>Iniciar prueba</a>
 </div>
 
+<!-- Footer -->
 <footer class="colorFooter">
   <div class="container">
     <div class="row">
@@ -113,9 +115,11 @@
   </div>
 </footer>
 
-
-</body>
+<!-- Links iconos font-awesome -->
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
+<!-- Framework: Materialize -->
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
+<!-- Script para el introduccionLecturaView -->
 <script src="views/js/introduccionLectura.js"></script>
+</body>
 </html>

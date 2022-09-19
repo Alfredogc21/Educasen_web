@@ -43,7 +43,7 @@
   </ul>
   
 <!------------------------------------------------------------------------------------------------------------> 
-<!-- Contenido -->
+<!-- Contenido de competencias -->
 <div class="contenedorMaterias">
 <main class="page-content">
   <div class="card">
@@ -110,12 +110,13 @@
   </div>
 </footer>
 
-</body>
+<!-- Framework: Materialize -->
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
+<!-- Script para el menu -->
 <script src="views/js/jsMenuPrincipal.js"></script>
 <!-- Links iconos font-awesome -->
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
+<!-- Script para la animacion inicial -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+</body>
 </html>

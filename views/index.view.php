@@ -131,11 +131,13 @@
   </div>
 </footer>
 
-</body>
-
+<!-- Framework: Materialize -->
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
+<!-- Libreria: Lottie -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <!-- Links iconos font-awesome -->
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
+<!-- Script para el index.view -->
 <script src="views/js/jsMain.js"></script>
+</body>
 </html>
