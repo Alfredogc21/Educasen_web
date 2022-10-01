@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="views/estilos/registrarylogin.css">
-  <title>Registrar</title>
+  <title>Actualizar informacion</title>
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
@@ -23,19 +23,30 @@
 
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="sidenav-close" href="./index.php">Inicio</a></li>
-        <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-        <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+        <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
+            <ul>
+                <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
+                <li><a class="sidenav-close" href="#">Ayuda</a></li>
+                <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
+              </ul>
+        </li>
+        <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
       </ul>
   </div>
 </nav>
 
 <!-- Cabecera menus para pantallas pequeñas  -->
 <ul class="sidenav" id="mobile-demo">
-  <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-  <li><a class="sidenav-close" href="index.php">Inicio</a></li>
-  <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-  <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
+    <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
+    <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+    <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
+        <ul>
+            <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
+            <li><a class="sidenav-close" href="#">Ayuda</a></li>
+            <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
+        </ul>
+    </li>
   <figure>
     <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
   </figure>
@@ -45,20 +56,20 @@
 <div class="contenedor-card">
   <div class="card-registro">
 
-    <h1 class="tituloCard">Crear una cuenta</h1>
+    <h1 class="tituloCard">Actualizar datos</h1>
     <figure class="fondoLading">
-      <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jcikwtux.json"  background="transparent"  speed="1"  loop autoplay></lottie-player>
+        <lottie-player class="fondoLading__lottie" src="https://assets9.lottiefiles.com/packages/lf20_md7jx0xq.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
     </figure>
 
     <!-- Formulario de registro -->
-    <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login">
+    <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="actualizar">
       <div class="row">
         <div class="input-field col s6">
-          <input id="name" type="text" name="nombre" class="validate" minlength="10" required value="<?php if(!empty($errores) && isset($nombre)) {echo $nombre;} ?>">
+          <input id="name" type="text" name="nombre" class="validate" minlength="10" required value="<?php echo $nombres_completos; ?>">
           <label for="name">Nombre</label>
         </div>
         <div class="input-field col s6">
-          <input id="email" type="email" name="correo" class="validate" minlength="4" required value="<?php if(!empty($errores) && isset($correo)) {echo $correo;} ?>">
+          <input id="email" type="email" name="correo" class="validate" minlength="4" required value="<?php echo $correo; ?>">
           <label for="email">Correo electronico</label>
         </div>
       </div>
@@ -97,7 +108,7 @@
       <br>
 
       <div class=" row offset-s1 center-align">
-      <i class="#7986cb indigo lighten-2 btn " onclick="login.submit()">Registrar</i>
+      <i class="#7986cb indigo lighten-2 btn " onclick="actualizar.submit()">Actualizar</i>
       </div>
 
       <?php if(!empty($errores)): ?> <!-- Si hay errores los muestra -->
@@ -114,7 +125,7 @@
           </div>
       <?php endif; ?>
     </form>
-    <a class="linkTengoCuenta" href="login.php">Tengo una cuenta</a>
+    <a class="linkTengoCuenta" href="eliminar.php">Eliminar cuenta</a>
 
   </div>
 </div>

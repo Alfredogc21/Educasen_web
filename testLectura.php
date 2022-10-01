@@ -32,6 +32,21 @@ if (isset($_SESSION['usuarios'])) {
     $statement->execute(array(':azar' => $azar));
     $resultado = $statement->fetchAll();
 
+    // Recibimos los datos del formulario
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $respuesta = $_POST['respuesta'];
+        //echo $respuesta;
+        if ($respuesta == 1) {
+           echo 'Correcta';
+           $contador = $contador + 1;
+        } else {
+            echo 'Incorrecta';
+        }
+
+        
+
+    }
+
     require 'views/testLectura.View.php';
 } else {
     header('Location: login.php');
