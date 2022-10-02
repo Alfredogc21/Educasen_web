@@ -6,6 +6,7 @@ if (isset($_SESSION['usuarios'])) {
 }
 
 $errores = '';
+$resultado = 0;
 
 // Recibimos los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -40,17 +41,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores .= '<script>alert("Por favor rellena todos los campos")</script>';
     } else {
 // Verificamos que el correo y contraseña exista
-    $statement = $conexion->prepare('SELECT correo, password FROM usuarios WHERE correo = :correo AND password = :password');
-    $statement->execute(array(':correo' => $correoB, ':password' => $passwordB));
-    $resultado = $statement->fetch(); // Almacenamos el resultado
+        $statement = $conexion->prepare('SELECT correo, password, estados_usuarios_id FROM usuarios WHERE correo = :correo AND password = :password');
+        $statement->execute(array(':correo' => $correoB, ':password' => $passwordB));
+        $resultado = $statement->fetch(); // Almacenamos el resultado
 
-//Creamos una session y enrutamos a la pagina principal
-    if ($resultado !== false) {
-        $_SESSION['usuarios'] = $correoB;
-        header('Location: menuPrincipal.php');
-    } else {
-        $errores .= '<li class="#ef5350 red lighten-1">Datos Incorrectos</li>';
-    }
+        if ($resultado !== false) { // Si hay datos en la base de datos
+            if ($resultado['estados_usuarios_id'] == 1) { //Creamos una session y enrutamos a la pagina principal
+                $_SESSION['usuarios'] = $correoB;
+                header('Location: menuPrincipal.php'); 
+            } else if ($resultado['estados_usuarios_id'] == 2) { // Si el usuario esta inactivo
+                $errores .= '<li class="#ef5350 red lighten-1">El usuario esta deshabilitado</li>';
+                $errores .= '<script>alert("El usuario esta deshabilitado")</script>';
+            }  
+
+        } else {
+            $errores .= '<li class="#ef5350 red lighten-1">Se ha producido un problema al iniciar sesión. Comprueba el correo electrónico y la contraseña o crea una cuenta.</li>';
+        }
 
     }
 }

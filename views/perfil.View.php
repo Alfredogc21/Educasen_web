@@ -125,7 +125,9 @@
           </div>
       <?php endif; ?>
     </form>
-    <a class="linkTengoCuenta" href="eliminar.php">Eliminar cuenta</a>
+    <div class=" row offset-s1 center-align">
+      <i class="#7986cb indigo lighten-2 btn " onclick="actualizar.submit()">Eliminar</i>
+    </div>
 
   </div>
 </div>
@@ -140,5 +142,8 @@
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
 <!-- Script para el registrarView -->
 <script src="views/js/jsRegistrar.js"></script>
+<!-- Libreria sweetalert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="views/js/sweetAlert.js"></script>
 </body>
 </html>
