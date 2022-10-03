@@ -31,14 +31,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $atributos = json_decode($respuesta, true);
     
     if ($atributos['success'] == false) {
-        $errores .= '<script>alert("Por favor valida el reCaptcha")</script>';
+        $errores .= "<script> Swal.fire(
+                    'Por favor',
+                    'Valida el reCaptcha',
+                    'error')</script>";
         $errores .= '<li class="#ef5350 red lighten-1">Por favor verifica el captcha</li>';
     }
 
 // Verificamos que los campos no esten vacios
     if (empty($correoB) or empty($passwordB) or empty($captcha)) {
+        $errores .= "<script> Swal.fire(
+                    'Por favor',
+                    'Rellena todos los campos',
+                    'error')</script>";
         $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los campos</li>';
-        $errores .= '<script>alert("Por favor rellena todos los campos")</script>';
     } else {
 // Verificamos que el correo y contraseña exista
         $statement = $conexion->prepare('SELECT correo, password, estados_usuarios_id FROM usuarios WHERE correo = :correo AND password = :password');
@@ -50,11 +56,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['usuarios'] = $correoB;
                 header('Location: menuPrincipal.php'); 
             } else if ($resultado['estados_usuarios_id'] == 2) { // Si el usuario esta inactivo
+                $errores .= "<script> Swal.fire(
+                            'Lo sentimos',
+                            'El usuario esta deshabilitado',
+                            'error')</script>";
                 $errores .= '<li class="#ef5350 red lighten-1">El usuario esta deshabilitado</li>';
-                $errores .= '<script>alert("El usuario esta deshabilitado")</script>';
             }  
 
-        } else {
+        } else { // Si no hay datos en la base de datos
+            $errores .= "<script> Swal.fire(
+                        'Se ha producido un problema al iniciar sesión',
+                        'Comprueba el correo electrónico y la contraseña o crea una cuenta',
+                        'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">Se ha producido un problema al iniciar sesión. Comprueba el correo electrónico y la contraseña o crea una cuenta.</li>';
         }
 

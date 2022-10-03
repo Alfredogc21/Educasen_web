@@ -14,7 +14,7 @@ if (isset($_SESSION['usuarios'])) {
     }
 
     //Hacemos la consulta para traer los datos del usuario
-    $statement = $conexion->prepare('SELECT id, nombres_completos, correo FROM usuarios WHERE correo = :correo');
+    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo FROM usuarios WHERE correo = :correo');
     $statement->execute(array(':correo' => $correo));
     $resultado = $statement->fetch();
 
@@ -23,6 +23,7 @@ if (isset($_SESSION['usuarios'])) {
         $nombres_completos = $resultado['nombres_completos'];
         $correo = $resultado['correo'];
         $id = $resultado['id'];
+        $estados_usuarios_id = $resultado['estados_usuarios_id'];
     }
 
     //Hacemos la consulta para traer los grados
@@ -36,20 +37,28 @@ if (isset($_SESSION['usuarios'])) {
         $correo = $_POST['correo'];
         $password = $_POST['password'];
         $confipassword = $_POST['confipassword'];
-        $grado = $_POST['grado'];
+        $grado = isset($_POST['grado']) ? $grado = $_POST['grado'] : $grado = null;
 
         $errores = '';
         $success = '';
         //Validamos los datos
         if (empty($nombre) or empty($correo) or empty($password) or empty($confipassword) or empty($grado)) {
-            $errores .= '<li>Por favor rellena todos los datos correctamente</li>';
+            $errores .= "<script> Swal.fire(
+                        'Opps...',
+                        'Por favor rellena todos los datos correctamente',
+                        'error')</script>";
+            $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los datos correctamente</li>';
         } else {
             $statement = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo LIMIT 1');
             $statement->execute(array(':correo' => $correo));
             $resultado = $statement->fetch();
 
             if ($resultado != false) {
-                $errores .= '<li>El correo ya existe</li>';
+                $errores .= "<script> Swal.fire(
+                            'Opps...',
+                            'El correo ingresado ya existe',
+                            'error')</script>";
+                $errores .= '<li class="#ef5350 red lighten-1">El correo ya existe</li>';
             }
 
             //Encriptamos la contraseña
@@ -57,7 +66,11 @@ if (isset($_SESSION['usuarios'])) {
             $confipassword = hash('sha512', $confipassword);
 
             if ($password != $confipassword) {
-                $errores .= '<li>Las contraseñas no son iguales</li>';
+                $errores .= "<script> Swal.fire(
+                            'Opps...',
+                            'Las contraseñas no son iguales',
+                            'error')</script>";
+                $errores .= '<li class="#ef5350 red lighten-1">Las contraseñas no son iguales</li>';
             }
         }
 
@@ -65,7 +78,11 @@ if (isset($_SESSION['usuarios'])) {
         if ($errores == '') {
             $statement = $conexion->prepare('UPDATE usuarios SET nombres_completos = :nombre, correo = :correo, password = :password, grado_id = :grado WHERE id = :id');
             $statement->execute(array(':nombre' => $nombre, ':correo' => $correo, ':password' => $password, ':grado' => $grado, ':id' => $id));
-            $success .= '<script>alert("Usuario actualizado, inicie sesion con los nuevos datos")</script>';
+            $success .= "<script> Swal.fire(
+                        'Usuario actualizado',
+                        'Inicie sesion con los nuevos datos',
+                        'success')</script>";
+            $success .= '<li class="#00e676 green accent-3">Usuario actualizado, inicie sesion con los nuevos datos</li>';
             $_SESSION['usuarios'] = $correo;
 
             //Esperar 0.2 segundos destruir sesion y redireccionar
@@ -73,6 +90,17 @@ if (isset($_SESSION['usuarios'])) {
             session_destroy();
         }
     }
+
+    //El metodo POST no me serviria ya que no esta en un formulario el boton
+    if (isset($_POST['eliminar'])) {
+        //Actualizamos el  $estados_usuarios_id a 2
+        $statement = $conexion->prepare('UPDATE usuarios SET estados_usuarios_id = 2 WHERE id = :id');
+        $statement->execute(array(':id' => $id));
+    }
+
+    //Enviar el id a javascript
+    echo "<script>var id = $id;</script>";
+    
     
 require 'views/perfil.View.php';
 } else {

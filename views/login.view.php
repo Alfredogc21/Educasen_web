@@ -10,6 +10,8 @@
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
+  <!-- Libreria sweetalert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <!------------------------------------------------------------------------------------------------------------> 

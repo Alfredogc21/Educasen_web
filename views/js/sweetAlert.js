@@ -1,10 +1,4 @@
-//Recibir el evento onclick del boton eliminar
-$('.btn-delete').on('click', function(e){
-    e.preventDefault();
-    //Obtener el valor del atributo href del boton
-    var href = $(this).attr('href');
-    //Mostrar el mensaje de alerta
-
+function EliminarUsuario(id){
 Swal.fire({
     title: '¿Estás seguro?',
     text: "¡No podrás revertir esto!",
@@ -12,14 +6,26 @@ Swal.fire({
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: '¡Sí, elimínalo!'
+    confirmButtonText: '¡Sí, elimínalo!',
+    cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
+
+
       Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
+        'Usuario eliminado',
+        'Ya no podrá acceder al sistema con este correo.',
         'success'
+
       )
+    } else {
+        Swal.fire(
+            'Usuario no eliminado',
+            'El usuario no ha sido eliminado.',
+            'error'
+          )
     }
-  })
-});
+  });
+}
+
+

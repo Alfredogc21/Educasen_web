@@ -30,8 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errores = '';
     $success = '';
     if (empty($nombre) or empty($correo) or empty($password) or empty($confipassword) or empty($grado)) {
+        $errores .= "<script> Swal.fire(
+                    'Opps...',
+                    'Por favor rellena todos los datos correctamente',
+                    'error')</script>";
         $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los datos correctamente</li>';
-        $errores .= '<script>alert("Por favor rellena todos los campos")</script>';
     } else {
         // Verificamos que el correo no exista
        $statement = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo LIMIT 1');
@@ -39,6 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        $resultado = $statement->fetch();
 
         if ($resultado != false) {
+            $errores .= "<script> Swal.fire(
+                        'Opps...',
+                        'El correo ya existe',
+                        'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">El correo ya existe</li>';
         }
 
@@ -47,6 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Verificamos que las contraseñas coincidan
         if ($password != $confipassword) {
+            $errores .= "<script> Swal.fire(
+                        'Opps...',
+                        'Las contraseñas no coinciden',
+                        'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">Las contraseñas no coinciden</li>';
         }
 
@@ -59,7 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $atributos = json_decode($respuesta, true);
 
         if ($atributos['success'] == false) {
-            $errores .= '<script>alert("Por favor valida el reCaptcha")</script>';
+            $errores .= "<script> Swal.fire(
+                        'Opps...',
+                        'Por favor valida el reCaptcha',
+                        'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">Por favor verifica el captcha</li>';
         }
 
@@ -69,6 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($errores == '') {
         $statement = $conexion->prepare('INSERT INTO usuarios (id, nombres_completos, grado_id, correo, password) VALUES (null, :nombre, :curso, :correo, :password)');
         $statement->execute(array(':nombre' => $nombre, ':curso' => $grado, ':correo' => $correo, ':password' => $password));
+        $success .= "<script> Swal.fire(
+                    'Bienvenido',
+                    'Usuario registrado correctamente',
+                    'success')</script>";
         $success .= '<li class="#00e676 green accent-3">Usuario registrado exitosamente</li>';
     }
     

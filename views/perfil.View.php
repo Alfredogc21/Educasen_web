@@ -10,7 +10,8 @@
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
-
+  <!-- Libreria sweetalert -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <!------------------------------------------------------------------------------------------------------------> 
@@ -126,7 +127,7 @@
       <?php endif; ?>
     </form>
     <div class=" row offset-s1 center-align">
-      <i class="#7986cb indigo lighten-2 btn " onclick="actualizar.submit()">Eliminar</i>
+      <i class="#7986cb indigo lighten-2 btn " onclick="EliminarUsuario()">Eliminar</i>
     </div>
 
   </div>
@@ -142,8 +143,7 @@
 <script src="https://kit.fontawesome.com/3f592185f1.js" crossorigin="anonymous"></script>
 <!-- Script para el registrarView -->
 <script src="views/js/jsRegistrar.js"></script>
-<!-- Libreria sweetalert -->
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Archivo js de alertas -->
 <script src="views/js/sweetAlert.js"></script>
 </body>
 </html>
