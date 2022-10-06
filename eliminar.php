@@ -6,21 +6,13 @@ if (isset($_SESSION['usuarios'])) {
     $correo = $_SESSION['usuarios'];
 
     //Hacemos la conexion a la base de datos
-    try {
-        $conexion = new PDO('mysql:host=localhost;dbname=educasen', 'root', '');
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-        die();
-    }
-
+    require 'conexion/conexion.php';
 
     //Hacemos la consulta para traer los datos del usuario
     $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo FROM usuarios WHERE correo = :correo LIMIT 1');
     $statement->execute(array(':correo' => $correo));
     $resultado = $statement->fetch();
 
-    $id = '';
-    $nombres_completos = '';
     //Guardamos los datos en variables
     if ($resultado != false) {
         $nombres_completos = $resultado['nombres_completos'];

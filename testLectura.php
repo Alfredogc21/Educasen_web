@@ -4,12 +4,8 @@ if (isset($_SESSION['usuarios'])) {
 
     $correo = $_SESSION['usuarios'];
 
-    try {
-        $conexion = new PDO('mysql:host=localhost;dbname=educasen', 'root', '');
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-        die();
-    }
+    //Hacemos la conexion a la base de datos
+    require 'conexion/conexion.php';
 
     // Mostrar el nombre del usuario
     $statementUsername = $conexion->prepare('SELECT nombres_completos FROM usuarios WHERE correo = :correo');

@@ -5,18 +5,13 @@ if (isset($_SESSION['usuarios'])) {
     header('Location: views/menuPrincipal.php');
 }
 
-//conexion base de datos
-try {
-    $conexion = new PDO('mysql:host=localhost;dbname=educasen', 'root', '');
-        //Para obtener los datos del grado
-        $statementGrados = $conexion->prepare('SELECT id, nombre_grado FROM grados');
-        $statementGrados->execute();
-        $resultadoGrado = $statementGrados->fetchAll();
-            
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    die("Error en el servidor");
-}
+//Hacemos la conexion a la base de datos
+require 'conexion/conexion.php';
+
+//Para obtener los datos del grado
+$statementGrados = $conexion->prepare('SELECT id, nombre_grado FROM grados');
+$statementGrados->execute();
+$resultadoGrado = $statementGrados->fetchAll();
 
 // Recibimos los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -37,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los datos correctamente</li>';
     } else {
         // Verificamos que el correo no exista
-       $statement = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo LIMIT 1');
-       $statement->execute(array(':correo' => $correo));
-       $resultado = $statement->fetch();
+        $statement = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo LIMIT 1');
+        $statement->execute(array(':correo' => $correo));
+        $resultado = $statement->fetch();
 
         if ($resultado != false) {
             $errores .= "<script> Swal.fire(

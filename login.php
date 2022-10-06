@@ -14,16 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passwordB = $_POST['password'];
     $passwordB= hash('sha512', $passwordB);
 
-// Conexion a la base de datos
-    try {
-        $conexion = new PDO('mysql:host=localhost;dbname=educasen', 'root', '');
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-        die("Error en el servidor");
-    }
+    //Hacemos la conexion a la base de datos
+    require 'conexion/conexion.php';
 
 // Verificamos que el captcha este correcto
-     $ip = $_SERVER['REMOTE_ADDR'];
+    $ip = $_SERVER['REMOTE_ADDR'];
     $captcha = $_POST['g-recaptcha-response'];
     $secretkey = "6LfL90kgAAAAADdvH6SJ4K8Kb-7ho9JzExaKi-P7";
     
