@@ -141,3 +141,28 @@ nav {
     font-size: 14px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   }
+
+  /* ------------------------------------------------Footer---------------------------------------------- */
+/*
+/* Color de fondo del footer */
+.colorFooter {
+  background: #6A80C0;  /* reserva para navegadores antiguos */
+  padding: 68px;
+}
+
+/* Logo abajo Footer */
+.logoAbajo {
+  border-radius: 20px;
+  margin-top: -30px;
+  position: relative;
+  top: -100px;
+}
+
+/* Ultima letras del footer */
+.copy {
+  margin:0;
+  height: 0px;
+  position: relative;
+  top: 22px;
+  color: #fff;
+}

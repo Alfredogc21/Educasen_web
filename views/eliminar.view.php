@@ -53,63 +53,30 @@
   </figure>
 </ul>
 <!------------------------------------------------------------------------------------------------------------> 
-
 <div class="contenedor-card">
+<br><br><br>
   <div class="card-registro">
 
-    <h1 class="tituloCard">Actualizar datos</h1>
+    <h1 class="tituloCard">Eliminar usuario</h1>
     <figure class="fondoLading">
-        <lottie-player class="fondoLading__lottie" src="https://assets9.lottiefiles.com/packages/lf20_md7jx0xq.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    <lottie-player class="fondoLading__lottie" src="https://assets5.lottiefiles.com/packages/lf20_4w6xksiq.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
     </figure>
 
     <!-- Formulario de registro -->
-    <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="actualizar">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="name" type="text" name="nombre" class="validate" minlength="10" required value="<?php echo $nombres_completos; ?>">
-          <label for="name">Nombre</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="email" type="email" name="correo" class="validate" minlength="4" required value="<?php echo $correo; ?>">
-          <label for="email">Correo electronico</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" name="password" minlength="7" class="validate" required>
-          <label for="password">Contraseña</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="confiPassword" type="password" name="confipassword" minlength="7" class="validate" required>
-          <label for="confiPassword">Confirmar contraseña</label>
-        </div>
-      </div>
-
-      <div class="row">  
-        <label>Seleccione el grado</label>
-        <select class="browser-default" name="grado" required>
-          <option value="" disabled selected>Seleccione el grado</option>
+    <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="Eliminar">
+    <div class="row">
+        <label>Seleccione el usuario</label>
+        <select class="browser-default" name="usuario" required>
+          <option value="" disabled selected>Seleccione el usuario</option>
           <?php
-              // Se recorre el array de grados
-              foreach($resultadoGrado as $gradoCurso) {
-                echo '<option value="' . $gradoCurso['id'] . '">' . $gradoCurso['nombre_grado'] . '</option>';
-              }
+                echo '<option value="' . $resultado['id'] . '">' . $resultado['nombres_completos'] . '</option>';
           ?>
         </select>
       </div>
       <br>
 
-      <!-- recaptcha -->
-      <div>
-        <div class="g-recaptcha" data-sitekey="6LfL90kgAAAAAESzVF-LUvSIl6RNVx13O3MsOD49">
-        </div>
-      </div>
-      <br>
-
       <div class=" row offset-s1 center-align">
-      <i class="#7986cb indigo lighten-2 btn " onclick="actualizar.submit()">Actualizar</i>
+      <i class="#7986cb indigo lighten-2 btn " onclick="Eliminar.submit()">Eliminar</i>
       </div>
 
       <?php if(!empty($errores)): ?> <!-- Si hay errores los muestra -->
@@ -126,12 +93,34 @@
           </div>
       <?php endif; ?>
     </form>
-    <div class=" row offset-s1 center-align">
-      <i class="#7986cb indigo lighten-2 btn " onclick="EliminarUsuario()">Eliminar</i>
-    </div>
-
   </div>
 </div>
+
+<!-- Footer -->
+<footer class="colorFooter">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+        <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text"><strong>Redes Sociales</strong></h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#" target="_blank">Facebook</a></li>
+          <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+          <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <p class="copy">Copyright © - 2022 Alfredo Gomez Culma Derechos Reservados</p>
+    <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
+    </div>
+  </div>
+</footer>
 
 <!--reCaptchat-->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

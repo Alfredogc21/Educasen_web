@@ -24,7 +24,7 @@
           <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
             <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' . $nombreUsuario; ?></a>
               <ul>
-                <li><a class="sidenav-close" href="perfil.php">Actualizar informacion</a></li>
+                <li><a class="sidenav-close" href="perfil.php">Perfil</a></li>
                 <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
                 <li><a class="sidenav-close" href="#">Ayuda</a></li>
                 <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>

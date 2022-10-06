@@ -14,10 +14,12 @@ if (isset($_SESSION['usuarios'])) {
     }
 
     //Hacemos la consulta para traer los datos del usuario
-    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo FROM usuarios WHERE correo = :correo');
+    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo FROM usuarios WHERE correo = :correo LIMIT 1');
     $statement->execute(array(':correo' => $correo));
     $resultado = $statement->fetch();
 
+    $id = '';
+    $nombres_completos = '';
     //Guardamos los datos en variables
     if ($resultado != false) {
         $nombres_completos = $resultado['nombres_completos'];
@@ -49,10 +51,6 @@ if (isset($_SESSION['usuarios'])) {
                         'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los datos correctamente</li>';
         } else {
-            $statement = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :correo LIMIT 1');
-            $statement->execute(array(':correo' => $correo));
-            $resultado = $statement->fetch();
-
             if ($resultado != false) {
                 $errores .= "<script> Swal.fire(
                             'Opps...',
@@ -90,19 +88,8 @@ if (isset($_SESSION['usuarios'])) {
             session_destroy();
         }
     }
-
-    //El metodo POST no me serviria ya que no esta en un formulario el boton
-    if (isset($_POST['eliminar'])) {
-        //Actualizamos el  $estados_usuarios_id a 2
-        $statement = $conexion->prepare('UPDATE usuarios SET estados_usuarios_id = 2 WHERE id = :id');
-        $statement->execute(array(':id' => $id));
-    }
-
-    //Enviar el id a javascript
-    echo "<script>var id = $id;</script>";
     
-    
-require 'views/perfil.View.php';
+require 'views/actualizar.view.php';
 } else {
     header('Location: login.php');
 }
