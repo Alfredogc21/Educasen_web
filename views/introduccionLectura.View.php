@@ -25,7 +25,6 @@
             <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' . $nombreUsuario; ?></a>
               <ul>
                 <li><a class="sidenav-close" href="perfil.php">Perfil</a></li>
-                <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
                 <li><a class="sidenav-close" href="#">Ayuda</a></li>
                 <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
               </ul>
@@ -41,7 +40,6 @@
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
     <li><a class="sidenav-close" href="perfil.php"><?php echo $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
-    <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
     <figure>

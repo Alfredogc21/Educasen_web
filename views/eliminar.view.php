@@ -27,12 +27,11 @@
         <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
         <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
             <ul>
-                <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
                 <li><a class="sidenav-close" href="#">Ayuda</a></li>
                 <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
               </ul>
         </li>
-        <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="perfil.php">Regresar</a></li>
       </ul>
   </div>
 </nav>
@@ -43,8 +42,8 @@
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
     <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
         <ul>
-            <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
             <li><a class="sidenav-close" href="#">Ayuda</a></li>
+            <li><a class="sidenav-close" href="perfil.php">Regresar</a></li>
             <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </li>

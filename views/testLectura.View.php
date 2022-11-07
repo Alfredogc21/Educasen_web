@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/estilos/testLectura.css">
+    <link rel="stylesheet" href="views/estilos/testLectura_calificaciones.css">
     <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
     <title>Examen introductorio</title>
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <!-- Libreria sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <!------------------------------------------------------------------------------------------------------------> 
@@ -26,8 +28,7 @@
           <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
           <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' . $nombreUsuario; ?></a>
             <ul>
-            <li><a class="sidenav-close" href="#">Actualizar informacion</a></li>
-              <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
+            <li><a class="sidenav-close" href="perfil.php">Perfil</a></li>
               <li><a class="sidenav-close" href="#">Ayuda</a></li>
               <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
             </ul>
@@ -41,8 +42,7 @@
 <ul class="sidenav" id="mobile-demo">
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-    <li><a class="sidenav-close" href="cuentaInfo.html"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
-    <li><a class="sidenav-close" href="#">Terminos y condiciones</a></li>
+    <li><a class="sidenav-close" href="perfil.php"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
     <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
