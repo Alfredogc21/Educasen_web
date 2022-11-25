@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="views/estilos/registrarylogin.css">
-  <title>Actualizar informacion</title>
+  <title>Actualizar correo</title>
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
@@ -56,43 +56,19 @@
 <div class="contenedor-card">
   <div class="card-registro">
 
-    <h1 class="tituloCard">Actualizar datos</h1>
+    <h1 class="tituloCard">Actualizar Correo</h1>
     <figure class="fondoLading">
         <lottie-player class="fondoLading__lottie" src="https://assets9.lottiefiles.com/packages/lf20_md7jx0xq.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
     </figure>
 
     <!-- Formulario de registro -->
     <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="actualizar">
+      <br>
       <div class="row">
         <div class="input-field col s12">
-          <input id="name" type="text" name="nombre" class="validate" minlength="10" required value="<?php echo $nombres_completos; ?>">
-          <label for="name">Nombre</label>
+          <input id="email" type="email" name="correo" class="validate" minlength="4" required value="<?php echo $correo; ?>">
+          <label for="email">Correo electronico</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" name="password" minlength="7" class="validate" required>
-          <label for="password">Contraseña</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="confiPassword" type="password" name="confipassword" minlength="7" class="validate" required>
-          <label for="confiPassword">Confirmar contraseña</label>
-        </div>
-      </div>
-
-      <div class="row">  
-        <label>Seleccione el grado</label>
-        <select class="browser-default" name="grado" required>
-          <option value="" disabled selected>Seleccione el grado</option>
-          <?php
-              // Se recorre el array de grados
-              foreach($resultadoGrado as $gradoCurso) {
-                echo '<option value="' . $gradoCurso['id'] . '">' . $gradoCurso['nombre_grado'] . '</option>';
-              }
-          ?>
-        </select>
       </div>
       <br>
 

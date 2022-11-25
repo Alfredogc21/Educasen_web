@@ -29,7 +29,6 @@ if (isset($_SESSION['usuarios'])) {
     //Recibimos los datos del formulario
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nombre = $_POST['nombre'];
-        $correo = $_POST['correo'];
         $password = $_POST['password'];
         $confipassword = $_POST['confipassword'];
         $grado = isset($_POST['grado']) ? $grado = $_POST['grado'] : $grado = null;
@@ -37,20 +36,13 @@ if (isset($_SESSION['usuarios'])) {
         $errores = '';
         $success = '';
         //Validamos los datos
-        if (empty($nombre) or empty($correo) or empty($password) or empty($confipassword) or empty($grado)) {
+        if (empty($nombre) or empty($password) or empty($confipassword) or empty($grado)) {
             $errores .= "<script> Swal.fire(
                         'Opps...',
                         'Por favor rellena todos los datos correctamente',
                         'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los datos correctamente</li>';
         } else {
-            if ($resultado != false) {
-                $errores .= "<script> Swal.fire(
-                            'Opps...',
-                            'El correo ingresado ya existe',
-                            'error')</script>";
-                $errores .= '<li class="#ef5350 red lighten-1">El correo ya existe</li>';
-            }
 
             //Encriptamos la contraseña
             $password = hash('sha512', $password);
@@ -67,8 +59,8 @@ if (isset($_SESSION['usuarios'])) {
 
         //Si no hay errores actualizamos los datos
         if ($errores == '') {
-            $statement = $conexion->prepare('UPDATE usuarios SET nombres_completos = :nombre, correo = :correo, password = :password, grado_id = :grado WHERE id = :id');
-            $statement->execute(array(':nombre' => $nombre, ':correo' => $correo, ':password' => $password, ':grado' => $grado, ':id' => $id));
+            $statement = $conexion->prepare('UPDATE usuarios SET nombres_completos = :nombre, password = :password, grado_id = :grado WHERE id = :id');
+            $statement->execute(array(':nombre' => $nombre, ':password' => $password, ':grado' => $grado, ':id' => $id));
             $success .= "<script> Swal.fire(
                         'Usuario actualizado',
                         'Inicie sesion con los nuevos datos',
@@ -77,8 +69,7 @@ if (isset($_SESSION['usuarios'])) {
             $_SESSION['usuarios'] = $correo;
 
             //Esperar 0.2 segundos destruir sesion y redireccionar
-            header("Refresh:0.2; url=login.php");
-            session_destroy();
+            header("Refresh:0.4; url=actualizar.php");
         }
     }
     
