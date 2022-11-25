@@ -73,7 +73,7 @@ if (isset($_SESSION['usuarios'])) {
         }
     }
     
-require 'views/actualizar.view.php';
+require 'views/actualizarDatos.view.php';
 } else {
     header('Location: login.php');
 }

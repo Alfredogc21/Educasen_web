@@ -30,6 +30,7 @@
               </ul>
             </li>
             <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
+            <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
         </ul>
     </div>
 </nav>
@@ -41,6 +42,7 @@
     <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
+    <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
     <figure>
       <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">

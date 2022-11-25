@@ -31,7 +31,7 @@
                 <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
               </ul>
         </li>
-        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="ajustes.php">Regresar</a></li>
       </ul>
   </div>
 </nav>
@@ -43,7 +43,7 @@
     <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
         <ul>
             <li><a class="sidenav-close" href="#">Ayuda</a></li>
-            <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
+            <li><a class="sidenav-close" href="ajustes.php">Regresar</a></li>
             <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </li>
@@ -55,22 +55,22 @@
 <div class="card-section">
   <h3 class="titulo"><i class="fa-solid fa-gear"></i> ¿Que deseas hacer? <i class="fa-sharp fa-solid fa-gears"></i></h3>
   <div class="card-list">
-    <a href="perfil.php">
+    <a href="actualizarCorreo.php">
         <div class="card">
             <div class="card-image">
                 <div class="card-content">
-                    <h3>Actualizar <i class="fa-solid fa-user-pen"></i></h3>
+                    <h3>Actualizar Correo <i class="fa-solid fa-user-pen"></i></h3>
                 </div>
             </div>
         </div>
     </a>
   </div>
   <div class="card-list">
-    <a class="card-list__link" href="eliminar.php">
+    <a class="card-list__link" href="actualizarDatos.php">
         <div class="card">
             <div class="card-image">
                 <div class="card-content">
-                    <h3>Eliminar <i class="fa-solid fa-trash"></i></h3>
+                    <h3>Actualizar datos <i class="fa-solid fa-user-pen"></i></h3>
                 </div>
             </div>
         </div>
