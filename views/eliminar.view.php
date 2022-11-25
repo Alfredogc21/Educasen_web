@@ -27,11 +27,12 @@
         <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
         <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
             <ul>
+                <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
                 <li><a class="sidenav-close" href="#">Ayuda</a></li>
                 <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
               </ul>
         </li>
-        <li><a class="sidenav-close" href="perfil.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="ajustes.php">Regresar</a></li>
       </ul>
   </div>
 </nav>
@@ -40,10 +41,10 @@
 <ul class="sidenav" id="mobile-demo">
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-    <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
+    <li><a class="sidenav-close" href="ajustes.php"><?php echo 'Usuario: ' .  $nombres_completos; ?></a>
         <ul>
             <li><a class="sidenav-close" href="#">Ayuda</a></li>
-            <li><a class="sidenav-close" href="perfil.php">Regresar</a></li>
+            <li><a class="sidenav-close" href="ajustes.php">Regresar</a></li>
             <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </li>

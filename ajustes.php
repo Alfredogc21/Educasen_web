@@ -21,7 +21,7 @@ if (isset($_SESSION['usuarios'])) {
         $estados_usuarios_id = $resultado['estados_usuarios_id'];
     }
 
-    require 'views/perfil.view.php';
+    require 'views/ajustes.view.php';
 } else {
     header('Location: login.php');
 }
