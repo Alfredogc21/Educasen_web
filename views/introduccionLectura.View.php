@@ -44,9 +44,9 @@
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
     <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
-    <figure>
-      <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
-    </figure>
+    <div class="logoMobile">
+      <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
+    </div>
 </ul>
 
 <!-- Contenido -->

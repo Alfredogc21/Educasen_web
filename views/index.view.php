@@ -28,7 +28,7 @@
 </div>
 <!-- div que encierra todo para el preloader -->
 <div class="hide" id="contenidoPagina">
-  
+
 <!------------------------------------------------------------------------------------------------------------> 
 <!-- Cabecera menu -->
 <nav role="navigation">
@@ -39,7 +39,7 @@
 
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="sidenav-close" routerLink="index.php">Inicio</a></li>
+        <li><a class="sidenav-close" href="#">Inicio</a></li>
         <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
         <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
         <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
@@ -54,9 +54,9 @@
   <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
   <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
   <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
-  <figure>
-    <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
-  </figure>
+  <div class="logoMobile">
+    <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
+  </div>
 </ul>
 
 <!------------------------------------------------------------------------------------------------------------> 
@@ -86,7 +86,7 @@
 <!------------------------------------------------------------------------------------------------------------> 
 
 <div class="parallax-container">
-  <div class="parallax"><img src="views/imagenes/imgParallax.jpg"></div>
+  <div class="parallax"><img src="views/imagenes/imgParallax.jpg" alt="imagen parallax"></div>
 </div>
 <!------------------------------------------------------------------------------------------------------------> 
 <div class="div__quienessomos">
@@ -126,10 +126,11 @@
   <div class="footer-copyright">
     <div class="container">
     <p class="copy">Copyright © - 2022 Alfredo Gomez Culma Derechos Reservados</p>
-    <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
+    <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100" height="90" class="logoAbajo right" alt="Logo de la institucion"></a>
     </div>
   </div>
 </footer>
+</div>
 
 <!-- Framework: Materialize -->
 <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>

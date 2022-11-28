@@ -48,9 +48,9 @@
             <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         </ul>
     </li>
-  <figure>
-    <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
-  </figure>
+    <div class="logoMobile">
+      <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
+    </div>
 </ul>
 <!------------------------------------------------------------------------------------------------------------> 
 <div class="contenedor-card">

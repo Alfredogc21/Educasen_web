@@ -19,6 +19,17 @@ body {
   background: #eef0f1;
 }
 
+.logoMobile {
+  background: rgb(243, 243, 243);
+  text-align: center;
+}
+  
+.logoMobile img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+}
+
 /* --------------------------------------------Contenido de la página-------------------------------------------- */
 .card-section {
     margin: 15px 0 20px 0;

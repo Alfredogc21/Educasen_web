@@ -37,9 +37,9 @@
   <li><a class="sidenav-close" href="index.php">Inicio</a></li>
   <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
   <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
-  <figure>
-    <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
-  </figure>
+  <div class="logoMobile">
+    <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
+  </div>
 </ul>
 <!------------------------------------------------------------------------------------------------------------> 
 
