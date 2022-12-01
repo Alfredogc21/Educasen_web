@@ -28,7 +28,7 @@
           <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
           <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' . $nombreUsuario; ?></a>
             <ul>
-            <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
+            <li><a class="sidenav-close" href="perfil.php">Perfil</a></li>
               <li><a class="sidenav-close" href="#">Ayuda</a></li>
               <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
             </ul>
@@ -42,33 +42,38 @@
 <ul class="sidenav" id="mobile-demo">
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-    <li><a class="sidenav-close" href="ajustes.php"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
+    <li><a class="sidenav-close" href="perfil.php"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
     <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
-    <div class="logoMobile">
-      <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
-    </div>
+    <figure>
+      <img src="views/imagenes/favicon.svg" alt="educasen" class="educasen" width="200" height="200">
+    </figure>
 </ul>
   
 <!------------------------------------------------------------------------------------------------------------> 
 <h1 class="titulo">Examen introductorio (Lectura Critica)</h1>
-<div class="contenedor">
-    <h2 class="contenedor__Pregunta">Pregunta <?php echo $azar ?></h2>
+<?php if ($errores): ?>
+    <div class="error">
+        <?php echo $errores; ?>
+    </div>
+<?php else: ?>
+  <div class="contenedor">
+    <h2 class="contenedor__Pregunta">Pregunta <?php echo $resultadoPregunta[0]['id'] ?></h2>
     <div class="contenedor__Opciones">
-        <h3 class="contenedor__parrafo"><?php echo $resultado[0]['enunciado_pregunta'] . '<br>'; ?></h3> <!-- Mostrar la pregunta -->
+        <h3 class="contenedor__parrafo"><?php echo $resultadoPregunta[0]['enunciado_pregunta'] . '<br>'; ?></h3> <!-- Mostrar la pregunta -->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="preguntas">
           <?php
-
+          $fila = '';
           //Recorre las respuestas de acuerdo a la pregunta
-          foreach ($resultado as $fila) {
+          foreach ($resultadoRespuestas as $fila) {
               echo '<p><label>
               <input class="with-gap" type="radio" name="respuesta" value="' . $fila['validacion_pregunta_id'] . '"/>
               <span>' . $fila['contenido_respuestas'] . '<br>' .'</span>
               </label> </p>';
           }
           ?>
-
+              <input type="hidden" name="idd" value="<?php echo $idPregunta2 ?>">
 
           <!-- Boton de enviar los datos -->
           <div class="col s10 offset-s1 center-align">
@@ -78,6 +83,8 @@
 
     </div>
 </div>
+<?php endif; ?>
+
 
 <!-- Footer -->
 <footer class="colorFooter">
