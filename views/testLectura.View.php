@@ -59,7 +59,7 @@
     </div>
 <?php else: ?>
   <div class="contenedor">
-    <h2 class="contenedor__Pregunta">Pregunta <?php echo $resultadoPregunta[0]['id'] ?></h2>
+    <h2 class="contenedor__Pregunta">Preguntas</h2>
     <div class="contenedor__Opciones">
         <h3 class="contenedor__parrafo"><?php echo $resultadoPregunta[0]['enunciado_pregunta'] . '<br>'; ?></h3> <!-- Mostrar la pregunta -->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="preguntas">
