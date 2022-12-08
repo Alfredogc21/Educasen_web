@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="views/estilos/pruebasycalificaciones.css">
     <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
-    <title>Examen introductorio</title>
+    <title>Examen - Lectura Critica</title>
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css"  media="screen,projection"/>
@@ -33,7 +33,7 @@
               <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
             </ul>
           </li>
-          <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
+          <li><a class="sidenav-close" href="menuPrincipal.php.php">Regresar</a></li>
         </ul>
     </div>
 </nav>
@@ -52,7 +52,7 @@
 </ul>
   
 <!------------------------------------------------------------------------------------------------------------> 
-<h1 class="titulo">Examen introductorio (Lectura Critica)</h1>
+<h1 class="titulo">Examen - Lectura Critica</h1>
 <?php if ($errores): ?>
     <div class="error">
         <?php echo $errores; ?>
