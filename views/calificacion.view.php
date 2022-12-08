@@ -55,8 +55,8 @@
 <br>
 <div class="row center">
   <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="buscar">
-  <h2>Seleccione la competencia</h2>
-    <select class="browser-default col s12" name="materia" required>
+  <h3>Seleccione la competencia y el tipo de cuestionario</h3>
+    <select class="browser-default col s6" name="materia" required>
         <option value="" disabled selected>Seleccione la competencia</option>
         <?php
           foreach ($resultadoMaterias as $materia) {
@@ -64,6 +64,15 @@
           }
         ?>
     </select>
+    <select class="browser-default col s6" name="oppreguntas" required>
+        <option value="" disabled selected>Seleccione el tipo de resultado</option>
+        <?php
+          foreach ($resultadoOpPregunta as $opPreguntas) {
+                echo '<option value="' . $opPreguntas['id'] . '">' . $opPreguntas['nombre_tipo_pregunta'] . '</option>';
+          }
+        ?>
+    </select>
+    <br><br><br>
     <div class=" row offset-s1 center-align">
       <i class="#7986cb indigo lighten-2 btn " onclick="buscar.submit()">Consultar</i>
     </div>
@@ -99,7 +108,7 @@
 </div>
 
 <div class="contenedor__grafico center">
-    <h3 class="center"><?php if($resultadoCalificacion) {echo "Resultados introductorios de " . $resultadoCalificacion[0]['nombres_materias'];} ?></h3>
+    <h3 class="center"><?php if($resultadoCalificacion) {echo "Resultados de " . $resultadoCalificacion[0]['nombres_materias'];} ?></h3>
     <?php if($resultadoCalificacion):?>
       <div class="contenedor__grafico1">
         <canvas class="graficosPosicion" id="myChart" width="400" height="400"></canvas>

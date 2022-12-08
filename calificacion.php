@@ -20,17 +20,23 @@ if (isset($_SESSION['usuarios'])) {
     $sql_Materias->execute();
     $resultadoMaterias = $sql_Materias->fetchAll();
 
+    //Mostrar opcion pregunta
+    $sql_opPregunta = $conexion->prepare('SELECT * FROM opcion_pregunta');
+    $sql_opPregunta->execute();
+    $resultadoOpPregunta = $sql_opPregunta->fetchAll();
+
     $resultadoCalificacion = null;
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $materia = isset($_POST['materia']) ? $_POST['materia'] : null; // Para mostrar en el select
+        $materia = isset($_POST['materia']) ? $_POST['materia'] : null; // Lo que recibe el select de materias
+        $oppreguntas = isset($_POST['oppreguntas']) ? $_POST['oppreguntas'] : null; // Lo que recibe el select de opcion pregunta
 
         $correctas = 0;
         $incorrectas = 0;
         
         // Mostrar las calificaciones
-        $sql_calificacion = $conexion->prepare('SELECT nombres_materias, enunciado_pregunta, validacion_pregunta_id FROM calificacion, preguntas_introduccion, materias WHERE preguntas_introduccion_id = preguntas_introduccion.id AND preguntas_introduccion.materia_id = materias.id AND usuarios_id = :idUsuario AND materias.id = :materia');
-        $sql_calificacion->execute(array(':idUsuario' => $idUsuario , ':materia' => $materia));
+        $sql_calificacion = $conexion->prepare('SELECT nombres_materias, enunciado_pregunta, validacion_pregunta_id FROM calificacion, preguntas, materias WHERE preguntas_id = preguntas.id AND preguntas.materia_id = materias.id AND usuarios_id = :idUsuario AND materias.id = :materia AND calificacion.opcion_pregunta_id = :oppreguntas');
+        $sql_calificacion->execute(array(':idUsuario' => $idUsuario , ':materia' => $materia , ':oppreguntas' => $oppreguntas));
         $resultadoCalificacion = $sql_calificacion->fetchAll();
 
         // contar las correctas e incorrectas
@@ -43,9 +49,7 @@ if (isset($_SESSION['usuarios'])) {
         }
     }
 
-
-
-    require 'views/calificacionIntroduccion.view.php';
+    require 'views/calificacion.view.php';
 } else {
     header('Location: login.php');
 }
