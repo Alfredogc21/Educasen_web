@@ -96,7 +96,8 @@
 <div class="contenedorBotones">
     <a href="menuPrincipal.php" class="botones"><i class="fa-solid fa-arrow-left"></i> Regresar</a>
     <a href="testLectura.php" class="botones botones__testIntroductorio"><i class="fa-solid fa-brain"></i>Test Introductorio</a>
-    <a href="pruebaLecturaCritica.php" class="botones botones__testIntroductorio"><i class="fa-solid fa-person-walking-arrow-right"></i>Iniciar prueba</a>
+    <a href="examenLecturaCritica.php" class="botones botones__testIntroductorio"><i class="fa-solid fa-person-walking-arrow-right"></i>Iniciar prueba</a>
+    <a href="calificacion.php" class="botones botones__testIntroductorio"><i class="fa-solid fa-star"></i>Calificaciones</a>
 </div>
 
 <!-- Footer -->

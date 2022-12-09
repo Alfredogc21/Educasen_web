@@ -16,9 +16,12 @@ if (isset($_SESSION['usuarios'])) {
     $nombreUsuario = $resultadoUsername['nombres_completos'];
     $idUsuario = $resultadoUsername['id'];
 
+    $opcion_pregunta = 1;    //Variable para mostrar las preguntas introductorias
+    $materiaLecturaCritica = 1; //Variable para mostrar las preguntas de lectura critica
+
     //Mostrar las preguntas
-    $sqlPreguntas =$conexion->prepare('SELECT p.* FROM preguntas_introduccion p JOIN usuarios u LEFT JOIN calificacion c ON c.preguntas_introduccion_id = p.id AND c.usuarios_id = u.id WHERE u.id = :idUsuario AND c.id is null ORDER BY rand() LIMIT 1');
-    $sqlPreguntas->execute(array(':idUsuario' => $idUsuario));
+    $sqlPreguntas =$conexion->prepare('SELECT p.* FROM preguntas p JOIN usuarios u JOIN opcion_pregunta op LEFT JOIN calificacion c ON c.preguntas_id = p.id AND c.usuarios_id = u.id WHERE u.id = :idUsuario AND p.opcion_pregunta_id = :opcionPregunta AND p.materia_id = :materia AND c.id is null ORDER BY rand() LIMIT 1;');
+    $sqlPreguntas->execute(array(':idUsuario' => $idUsuario , ':opcionPregunta' => $opcion_pregunta , ':materia' => $materiaLecturaCritica));
     $resultadoPregunta = $sqlPreguntas->fetchAll();
     //id de la pregunta
     $idPregunta = isset($resultadoPregunta[0]['id']) ? $resultadoPregunta[0]['id'] : null;
@@ -26,7 +29,7 @@ if (isset($_SESSION['usuarios'])) {
 
     //Mostrar las respuestas
     if ($resultadoPregunta != false && $idPregunta != null) {
-        $sqlRespuestas = $conexion->prepare('SELECT r.* FROM opcion_respuesta_introduccion r JOIN preguntas_introduccion p ON r.preguntas_introduccion_id = p.id WHERE p.id = :idPregunta');
+        $sqlRespuestas = $conexion->prepare('SELECT r.* FROM opcion_respuesta r JOIN preguntas p ON r.preguntas_id = p.id WHERE p.id = :idPregunta');
         $sqlRespuestas->execute(array(':idPregunta' => $resultadoPregunta[0]['id']));
         $resultadoRespuestas = $sqlRespuestas->fetchAll();
     } else {
