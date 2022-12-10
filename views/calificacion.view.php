@@ -105,6 +105,7 @@
         }
       endif;
     ?>
+  </div>
 </div>
 
 <div class="contenedor__grafico center">

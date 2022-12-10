@@ -33,7 +33,7 @@
               <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
             </ul>
           </li>
-          <li><a class="sidenav-close" href="menuPrincipal.php.php">Regresar</a></li>
+          <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
         </ul>
     </div>
 </nav>
@@ -59,7 +59,8 @@
     </div>
 <?php else: ?>
   <div class="contenedor">
-    <h2 class="contenedor__Pregunta">Preguntas</h2>
+    <h2 class="contenedor__Pregunta">Pregunta</h2>
+    <img class="imagenEnunciadoPregunta materialboxed" src="views/imagenes/fotos/<?php echo $resultadoImagen[0]['imagen']; ?>" alt="Imagen de la pregunta">
     <div class="contenedor__Opciones">
         <h3 class="contenedor__parrafo"><?php echo $resultadoPregunta[0]['enunciado_pregunta'] . '<br>'; ?></h3> <!-- Mostrar la pregunta -->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="preguntas">
@@ -77,7 +78,7 @@
 
           <!-- Boton de enviar los datos -->
           <div class="col s10 offset-s1 center-align">
-            <i class="#7986cb indigo lighten-2 btn" onclick="preguntas.submit()">Enviar datos</i>
+            <i class="#7986cb indigo lighten-2 btn" onclick="preguntas.submit()">Siguiente</i>
           </div>
         </form>
 

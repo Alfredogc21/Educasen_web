@@ -16,7 +16,7 @@ if (isset($_SESSION['usuarios'])) {
     $nombreUsuario = $resultadoUsername['nombres_completos'];
     $idUsuario = $resultadoUsername['id'];
 
-    $opcion_pregunta = 1;    //Variable para mostrar las preguntas introductorias
+    $opcion_pregunta = 2;    //Variable para mostrar las preguntas examen
     $materiaLecturaCritica = 1; //Variable para mostrar las preguntas de lectura critica
 
     //Mostrar las preguntas
@@ -27,6 +27,11 @@ if (isset($_SESSION['usuarios'])) {
     $idPregunta = isset($resultadoPregunta[0]['id']) ? $resultadoPregunta[0]['id'] : null;
     $idPregunta2 = $idPregunta;
 
+    //Mostrar imagen
+    $sql_Imagen = $conexion->prepare('SELECT * FROM imagenes_examen where preguntas_id = :idPregunta limit 1');
+    $sql_Imagen->execute(array(':idPregunta' => $idPregunta2));
+    $resultadoImagen = $sql_Imagen->fetchAll();
+
     //Mostrar las respuestas
     if ($resultadoPregunta != false && $idPregunta != null) {
         $sqlRespuestas = $conexion->prepare('SELECT r.* FROM opcion_respuesta r JOIN preguntas p ON r.preguntas_id = p.id WHERE p.id = :idPregunta');
@@ -34,7 +39,7 @@ if (isset($_SESSION['usuarios'])) {
         $resultadoRespuestas = $sqlRespuestas->fetchAll();
     } else {
         $errores .= '<script>alert("Felicidades! Has terminado el test");</script>';
-        header('Refresh: 0.1 ; URL=calificacionIntroduccion.php');
+        header('Refresh: 0.1 ; URL=calificacion.php');
     }
 
     // Recibimos los datos del formulario
@@ -44,12 +49,12 @@ if (isset($_SESSION['usuarios'])) {
         $idd = $_POST['idd'];
 
         if ($resultadoPregunta != false) {
-            $sql_calificacion = $conexion->prepare('INSERT INTO calificacion (id, usuarios_id, preguntas_introduccion_id, validacion_pregunta_id) VALUES (NULL, :usuarios_id, :preguntas_introduccion_id, :validacion_pregunta_id)');
-            $sql_calificacion->execute(array(':usuarios_id' => $idUsuario,':preguntas_introduccion_id' => $idd,':validacion_pregunta_id' => $respuesta));
+            $sql_calificacion = $conexion->prepare('INSERT INTO calificacion (id, usuarios_id, preguntas_id, validacion_pregunta_id, opcion_pregunta_id) VALUES (NULL, :usuarios_id, :preguntas_id, :validacion_pregunta_id, :opcion_pregunta_id)');
+            $sql_calificacion->execute(array(':usuarios_id' => $idUsuario,':preguntas_id' => $idd,':validacion_pregunta_id' => $respuesta,':opcion_pregunta_id' => $opcion_pregunta));
         }
 
         //recargar la pagina
-        header('Refresh: 0.1 ; URL=testLectura.php');
+        header('Refresh: 0.1 ; URL=examenLecturaCritica.php');
 
     }
 

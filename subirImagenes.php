@@ -17,7 +17,6 @@ $sql_UltimaPregunta = $conexion->prepare('SELECT * FROM preguntas ORDER BY id DE
 $sql_UltimaPregunta->execute();
 $resultadoUltimaPregunta = $sql_UltimaPregunta->fetchAll();
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES)) {
 
     $materia = $_POST['materia'];
