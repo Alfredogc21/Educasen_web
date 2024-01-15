@@ -125,7 +125,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-    <p class="copy">Copyright © - 2022 Alfredo Gomez Culma Derechos Reservados</p>
+    <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
     <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100" height="90" class="logoAbajo right" alt="Logo de la institucion"></a>
     </div>
   </div>
