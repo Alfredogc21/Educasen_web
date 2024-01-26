@@ -237,6 +237,26 @@ nav ul li ul li a:hover {
   }
 }
 
+@media screen and (max-width: 1024px) and (min-height: 1366px) {
+  .contenedor-card {
+    margin-bottom: 600px;
+  }
+
+  .waves {
+    top: -400px;
+  }
+
+  .tituloCard {
+    font-size: 4rem;
+    height: 100px;
+  }
+  
+  .contenedor__recaptcha {
+    width: 35%;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .waves {
     height: 40px;
