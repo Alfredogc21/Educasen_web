@@ -71,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         'error')</script>";
             $errores .= '<li class="#ef5350 red lighten-1">Por favor verifica el captcha</li>';
         }
-
     }
 
     // Si no hay errores
@@ -83,12 +82,76 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'Usuario registrado correctamente',
                     'success')</script>";
         $success .= '<li class="#00e676 green accent-3">Usuario registrado exitosamente</li>';
+
+        // Envío de correo electrónico
+        $to = $correo;
+        $subject = "Bienvenido a Educasen - Registro Exitoso";
+        $headers = "From: Educasen <noreply@educasen.com>\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+        // Cuerpo del mensaje en formato HTML
+        $message = '
+        <html>
+        <head>
+        <title>Bienvenido a Educasen</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            }
+            .container {
+            max-width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            }
+            h1 {
+            color: #6a80c0;
+            }
+            p {
+            color: #555;
+            }
+            .image {
+            max-width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+            height: auto; /* Mantiene la proporción original de la imagen */
+            display: block; /* Centra la imagen */
+            margin: 20px auto; /* Ajusta el espacio alrededor de la imagen */
+            }
+        </style>
+        </head>
+        <body>
+        <div class="container">
+            <h1>Bienvenido(a) a Educasen</h1>
+            <p>Hola ' . $nombre . ',</p>
+            <p>Tu cuenta en Educasen ha sido creada exitosamente. ¡Gracias por registrarte!</p>
+            <p>¡Esperamos que disfrutes de nuestra plataforma!</p>
+            <img src="https://alfredohostg.online/web/views/imagenes/logoIECentral-removebg.png" alt="ImagenInstitucion" class="image">
+            <a href="https://alfredohostg.online/web" style="background-color: #6A80C0; color: #fff; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 15px; border-radius: 5px;">Iniciar sesión</a>
+        </div>
+        </body>
+        </html>';
+
+        if (mail($to, $subject, $message, $headers)) {
+            $success .= "<script> Swal.fire(
+            'Bienvenido',
+            'Usuario registrado correctamente. Se ha enviado un correo de confirmación.',
+            'success')</script>";
+            $success .= '<li class="#00e676 green accent-3">Usuario registrado exitosamente. Se ha enviado un correo de confirmación.</li>';
+        } else {
+            $errores .= "<script> Swal.fire(
+            'Opps...',
+            'Error al enviar el correo de confirmación',
+            'error')</script>";
+            $errores .= '<li class="#ef5350 red lighten-1">Error al enviar el correo de confirmación</li>';
+        }
     }
-    
 }
 
 // Llamamos la vista
 require 'views/registrate.view.php';
-
-
-?>
