@@ -8,22 +8,22 @@ body {
 
 /* -------------------------------------------------Sidenav------------------------------------------------- */
 .nav-wrapper {
-  background-color: #6A80C0;
+    background-color: #6A80C0;
 }
 
 .logoIECentral {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #eef0f1;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eef0f1;
 }
 
 .logoMobile {
     background: rgb(243, 243, 243);
     text-align: center;
 }
-    
+
 .logoMobile img {
     width: 30%;
     height: 30%;
@@ -33,21 +33,21 @@ body {
 /* Modificar los nav */
 nav {
     height: 100%;
-  }
-  
-  nav > ul {
+}
+
+nav>ul {
     height: 100%;
     display: flex;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     height: 100%;
     list-style: none;
     position: relative;
-  }
-  
-  /* Submenu */
-  nav ul li ul{
+}
+
+/* Submenu */
+nav ul li ul {
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -58,18 +58,18 @@ nav {
     padding: 14px 0px;
     visibility: hidden;
     opacity: 0;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     z-index: 10;
     transition: all 300ms ease;
-  }
-  
-  nav ul li:hover ul{
+}
+
+nav ul li:hover ul {
     visibility: visible;
     opacity: 1;
     top: 70px;
-  }
-  
-  nav ul li ul::before{
+}
+
+nav ul li ul::before {
     content: '';
     width: 0;
     height: 0;
@@ -79,27 +79,28 @@ nav {
     position: absolute;
     top: -12px;
     left: 20px;
-  }
-  
-  nav ul li ul li a{
+}
+
+nav ul li ul li a {
     display: block;
-    color : #6A80C0;
+    color: #6A80C0;
     padding: 6px;
     padding-left: 14px;
     margin-top: 10px;
     font-size: 14px;
     text-transform: uppercase;
     transition: all 300ms ease;
-  } 
-  
-  nav ul li ul li a:hover{
+}
+
+nav ul li ul li a:hover {
     background-color: #6A80C0;
     color: #fff;
     transform: scale(1.1);
     padding-left: 36px;
     font-size: 14px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  }
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 /* -------------------------------------------------Contenido------------------------------------------------- */
 
 .contenedorP1 {
@@ -120,12 +121,12 @@ nav {
 }
 
 .parrafo1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #353e5c;
     text-align: center;
 }
 
-.container2{
+.container2 {
     width: 100%;
     max-width: 1200px;
     padding: 10px 0;
@@ -134,13 +135,13 @@ nav {
     background-color: #f3f3f3;
 }
 
-.title{
+.title {
     font-size: 2.5rem;
     text-align: left;
     color: #000;
 }
 
-.title--border::after{
+.title--border::after {
     content: "";
     display: block;
     width: 100px;
@@ -151,30 +152,30 @@ nav {
 
 /* about */
 
-.about{
+.about {
     display: grid;
     grid-template-columns: 3fr 3fr;
     place-items: center;
 }
 
-.about__evalua{
+.about__evalua {
     width: 90%;
 }
 
-.about__paragraph{
+.about__paragraph {
     margin: 20px 0;
     font-size: 1.5rem;
 }
 
-.about__picture{
+.about__picture {
     text-align: center;
 }
 
-.about__img{
+.about__img {
     width: 95%;
 }
 
-.afirmacionesEvidencia{
+.afirmacionesEvidencia {
     width: 100%;
     background-color: rgb(243, 243, 243);
     border-radius: 10px;
@@ -191,7 +192,8 @@ nav {
     margin: 0 auto;
 }
 
-.about__picture2, .about__img2 {
+.about__picture2,
+.about__img2 {
     display: block;
     margin: 0 auto;
     width: 80%;
@@ -213,16 +215,22 @@ nav {
 }
 
 .contenedorBotones {
-    display: block;
+    display: flex;
     width: 80%;
-    margin: 50px auto;
-    background-color: #d2d2d2;
+    margin: 30px auto;
+    background-color: #f3f3f3;
+    border-radius: 20px;
     padding: 50px;
     text-align: center;
+
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    overflow: hidden;
 }
 
 .botones {
-    padding: 20px;
+    padding: 20px 20px;
     background-color: #dc143c;
     color: #fff;
     border-radius: 10px;
@@ -233,61 +241,72 @@ nav {
     color: #fff;
 }
 
-.botones__testIntroductorio {
-    margin-left: 150px;
-    margin-right: 20px;
-}
+
 
 /* ------------------------------------------------Footer---------------------------------------------- */
 /*
 /* Color de fondo del footer */
 .colorFooter {
-    background: #6A80C0;  /* reserva para navegadores antiguos */
+    background: #6A80C0;
+    /* reserva para navegadores antiguos */
     padding: 68px;
-  }
-  
-  /* Logo abajo Footer */
-  .logoAbajo {
-    border-radius: 20px;
+}
+
+/* Logo abajo Footer */
+.logoAbajo {
     margin-top: -30px;
     position: relative;
     top: -100px;
+    left: 80px;
   }
-  
-  /* Ultima letras del footer */
-  .copy {
-    margin:0;
+
+/* Ultima letras del footer */
+.copy {
+    margin: 0;
     height: 0px;
     position: relative;
     top: 22px;
     color: #fff;
-  }
+}
 
 
 /* ----------------------------------------------Responsive------------------------------------------- */
 
-@media screen and (max-width:1024px){
-    .botones__testIntroductorio {
-        margin-left: 30px;
-        margin-right: 20px;
+@media screen and (max-width: 1200px) {
+    .contenedorBotones {
+        margin: 40px auto;
+        flex-flow: column wrap;
+        align-content: center;
+    }
+
+    .botones {
+        padding: 20px 40px;
+        margin-top: 10px;
+        font-size: 3rem;
     }
 }
 
-@media screen and (max-width:768px){
+
+@media screen and (max-width:768px) {
 
     /* About */
 
-    .about{
+    .container2 {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .about {
         grid-template-columns: 1fr;
         grid-template-rows: max-content 1fr;
         gap: 80px;
     }
 
-    .about__evalua{
+    .about__evalua {
         width: 100%;
     }
 
-    .about__img{
+    .about__img {
         width: 100%;
     }
 
@@ -295,7 +314,8 @@ nav {
         width: 90%;
     }
 
-    .about__picture2, .about__img2 {
+    .about__picture2,
+    .about__img2 {
         width: 100%;
     }
 
@@ -307,30 +327,35 @@ nav {
     }
 
     .botones {
-        display: block;
         width: 100%;
         margin: 40px auto;
+        font-size: 2rem;
     }
 
     .botones__testIntroductorio {
         margin-left: 1px;
         margin-right: 1px;
     }
-    
+
 }
 
-@media screen and (max-width: 500px){
-    :root{
+@media screen and (max-width: 500px) {
+    :root {
         --padding-btn: 20px 0;
+    }
+    
+    .container2 {
+        width: 95%;
+        padding: 0 10px;
     }
 
     /* About */
 
-    .about{
+    .about {
         gap: 40px;
     }
 
-    .about__evalua{
+    .about__evalua {
         width: 100%;
     }
 
@@ -338,7 +363,8 @@ nav {
         width: 100%;
     }
 
-    .about__picture2, .about__img2 {
+    .about__picture2,
+    .about__img2 {
         width: 100%;
     }
 
@@ -351,5 +377,15 @@ nav {
         margin-left: 1px;
         margin-right: 1px;
     }
+
+    .botones {
+        font-size: 1.5rem;
+    }
 }
 
+@media screen and (max-width: 280px) {
+    .botones {
+        font-size: 1rem;
+        padding: 15px 10px;
+    }
+}

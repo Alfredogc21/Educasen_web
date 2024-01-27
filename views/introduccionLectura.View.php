@@ -51,7 +51,7 @@
 
 <!-- Contenido -->
 <section class="contenedorP1">
-    <h1 class="tituloParrafo1">Lectura Critica<i class="fa-solid fa-book"></i></h1>
+    <h1 class="tituloParrafo1">Lectura Critica <i class="fa-solid fa-book"></i></h1>
     <p class="parrafo1">La competencia de Lectura Crítica tiene que ver, por sobretodo, con comprensión lectora, o sea, la capacidad para comprender, no solo los vocablos y oraciones sino, la globalidad de un escrito, lo cual está escrito explícitamente o la que no está escrita, pero se puede deducir.</p>
 </section>
 
@@ -79,7 +79,7 @@
 </section>
 
 <section class="contenedorP1">
-    <h2 class="tituloParrafo1">¿Cuáles son los tipos de textos que puedes encontrar en la prueba?<i class="fa-solid fa-book-open-reader"></i></h2>
+    <h2 class="tituloParrafo1">¿Cuáles son los tipos de textos que puedes encontrar en la prueba? <i class="fa-solid fa-book-open-reader"></i></h2>
     <p class="parrafo1">Estas competencias se evalúan mediante textos de diferentes tipos. Se incluyen textos continuos y textos discontinuos. Esto se debe a que, si bien la Lectura Critica de todo texto exige el uso de las competencias mencionadas, estas se ejercitan de diferentes maneras según el tipo de texto. Mira el detalle de los tipos de texto de la prueba y sus porcentajes.</p>
     <figure class="about__picture2">
         <img src="views/imagenes/literarios.png" class="about__img2 materialboxed">
