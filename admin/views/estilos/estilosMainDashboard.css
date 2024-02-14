@@ -1,0 +1,28 @@
+.imgLogo {
+    width: 100%;
+    height: 100%;
+}
+
+.logoPrincipal {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin-top: 2em;
+}
+
+.logoPrincipal__img {
+    width: 20em;
+    height: 20em;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 400px) {
+    .logoPrincipal__img {
+        width: 10em;
+        height: 10em;
+    }
+
+    .logoPrincipal {
+        margin-top: 1em;
+    }
+}
