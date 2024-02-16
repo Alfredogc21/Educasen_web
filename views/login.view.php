@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="views/estilos/registrarylogin.css">
+  <link rel="stylesheet" href="views/estilos/login.css">
   <title>Iniciar sesion</title>
 
   <!--Import materialize.css-->
@@ -28,7 +28,6 @@
       <ul class="right hide-on-med-and-down">
         <li><a class="sidenav-close" href="./index.php">Inicio</a></li>
         <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-        <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
       </ul>
     </div>
   </nav>
@@ -38,7 +37,6 @@
     <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
     <li><a class="sidenav-close" href="index.php">Inicio</a></li>
     <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-    <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
     <div class="logoMobile">
       <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
     </div>
@@ -86,8 +84,6 @@
           </div>
         <?php endif; ?>
       </form>
-      <a class="linkTengoCuenta" href="registrate.php">¿No tienes una cuenta? Registrate</a>
-
     </div>
 
     <!--Waves Container-->

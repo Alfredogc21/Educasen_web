@@ -46,7 +46,6 @@
         <ul class="right hide-on-med-and-down">
           <li><a class="sidenav-close" href="#">Inicio</a></li>
           <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-          <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
           <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
         </ul>
       </div>
@@ -57,7 +56,6 @@
       <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
       <li><a class="sidenav-close" href="index.php">Inicio</a></li>
       <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-      <li><a class="sidenav-close" href="./registrate.php">Registrarse</a></li>
       <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
       <div class="logoMobile">
         <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">

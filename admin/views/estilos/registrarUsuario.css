@@ -1,0 +1,167 @@
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor-card {
+  position: relative;
+  border: 1px solid transparent;
+  margin-bottom: 40px;
+}
+
+/* Contenedor principal del formulario */
+.card-registro {
+  width: 50%;
+  background-color: #fff;
+  margin: 40px auto 0;
+  box-shadow: 1px 1px 46px 2px #6A80C0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.fondoLading {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fondoLading__lottie {
+  position: relative;
+  left: -40px;
+}
+
+.tituloCard {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 4x 4px 5px #000;
+}
+
+fieldset {
+  border: 0;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.input-container {
+  flex: 1;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+label {
+  position: relative;
+  top: 40px;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.3s ease-out;
+}
+
+.inputs {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 2px solid #697a8d;
+  font-size: 1.1rem;
+}
+
+.inputs:focus+label,
+.inputs:valid+label {
+  top: -20px;
+  font-size: 16px;
+  color: #697A8D;
+}
+
+
+.inputs:focus {
+  outline: none;
+}
+
+.contenedor__recaptcha {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Estilos para el contenedor del botón */
+.boton-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilos para el botón */
+.menu-icono {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 12px 30px;
+  background-color: #6A80C0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.menu-icono:hover {
+  background-color: #4E6CB0;
+}
+
+.error {
+  color: #e15773;
+  font-size: 1.2rem;
+}
+
+.success {
+  color: darkcyan;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+/* Responsive Design*/
+@media screen and (max-width: 1024px) {
+  .card-registro {
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .contenedor__recaptcha {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 376px) {
+
+  .card-registro {
+    width: 95%;
+    margin-top: 30px;
+    box-shadow: 1px 1px 25px 2px #6A80C0;
+    overflow: hidden;
+  }
+
+  .input-group {
+    display: block;
+  }
+
+  .input-container {
+    margin-bottom: 10px;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .tituloCard {
+    font-size: 1.4rem;
+  }
+}

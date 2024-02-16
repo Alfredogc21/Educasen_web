@@ -6,7 +6,7 @@ if (isset($_SESSION['usuarios'])) {
 }
 
 //Hacemos la conexion a la base de datos
-require 'conexion/conexion.php';
+require '../conexion/conexion.php';
 
 //Para obtener los datos del grado
 $statementGrados = $conexion->prepare('SELECT id, nombre_grado FROM grados');
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'Bienvenido',
                     'Usuario registrado correctamente',
                     'success')</script>";
-        $success .= '<li class="#00e676 green accent-3">Usuario registrado exitosamente</li>';
+        $success .= '<li>Usuario registrado exitosamente</li>';
 
         // Envío de correo electrónico
         $to = $correo;
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'Bienvenido',
             'Usuario registrado correctamente. Se ha enviado un correo de confirmación.',
             'success')</script>";
-            $success .= '<li class="#00e676 green accent-3">Usuario registrado exitosamente. Se ha enviado un correo de confirmación.</li>';
+            $success .= '<li>Se ha enviado un correo de confirmación.</li>';
         } else {
             $errores .= "<script> Swal.fire(
             'Opps...',
@@ -154,4 +154,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Llamamos la vista
-require 'views/registrate.view.php';
+require 'views/registrarUsuario.view.php';
