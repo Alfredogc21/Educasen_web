@@ -13,6 +13,11 @@ $statementGrados = $conexion->prepare('SELECT id, nombre_grado FROM grados');
 $statementGrados->execute();
 $resultadoGrado = $statementGrados->fetchAll();
 
+//Para obtener los roles
+$statementRoles = $conexion->prepare('SELECT id, nombre FROM roles');
+$statementRoles->execute();
+$resultadoRol = $statementRoles->fetchAll();
+
 // Recibimos los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = $_POST['nombre'];
@@ -20,11 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $confipassword = $_POST['confipassword'];
     $grado = isset($_POST['grado']) ? $grado = $_POST['grado'] : $grado = null;
+    $rol = isset($_POST['roles']) ? $rol = $_POST['roles'] : $rol = null;
 
     // Verificamos que los campos no esten vacios
     $errores = '';
     $success = '';
-    if (empty($nombre) or empty($correo) or empty($password) or empty($confipassword) or empty($grado)) {
+    if (empty($nombre) or empty($correo) or empty($password) or empty($confipassword) or empty($rol)) {
         $errores .= "<script> Swal.fire(
                     'Opps...',
                     'Por favor rellena todos los datos correctamente',
@@ -56,6 +62,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errores .= '<li class="#ef5350 red lighten-1">Las contraseñas no coinciden</li>';
         }
 
+        // Verificamos el rol
+        if ($rol == null) {
+            $errores .= "<script> Swal.fire(
+                        'Opps...',
+                        'Por favor selecciona un rol',
+                        'error')</script>";
+            $errores .= '<li class="#ef5350 red lighten-1">Por favor selecciona un rol</li>';
+        }
+
         // Verificamos que el captcha este correcto
         $ip = $_SERVER['REMOTE_ADDR'];
         $captcha = $_POST['g-recaptcha-response'];
@@ -75,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Si no hay errores
     if ($errores == '') {
-        $statement = $conexion->prepare('INSERT INTO usuarios (id, nombres_completos, grado_id, correo, password) VALUES (null, :nombre, :curso, :correo, :password)');
-        $statement->execute(array(':nombre' => $nombre, ':curso' => $grado, ':correo' => $correo, ':password' => $password));
+        $statement = $conexion->prepare('INSERT INTO usuarios (id, nombres_completos, grado_id, roles_id, correo, password) VALUES (null, :nombre, :curso, :rol, :correo, :password)');
+        $statement->execute(array(':nombre' => $nombre, ':curso' => $grado, ':correo' => $correo, ':password' => $password , ':rol' => $rol));
         $success .= "<script> Swal.fire(
                     'Bienvenido',
                     'Usuario registrado correctamente',

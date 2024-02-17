@@ -85,6 +85,10 @@ label {
   outline: none;
 }
 
+.inputs--selects {
+  margin-top: 50px;
+}
+
 .contenedor__recaptcha {
   width: 60%;
   margin: 0 auto;

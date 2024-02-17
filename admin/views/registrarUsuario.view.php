@@ -267,6 +267,15 @@
                   }
                   ?>
                 </select>
+                <select name="roles" class="inputs inputs--selects" required>
+                  <option value="" disabled selected>Seleccione el rol</option>
+                  <?php
+                  // Se recorre el array de roles
+                  foreach ($resultadoRol as $respRol) {
+                    echo '<option value="' . $respRol['id'] . '">' . $respRol['nombre'] . '</option>';
+                  }
+                  ?>
+                </select>
               </fieldset>
 
               <!-- recaptcha -->
