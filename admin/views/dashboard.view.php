@@ -102,6 +102,34 @@
           </li>
 
           <!-- Agregar preguntas -->
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Preguntas ICFES</span>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-collection"></i>
+              <div>Agregar</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div>Pregunta</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="registrarUsuario.php" class="menu-link">
+                  <div>Opcion de respuesta</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="subirImagenes.php" class="menu-link">
+                  <div>Imagen pregunta</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Agregar preguntas -->
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Preguntas</span></li>
           <li class="menu-item">
             <a href="#" class="menu-link">
@@ -206,7 +234,7 @@
                 <div class="dropdown-divider"></div>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../cerrar.php">
                   <i class="bx bx-power-off me-2"></i>
                   <span class="align-middle">Cerrar sesión</span>
                 </a>
@@ -254,13 +282,13 @@
           </picture>
 
 
-  <script src="views/js/default/jquery.js"></script>
-  <script src="views/js/default/bootstrap.js"></script>
-  <script src="views/js/default/perfect-scrollbar.js"></script>
-  <script src="views/js/default/menu.js"></script>
-  <script src="views/js/default/main.js"></script>
-  <!-- JavaScript de la pagina de registos -->
-  <script src="views/js/dashboard.js"></script>
+          <script src="views/js/default/jquery.js"></script>
+          <script src="views/js/default/bootstrap.js"></script>
+          <script src="views/js/default/perfect-scrollbar.js"></script>
+          <script src="views/js/default/menu.js"></script>
+          <script src="views/js/default/main.js"></script>
+          <!-- JavaScript de la pagina de registos -->
+          <script src="views/js/dashboard.js"></script>
 </body>
 
 </html>

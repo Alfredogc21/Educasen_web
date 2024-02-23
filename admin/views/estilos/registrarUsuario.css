@@ -40,6 +40,10 @@ body {
   text-shadow: 4x 4px 5px #000;
 }
 
+.contenedor-card__descripcion {
+	text-align: center;
+}
+
 fieldset {
   border: 0;
 }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#6A80C0">
   <link rel="shortcut icon" href="../views/imagenes/favicon.ico" type="image/x-icon">
-  <title>Dashboard</title>
+  <title>Registro de usuarios</title>
 
   <link rel="stylesheet" href="views/estilos/registrarUsuario.css">
 
@@ -29,7 +29,7 @@
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-      
+
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
@@ -99,6 +99,34 @@
               <li class="menu-item">
                 <a href="#" class="menu-link" target="_blank">
                   <div>Docentes</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Agregar preguntas -->
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Preguntas ICFES</span>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-collection"></i>
+              <div>Agregar</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div>Pregunta</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="registrarUsuario.php" class="menu-link">
+                  <div>Opcion de respuesta</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="subirImagenes.php" class="menu-link">
+                  <div>Imagen pregunta</div>
                 </a>
               </li>
             </ul>
@@ -208,7 +236,7 @@
                 <div class="dropdown-divider"></div>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../cerrar.php">
                   <i class="bx bx-power-off me-2"></i>
                   <span class="align-middle">Cerrar sesión</span>
                 </a>
@@ -229,6 +257,7 @@
 
               <fieldset>
                 <legend class="tituloCard">Crear una cuenta</legend>
+                <p class="contenedor-card__descripcion">Puedes crear usuarios para acceder a la plataforma</p>
                 <figure class="fondoLading">
                   <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" loop autoplay></lottie-player>
                 </figure>
@@ -237,11 +266,15 @@
               <fieldset class="input-group">
                 <div class="input-container">
                   <label for="name">Nombre</label>
-                  <input id="name" type="text" name="nombre" minlength="10" class="inputs" required value="<?php if (!empty($errores) && isset($nombre)) {echo $nombre;} ?>">
+                  <input id="name" type="text" name="nombre" minlength="10" class="inputs" required value="<?php if (!empty($errores) && isset($nombre)) {
+                                                                                                              echo $nombre;
+                                                                                                            } ?>">
                 </div>
                 <div class="input-container">
                   <label for="email">Correo electronico</label>
-                  <input id="email" type="email" name="correo" minlength="12" class="inputs" required value="<?php if (!empty($errores) && isset($correo)) {echo $correo;} ?>">
+                  <input id="email" type="email" name="correo" minlength="12" class="inputs" required value="<?php if (!empty($errores) && isset($correo)) {
+                                                                                                                echo $correo;
+                                                                                                              } ?>">
                 </div>
               </fieldset>
 
@@ -308,18 +341,18 @@
         </div>
 
 
-  <script src="views/js/default/jquery.js"></script>
-  <script src="views/js/default/bootstrap.js"></script>
-  <script src="views/js/default/perfect-scrollbar.js"></script>
-  <script src="views/js/default/menu.js"></script>
-  <script src="views/js/default/main.js"></script>
+        <script src="views/js/default/jquery.js"></script>
+        <script src="views/js/default/bootstrap.js"></script>
+        <script src="views/js/default/perfect-scrollbar.js"></script>
+        <script src="views/js/default/menu.js"></script>
+        <script src="views/js/default/main.js"></script>
 
-  <!-- JavaScript de la pagina de registos -->
-  <script src="views/js/registrarUsuario.js"></script>
-  <!--reCaptchat-->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <!-- Libreria: Lottie -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <!-- JavaScript de la pagina de registos -->
+        <script src="views/js/registrarUsuario.js"></script>
+        <!--reCaptchat-->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- Libreria: Lottie -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>
