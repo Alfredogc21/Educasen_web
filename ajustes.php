@@ -9,7 +9,7 @@ if (isset($_SESSION['usuarios'])) {
     require 'conexion/conexion.php';
 
     //Hacemos la consulta para traer los datos del usuario
-    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo FROM usuarios WHERE correo = :correo LIMIT 1');
+    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $statement->execute(array(':correo' => $correo));
     $resultado = $statement->fetch();
 
@@ -21,7 +21,11 @@ if (isset($_SESSION['usuarios'])) {
         $estados_usuarios_id = $resultado['estados_usuarios_id'];
     }
 
-    require 'views/ajustes.view.php';
+    if($resultado['roles_id'] == 2){ // Si es estudiante
+        require 'views/ajustes.view.php';
+    } else if($resultado['roles_id'] == 1){ // Si es administrador
+        header('Location: admin/dashboard.php');
+    }
 } else {
     header('Location: login.php');
 }

@@ -9,7 +9,7 @@ if (isset($_SESSION['usuarios'])) {
     require 'conexion/conexion.php';
 
     // Mostrar el nombre del usuario
-    $statementUsername = $conexion->prepare('SELECT id, nombres_completos FROM usuarios WHERE correo = :correo LIMIT 1');
+    $statementUsername = $conexion->prepare('SELECT id, nombres_completos, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $statementUsername->execute(array(':correo' => $correo));
     $resultadoUsername = $statementUsername->fetch();
     
@@ -55,12 +55,15 @@ if (isset($_SESSION['usuarios'])) {
 
         //recargar la pagina
         header('Refresh: 0.1 ; URL=examenLecturaCritica.php');
-
     }
 
-    require 'views/examenLecturaCritica.view.php';
+    if($resultadoUsername['roles_id'] == 2){ // Si es estudiante
+        require 'views/examenLecturaCritica.view.php';
+    } else if($resultadoUsername['roles_id'] == 1){ // Si es administrador
+        header('Location: admin/dashboard.php');
+    }
+    
 } else {
     header('Location: login.php');
 }
 
-?>

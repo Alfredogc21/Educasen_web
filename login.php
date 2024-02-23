@@ -1,21 +1,30 @@
 <?php session_start();
 
-// Validamos si hay una sesion
-if (isset($_SESSION['usuarios'])) {
-    header('Location: index.php');
-}
-
+//Hacemos la conexion a la base de datos
+require 'conexion/conexion.php';
 $errores = '';
 $resultado = 0;
+$email = '';
+
+// Validamos si hay una sesion
+if (isset($_SESSION['usuarios'])) {
+    $email = $_SESSION['usuarios'];
+    $consultarROl = $conexion->prepare('SELECT roles_id FROM usuarios WHERE correo = :correo');
+    $consultarROl->execute(array(':correo' => $email));
+    $resultadoConsulta = $consultarROl->fetch();
+
+    if($resultadoConsulta['roles_id'] == 2){ // Si es estudiante
+        header('Location: menuPrincipal.php');
+    } else if($resultadoConsulta['roles_id'] == 1){ // Si es administrador
+        header('Location: admin/dashboard.php');
+    }
+}
 
 // Recibimos los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $correoB = filter_var(strtolower($_POST['correo']), FILTER_SANITIZE_EMAIL); // FILTER_SANITIZE_EMAIL -> filtra el correo
     $passwordB = $_POST['password'];
     $passwordB = hash('sha512', $passwordB);
-
-    //Hacemos la conexion a la base de datos
-    require 'conexion/conexion.php';
 
     // Verificamos que el captcha este correcto
     $ip = $_SERVER['REMOTE_ADDR'];
@@ -42,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores .= '<li class="#ef5350 red lighten-1">Por favor rellena todos los campos</li>';
     } else {
         // Verificamos que el correo y contraseña exista
-        $statement = $conexion->prepare('SELECT correo, password, estados_usuarios_id FROM usuarios WHERE correo = :correo AND password = :password');
+        $statement = $conexion->prepare('SELECT correo, password, estados_usuarios_id, roles_id FROM usuarios WHERE correo = :correo AND password = :password');
         $statement->execute(array(':correo' => $correoB, ':password' => $passwordB));
         $resultado = $statement->fetch(); // Almacenamos el resultado
 
@@ -88,7 +97,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 mail($to, $subject, $message, $headers);
 
-                header('Location: menuPrincipal.php');
+                if ($resultado['roles_id'] == 2 ) { // Si es estudiante
+                    header('Location: menuPrincipal.php');
+                } else if ( $resultado['roles_id'] == 1 ) { // Si es administrador
+                    header('Location: admin/dashboard.php');
+                }
+
             } else if ($resultado['estados_usuarios_id'] == 2) { // Si el usuario esta inactivo
                 $errores .= "<script> Swal.fire(
                             'Lo sentimos',
