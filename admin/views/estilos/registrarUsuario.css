@@ -23,8 +23,8 @@ body {
 
 .fondoLading {
   width: 200px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
 }
 
 .fondoLading__lottie {
@@ -97,6 +97,7 @@ label {
   width: 60%;
   margin: 0 auto;
   overflow: hidden;
+  aspect-ratio: 28/9;
 }
 
 /* Estilos para el contenedor del botón */
