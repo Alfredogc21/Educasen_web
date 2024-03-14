@@ -56,9 +56,9 @@
             </a>
           </li>
 
-          <!-- Registros y consultas de cuenta -->
+          <!-- Usuarios registrados -->
           <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Registros y consultas</span>
+            <span class="menu-header-text">Usuarios</span>
           </li>
           <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -66,11 +66,6 @@
               <div>Registrar</div>
             </a>
             <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div>Personas</div>
-                </a>
-              </li>
               <li class="menu-item active">
                 <a href="registrarUsuario.php" class="menu-link">
                   <div>Usuarios</div>
@@ -82,7 +77,7 @@
           <!-- Consultas miembros de cada rol -->
           <li class="menu-item">
             <a href="#" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+              <i class="menu-icon tf-icons bx bx-search"></i>
               <div>Consultar</div>
             </a>
             <ul class="menu-sub">
@@ -96,13 +91,49 @@
                   <div>Estudiantes</div>
                 </a>
               </li>
+            </ul>
+          </li>
+
+          <!-- Actualizar datos de administradores y estudiantes -->
+          <li class="menu-item">
+            <a href="#" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-refresh"></i>
+              <div>Actualizar</div>
+            </a>
+            <ul class="menu-sub">
               <li class="menu-item">
                 <a href="#" class="menu-link" target="_blank">
-                  <div>Docentes</div>
+                  <div>Administradores</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                  <div>Estudiantes</div>
                 </a>
               </li>
             </ul>
           </li>
+
+          <!-- Eliminar administradores y estudiantes -->
+          <li class="menu-item">
+            <a href="#" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-trash"></i>
+              <div>Eliminar</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="#" class="menu-link" target="_blank">
+                  <div>Administradores</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                  <div>Estudiantes</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
           <!-- Agregar preguntas -->
           <li class="menu-header small text-uppercase">
