@@ -91,46 +91,6 @@
             </ul>
           </li>
 
-          <!-- Actualizar datos de administradores y estudiantes -->
-          <li class="menu-item">
-            <a href="#" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-refresh"></i>
-              <div>Actualizar</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="#" class="menu-link" target="_blank">
-                  <div>Administradores</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                  <div>Estudiantes</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <!-- Eliminar administradores y estudiantes -->
-          <li class="menu-item">
-            <a href="#" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-trash"></i>
-              <div>Eliminar</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="#" class="menu-link" target="_blank">
-                  <div>Administradores</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                  <div>Estudiantes</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-
           <!-- Agregar preguntas -->
           <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Preguntas ICFES</span>
@@ -248,15 +208,9 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="perfil.php">
                       <i class="bx bx-user me-2"></i>
                       <span class="align-middle">Mi perfil</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i class="bx bx-cog me-2"></i>
-                      <span class="align-middle">Ajustes</span>
                     </a>
                   </li>
               </li>
@@ -294,7 +248,7 @@
                           Panel <span class="fw-bold">administrativo</span> de educasen. Aquí podrás gestionar los registros y consultas de la plataforma.
                         </p>
 
-                        <a href="#" class="btn btn-sm btn-outline-primary">Mi perfil</a>
+                        <a href="perfil.php" class="btn btn-sm btn-outline-primary">Mi perfil</a>
                       </div>
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">

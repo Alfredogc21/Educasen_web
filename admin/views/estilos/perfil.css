@@ -1,138 +1,129 @@
 body {
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .contenedor-card {
-    position: relative;
-    border: 1px solid transparent;
-    margin-bottom: 40px;
-  }
-  
-  /* Contenedor principal del formulario */
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor-card {
+  position: relative;
+  border: 1px solid transparent;
+  margin-bottom: 40px;
+}
+
+.card-registro {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  margin: 100px auto 0;
+  box-shadow: 1px 1px 46px 2px #6A80C0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contenedor-figure {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fafafa;
+  box-shadow: 1px 1px 25px 2px #6A80C0;
+}
+
+.contenedor-figure--img {
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-title {
+  text-align: center;
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+.contenedor-info {
+  height: 150px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contenedor-info--parrafo {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.contenedor-card__descripcion,
+.contenedor-btn {
+  text-align: center;
+}
+
+.contenedor-btn {
+  margin: 20px 0 0 0;
+}
+
+.contenedor-btn--link {
+  width: 50%;
+  max-width: 350px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #6A80C0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  transition: 0.5s;
+}
+
+.contenedor-btn--link:hover {
+  background-color: #4A5F9C;
+  color: #fff;
+  transition: 0.5s;
+}
+
+/* Responsive Design*/
+@media screen and (max-width: 1024px) {
   .card-registro {
-    width: 80%;
-    max-width: 1200px;
-    background-color: #fff;
-    margin: 100px auto 0;
-    box-shadow: 1px 1px 46px 2px #6A80C0;
-    padding: 20px;
-    border-radius: 10px;
-    height: 500px;
+    width: 90%;
+    margin-top: 80px;
   }
 
-  .contenedor-figure {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: absolute;
-    top: 20px;
-    left: 44%;
-    background-color: #fafafa;
-    box-shadow: 1px 1px 25px 2px #6A80C0;
-  }
-
-  .contenedor-figure--img {
+  .contenedor__recaptcha {
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .contenedor-info {
+    flex-flow: column nowrap;
+    text-align: center;
+    overflow: scroll;
+    height: 250px;
+  }
+
+  .contenedor-btn--link {
+    width: 90%;
   }
 
   .contenedor-title {
-    width: 100%;
-    text-align: center;
-    margin-top: 100px;
-    font-weight: bold;
+    margin-top: 130px;
   }
+}
 
-  .contenedor-info {
-    height: 150px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
+@media screen and (max-width: 376px) {
+  .card-registro {
+    width: 95%;
+    margin-top: 40px;
+    box-shadow: 1px 1px 25px 2px #6A80C0;
     overflow: hidden;
   }
-
-  .contenedor-info--parrafo {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  
-  .tituloCard {
-    text-align: center;
-    font-size: 2rem;
-    margin: 0;
-    font-weight: bold;
-    text-shadow: 4x 4px 5px #000;
-  }
-  
-  .contenedor-card__descripcion, .contenedor-btn {
-      text-align: center;
-  }
-
-  .contenedor-btn {
-    margin: 20px 0 0 0;
-  }
-  
-  .contenedor-btn--link {
-    width: 50%;
-    max-width: 350px;
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    background-color: #6A80C0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    margin: 20px auto;
-    transition: 0.5s;
-  }
-
-  .contenedor-btn--link:hover {
-    background-color: #4A5F9C;
-    color: #fff;
-    transition: 0.5s;
-  }
-
-  /* Responsive Design*/
-  @media screen and (max-width: 1024px) {
-    .card-registro {
-      width: 90%;
-      margin-top: 50px;
-    }
-  
-    .contenedor__recaptcha {
-      width: 100%;
-      overflow: hidden;
-    }
-  }
-  
-  @media screen and (max-width: 376px) {
-  
-    .card-registro {
-      width: 95%;
-      margin-top: 30px;
-      box-shadow: 1px 1px 25px 2px #6A80C0;
-      overflow: hidden;
-    }
-  
-    .input-group {
-      display: block;
-    }
-  
-    .input-container {
-      margin-bottom: 10px;
-    }
-  
-    .inputs {
-      width: 100%;
-    }
-  
-    .tituloCard {
-      font-size: 1.4rem;
-    }
-  }
+}
