@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#6A80C0">
   <link rel="shortcut icon" href="../views/imagenes/favicon.ico" type="image/x-icon">
-  <title>Perfil</title>
+  <title>Eliminar usuario</title>
 
   <!-- <link rel="stylesheet" href="views/estilos/foto.css"> -->
-  <link rel="stylesheet" href="views/estilos/perfil.css">
+  <link rel="stylesheet" href="views/estilos/registrarUsuario.css">
 
   <meta name="description" content="Prepárate para el ICFES con nuestra plataforma educativa. Ofrecemos recursos y prácticas para estudiantes de la Institución Educativa Central, ayudándote a alcanzar tus metas académicas en el examen ICFES y destacar en tu rendimiento académico." />
 
@@ -115,7 +115,7 @@
                   <div>Opcion de respuesta</div>
                 </a>
               </li>
-              <li class="menu-item">
+              <li class="menu-item active">
                 <a href="subirImagenes.php" class="menu-link">
                   <div>Imagen pregunta</div>
                 </a>
@@ -201,7 +201,7 @@
                           </div>
                         </div>
                         <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">Alfredo Gomez</span>
+                          <span class="fw-semibold d-block"><?php echo $resultado['nombres_completos']; ?></span>
                           <small class="text-muted">Admin</small>
                         </div>
                       </div>
@@ -234,45 +234,71 @@
         </nav>
         <!-- / Navbar -->
 
-        <section class="contenedor-card">
+        <div class="contenedor-card">
           <div class="card-registro">
-            <figure class="contenedor-figure">
-                <img src="../views/imagenes/man-with-laptop-light.png" class="contenedor-figure--img" alt="Imagen perfil">
-            </figure>
 
-            <div class="contenedor-title">
-                <h2 class="contenedor-title--h2"><?php echo $infoCorreo['nombres_completos']; ?></h2>
-            </div>
 
-            <div class="contenedor-info">
-                <p class="contenedor-info--parrafo">Se unio el: <?php echo $fechaRegistro ?> </p>
-                <p class="contenedor-info--parrafo">Correo: <?php echo $infoCorreo['correo']; ?> </p>
-                <p class="contenedor-info--parrafo">Rol: Administrador </p>
-                <p class="contenedor-info--parrafo">Estado: Activo </p>
-            </div>
-            
-            <div class="contenedor-btn">
-                <a href="actualizarCorreo.php" class="contenedor-btn--link">Actualizar correo</a>
-                <a href="actualizarContrasena.php" class="contenedor-btn--link">Actualizar contraseña</a>
-                <a href="eliminar.php" class="contenedor-btn--link">Eliminar cuenta</a>
-            </div>
+
+
+
+
+            <!-- Formulario de registro -->
+            <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="Eliminar">
+              <fieldset>
+                <legend class="tituloCard">Eliminar usuario</legend>
+                <p class="contenedor-card__descripcion">Elimina tu cuenta de Educasen</p>
+                <figure class="fondoLading">
+                  <lottie-player class="fondoLading__lottie" src="https://assets5.lottiefiles.com/packages/lf20_4w6xksiq.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                </figure>
+              </fieldset>
+
+              <fieldset class="input-group">
+                <div class="input-container">
+                  <label>Seleccione el usuario</label>
+                  <select name="usuario" class="inputs inputs--selects" required>
+                    <option value="" disabled selected>Seleccione el usuario</option>
+                    <?php
+                    echo '<option value="' . $resultado['id'] . '">' . $resultado['nombres_completos'] . '</option>';
+                    ?>
+                  </select>
+                </div>
+              </fieldset>
+
+              <div class="boton-container">
+                <i class="menu-icono tf-icons bx bx-check" onclick="Eliminar.submit()">Eliminar</i>
+              </div>
+
+              <?php if (!empty($errores)) : ?> <!-- Si hay errores los muestra -->
+                <div class="error">
+                  <ul>
+                    <?php echo $errores; ?>
+                  </ul>
+                </div>
+              <?php elseif (!empty($success)) : ?> <!-- Si no hay errores y si hay un mensaje de exito -->
+                <div class="success">
+                  <ul>
+                    <?php echo $success; ?>
+                  </ul>
+                </div>
+              <?php endif; ?>
+            </form>
           </div>
-        </section>
-    </div>
+        </div>
 
 
-    <script src="views/js/default/jquery.js"></script>
-    <script src="views/js/default/bootstrap.js"></script>
-    <script src="views/js/default/perfect-scrollbar.js"></script>
-    <script src="views/js/default/menu.js"></script>
-    <script src="views/js/default/main.js"></script>
 
-    <!-- JavaScript de la pagina de registos -->
-    <script src="views/js/registrarUsuario.js"></script>
-    <!--reCaptchat-->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Libreria: Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="views/js/default/jquery.js"></script>
+        <script src="views/js/default/bootstrap.js"></script>
+        <script src="views/js/default/perfect-scrollbar.js"></script>
+        <script src="views/js/default/menu.js"></script>
+        <script src="views/js/default/main.js"></script>
+
+        <!-- JavaScript de la pagina de registos -->
+        <script src="views/js/registrarUsuario.js"></script>
+        <!--reCaptchat-->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- Libreria: Lottie -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>

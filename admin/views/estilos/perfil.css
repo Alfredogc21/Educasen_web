@@ -89,6 +89,13 @@ body {
   transition: 0.5s;
 }
 
+.contenedor-btn--link:last-of-type {
+  width: 130px;
+  font-size: 13px;
+  padding: 10px;
+  background-color: #919191;
+}
+
 /* Responsive Design*/
 @media screen and (max-width: 1024px) {
   .card-registro {
