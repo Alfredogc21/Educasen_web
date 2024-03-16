@@ -201,7 +201,7 @@
                           </div>
                         </div>
                         <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">Alfredo Gomez</span>
+                          <span class="fw-semibold d-block"><?php echo $resultado['nombres_completos']; ?></span>
                           <small class="text-muted">Admin</small>
                         </div>
                       </div>

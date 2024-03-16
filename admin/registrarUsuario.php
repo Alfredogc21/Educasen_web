@@ -9,7 +9,7 @@ if (isset($_SESSION['usuarios'])) {
     require '../conexion/conexion.php';
 
     //Hacemos la consulta para traer los datos del usuario y determinar el rol
-    $sqlRolUser = $conexion->prepare('SELECT roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
+    $sqlRolUser = $conexion->prepare('SELECT nombres_completos, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $sqlRolUser->execute(array(':correo' => $correo));
     $infoCorreo = $sqlRolUser->fetch();
 
@@ -173,6 +173,7 @@ if (isset($_SESSION['usuarios'])) {
         }
     }
 
+    // Dependiendo del rol asi mismo es el enrutamiento
     if ($infoCorreo['roles_id'] == 2) { // Si es estudiante
         header('Location: ../menuPrincipal.php');
     } else if ($infoCorreo['roles_id'] == 1) { // Si es administrador

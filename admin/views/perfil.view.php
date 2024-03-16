@@ -241,12 +241,12 @@
             </figure>
 
             <div class="contenedor-title">
-                <h2 class="contenedor-title--h2">Alfredo Gomez Culma</h2>
+                <h2 class="contenedor-title--h2"><?php echo $infoCorreo['nombres_completos']; ?></h2>
             </div>
 
             <div class="contenedor-info">
-                <p class="contenedor-info--parrafo">Se unio el: 14-03-2024 </p>
-                <p class="contenedor-info--parrafo">Correo: Alfretg.c@hotmail.com </p>
+                <p class="contenedor-info--parrafo">Se unio el: <?php echo $fechaRegistro ?> </p>
+                <p class="contenedor-info--parrafo">Correo: <?php echo $infoCorreo['correo']; ?> </p>
                 <p class="contenedor-info--parrafo">Rol: Administrador </p>
                 <p class="contenedor-info--parrafo">Estado: Activo </p>
             </div>
