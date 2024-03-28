@@ -82,12 +82,12 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="#" class="menu-link" target="_blank">
+                                <a href="#" class="menu-link">
                                     <div>Administradores</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                                <a href="consultarEstudiantes.php" class="menu-link">
                                     <div>Estudiantes</div>
                                 </a>
                             </li>
