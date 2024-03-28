@@ -83,7 +83,7 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="#" class="menu-link">
+                <a href="consultarAdministradores.php" class="menu-link">
                   <div>Administradores</div>
                 </a>
               </li>
