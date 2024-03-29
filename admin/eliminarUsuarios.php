@@ -9,21 +9,25 @@ if (isset($_SESSION['usuarios'])) {
     require '../conexion/conexion.php';
 
     // Obtenemos los datos del usuario y su rol
-    $sqlRolUser = $conexion->prepare('SELECT roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
+    $sqlRolUser = $conexion->prepare('SELECT id, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $sqlRolUser->execute(array(':correo' => $correo));
     $infoCorreo = $sqlRolUser->fetch();
 
     // Verificamos si se ha enviado el ID del estudiante y es un número válido
     if (isset($_GET['id'])) {
-        $id_estudiante = $_GET['id'];
+        $id_usuarios = $_GET['id'];
 
-        try {
-            // Preparamos la consulta para actualizar el estado del estudiante a "inactivo" 
-            $sqlActualizarEstado = $conexion->prepare("UPDATE usuarios SET estados_usuarios_id = 2 WHERE id = :id");
-            $sqlActualizarEstado->execute(array(':id' => $id_estudiante));
-
-        } catch (Exception $e) {
-            $errores = $e->getMessage();
+        if($infoCorreo['id'] == $id_usuarios) {
+            echo 'No puedes eliminarte a ti mismo';
+        } else {
+            try {
+                // Preparamos la consulta para actualizar el estado del estudiante a "inactivo" 
+                $sqlActualizarEstado = $conexion->prepare("UPDATE usuarios SET estados_usuarios_id = 2 WHERE id = :id");
+                $sqlActualizarEstado->execute(array(':id' => $id_usuarios));
+    
+            } catch (Exception $e) {
+                $errores = $e->getMessage();
+            }
         }
     }
 

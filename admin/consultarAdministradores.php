@@ -11,7 +11,7 @@ if (isset($_SESSION['usuarios'])) {
     require '../conexion/conexion.php';
 
     //Hacemos la consulta para traer los datos del usuario y determinar el rol
-    $sqlRolUser = $conexion->prepare('SELECT nombres_completos, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
+    $sqlRolUser = $conexion->prepare('SELECT id, nombres_completos, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $sqlRolUser->execute(array(':correo' => $correo));
     $infoCorreo = $sqlRolUser->fetch();
 

@@ -133,6 +133,19 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
 
             const idAdmin = parseInt(enlace.dataset.id);
+            
+            // Obtener el valor del atributo data-id-usuario-logueado
+            const idUsuarioLogueado = document.getElementById('datos-usuario').getAttribute('data-id-usuario-logueado');
+
+            // Verificar si el administrador a eliminar es el mismo que el usuario logueado
+            if (idAdmin === parseInt(idUsuarioLogueado)) {
+                Swal.fire(
+                    'Error',
+                    'No puedes eliminar tu propio usuario.',
+                    'error'
+                );
+                return;
+            }
 
             Swal.fire({
                 title: '¿Estás seguro?',

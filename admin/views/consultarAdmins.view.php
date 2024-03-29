@@ -255,6 +255,7 @@
                             </select>
 
                         </div>
+                        <div class="ocultarInput" id="datos-usuario" data-id-usuario-logueado="<?php echo $infoCorreo['id']; ?>"></div>
 
                         <!-- Tabla HTML -->
                         <table class="titulosTabla" id="tablaAdministradores">
