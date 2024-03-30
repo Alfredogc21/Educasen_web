@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#6A80C0">
     <link rel="shortcut icon" href="../views/imagenes/favicon.ico" type="image/x-icon">
-    <title>Subir imagen pregunta</title>
+    <title>Agregar pregunta</title>
 
     <link rel="stylesheet" href="views/estilos/preguntas.css">
 
@@ -104,7 +104,7 @@
                             <div>Agregar</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="#" class="menu-link">
                                     <div>Pregunta</div>
                                 </a>
@@ -114,7 +114,7 @@
                                     <div>Opcion de respuesta</div>
                                 </a>
                             </li>
-                            <li class="menu-item active">
+                            <li class="menu-item">
                                 <a href="subirImagenes.php" class="menu-link">
                                     <div>Imagen pregunta</div>
                                 </a>
@@ -240,56 +240,44 @@
                         <form class="formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
 
                             <fieldset>
-                                <legend class="tituloCard">Subir imagen</legend>
-                                <p class="contenedor-card__descripcion">Puedes adjuntar una imagen a tu pregunta si es necesario</p>
+                                <legend class="tituloCard">Agregar pregunta ICFES</legend>
+                                <p class="contenedor-card__descripcion">Agrega preguntas del ICFES para los estudiantes</p>
                                 <figure class="fondoLading">
-                                    <lottie-player src="views/imagenes/lottiefiles/Animation-image.json" class="lottieWidth" background="transparent" speed="1" loop autoplay></lottie-player>
+                                    <lottie-player src="views/imagenes/lottiefiles/Animation-pregunta.json" class="lottieWidth" background="transparent" speed="1" loop autoplay></lottie-player>
                                 </figure>
                             </fieldset>
+
                             <!-- Mostramos la competencia -->
-                            <select class="inputs inputs--selects" name="materia" required>
-                                <option value="" disabled selected>Seleccione la competencia</option>
-                                <?php
-                                foreach ($resultadoMaterias as $materia) {
-                                    echo '<option value="' . $materia['id'] . '">' . $materia['nombres_materias'] . '</option>';
-                                }
-                                ?>
-                            </select>
+                            <fieldset class="contenedor-card__fieldset">
+                                <select class="inputs inputs--selects" name="materia" required>
+                                    <option value="" disabled selected>Seleccione la competencia</option>
+                                    <?php
+                                    foreach ($resultadoMaterias as $materia) {
+                                        echo '<option value="' . $materia['id'] . '">' . $materia['nombres_materias'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
 
-                            <br>
+                                <!-- Mostrar la Opcion pregunta -->
+                                <select class="inputs inputs--selects" name="Oppregunta" required>
+                                    <option value="" disabled selected>Seleccione el tipo de pregunta</option>
+                                    <?php
+                                    foreach ($resultadoOpPregunta as $Oppregunta) {
+                                        echo '<option value="' . $Oppregunta['id'] . '">' . $Oppregunta['nombre_tipo_pregunta'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            
+                                <br>
 
-                            <!-- Mostrar la Opcion pregunta -->
-                            <select class="inputs inputs--selects" name="Oppregunta" required>
-                                <option value="" disabled selected>Seleccione el tipo de pregunta</option>
-                                <?php
-                                foreach ($resultadoOpPregunta as $Oppregunta) {
-                                    echo '<option value="' . $Oppregunta['id'] . '">' . $Oppregunta['nombre_tipo_pregunta'] . '</option>';
-                                }
-                                ?>
-                            </select>
-
-                            <br>
-
-                            <!-- Mostrar la las ultimas dos preguntas -->
-                            <select class="inputs inputs--selects" name="pregunta" required>
-                                <option value="" disabled selected>Seleccione la ultima pregunta</option>
-                                <?php
-                                foreach ($resultadoUltimaPregunta as $pregunta) {
-                                    echo '<option value="' . $pregunta['id'] . '">' . $pregunta['enunciado_pregunta'] . '</option>';
-                                }
-                                ?>
-                            </select>
-
-                            <br>
-
-                            <!-- Seleccionar la imagen -->
-                            <fieldset class="contenedor-card__fielset">
-                                <label for="foto" class="labelSubir">Seleciona la imagen</label>
-                                <input type="file" class="inputFile" name="foto" id="foto" required>
+                                <!-- Pregunta -->
+                                <label for="pregunta" class="inputs__label">Pregunta</label>
+                                <textarea name="pregunta" class="inputs__textarea" required placeholder="Ingrese el enunciado de la pregunta"></textarea>
                             </fieldset>
 
+
                             <div class="boton-container">
-                                <input class="submit menu-icono" type="submit" value="Subir Foto">
+                                <input class="submit menu-icono" type="submit" value="Agregar pregunta">
                             </div>
                         </form>
 

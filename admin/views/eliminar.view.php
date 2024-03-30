@@ -9,7 +9,6 @@
   <link rel="shortcut icon" href="../views/imagenes/favicon.ico" type="image/x-icon">
   <title>Eliminar usuario</title>
 
-  <!-- <link rel="stylesheet" href="views/estilos/foto.css"> -->
   <link rel="stylesheet" href="views/estilos/registrarUsuario.css">
 
   <meta name="description" content="Prepárate para el ICFES con nuestra plataforma educativa. Ofrecemos recursos y prácticas para estudiantes de la Institución Educativa Central, ayudándote a alcanzar tus metas académicas en el examen ICFES y destacar en tu rendimiento académico." />
