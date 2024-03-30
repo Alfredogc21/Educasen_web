@@ -102,12 +102,12 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="#" class="menu-link">
+                <a href="agregarPregunta.php" class="menu-link">
                   <div>Pregunta</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="registrarUsuario.php" class="menu-link">
+                <a href="#" class="menu-link">
                   <div>Opcion de respuesta</div>
                 </a>
               </li>
