@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link">
+                <a href="insertarOPregunta.php" class="menu-link">
                   <div>Opcion de respuesta</div>
                 </a>
               </li>
