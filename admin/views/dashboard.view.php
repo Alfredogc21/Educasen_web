@@ -119,6 +119,14 @@
             </ul>
           </li>
 
+          <!-- Consultar preguntas -->
+          <li class="menu-item">
+            <a href="consultarPreguntas.php" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-file-find"></i>
+              <div>Consultar</div>
+            </a>
+          </li>
+
           <!-- Agregar preguntas -->
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Preguntas</span></li>
           <li class="menu-item">

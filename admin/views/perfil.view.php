@@ -122,6 +122,14 @@
             </ul>
           </li>
 
+          <!-- Consultar preguntas -->
+          <li class="menu-item">
+            <a href="consultarPreguntas.php" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-file-find"></i>
+              <div>Consultar</div>
+            </a>
+          </li>
+
           <!-- Agregar preguntas -->
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Preguntas</span></li>
           <li class="menu-item">
@@ -236,41 +244,41 @@
         <section class="contenedor-card">
           <div class="card-registro">
             <figure class="contenedor-figure">
-                <img src="../views/imagenes/man-with-laptop-light.png" class="contenedor-figure--img" alt="Imagen perfil">
+              <img src="../views/imagenes/man-with-laptop-light.png" class="contenedor-figure--img" alt="Imagen perfil">
             </figure>
 
             <div class="contenedor-title">
-                <h2 class="contenedor-title--h2"><?php echo $infoCorreo['nombres_completos']; ?></h2>
+              <h2 class="contenedor-title--h2"><?php echo $infoCorreo['nombres_completos']; ?></h2>
             </div>
 
             <div class="contenedor-info">
-                <p class="contenedor-info--parrafo">Se unio el: <?php echo $fechaRegistro ?> </p>
-                <p class="contenedor-info--parrafo">Correo: <?php echo $infoCorreo['correo']; ?> </p>
-                <p class="contenedor-info--parrafo">Rol: Administrador </p>
-                <p class="contenedor-info--parrafo">Estado: Activo </p>
+              <p class="contenedor-info--parrafo">Se unio el: <?php echo $fechaRegistro ?> </p>
+              <p class="contenedor-info--parrafo">Correo: <?php echo $infoCorreo['correo']; ?> </p>
+              <p class="contenedor-info--parrafo">Rol: Administrador </p>
+              <p class="contenedor-info--parrafo">Estado: Activo </p>
             </div>
-            
+
             <div class="contenedor-btn">
-                <a href="actualizarCorreo.php" class="contenedor-btn--link">Actualizar correo</a>
-                <a href="actualizarPassword.php" class="contenedor-btn--link">Actualizar contraseña</a>
-                <a href="eliminar.php" class="contenedor-btn--link">Eliminar cuenta</a>
+              <a href="actualizarCorreo.php" class="contenedor-btn--link">Actualizar correo</a>
+              <a href="actualizarPassword.php" class="contenedor-btn--link">Actualizar contraseña</a>
+              <a href="eliminar.php" class="contenedor-btn--link">Eliminar cuenta</a>
             </div>
           </div>
         </section>
-    </div>
-    
-    <script src="views/js/default/jquery.js"></script>
-    <script src="views/js/default/bootstrap.js"></script>
-    <script src="views/js/default/perfect-scrollbar.js"></script>
-    <script src="views/js/default/menu.js"></script>
-    <script src="views/js/default/main.js"></script>
+      </div>
 
-    <!-- JavaScript de la pagina de registos -->
-    <script src="views/js/registrarUsuario.js"></script>
-    <!--reCaptchat-->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Libreria: Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <script src="views/js/default/jquery.js"></script>
+      <script src="views/js/default/bootstrap.js"></script>
+      <script src="views/js/default/perfect-scrollbar.js"></script>
+      <script src="views/js/default/menu.js"></script>
+      <script src="views/js/default/main.js"></script>
+
+      <!-- JavaScript de la pagina de registos -->
+      <script src="views/js/registrarUsuario.js"></script>
+      <!--reCaptchat-->
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <!-- Libreria: Lottie -->
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>

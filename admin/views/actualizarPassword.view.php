@@ -122,6 +122,14 @@
             </ul>
           </li>
 
+          <!-- Consultar preguntas -->
+          <li class="menu-item">
+            <a href="consultarPreguntas.php" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-file-find"></i>
+              <div>Consultar</div>
+            </a>
+          </li>
+
           <!-- Agregar preguntas -->
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Preguntas</span></li>
           <li class="menu-item">
@@ -242,7 +250,7 @@
                 <legend class="tituloCard">Actualizar contraseña</legend>
                 <p class="contenedor-card__descripcion">Actualiza la contraseña de Educasen</p>
                 <figure class="fondoLading">
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_md7jx0xq.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player>
+                  <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_md7jx0xq.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player>
                 </figure>
               </fieldset>
 
@@ -264,9 +272,9 @@
                 </div>
               </fieldset>
 
-                <fieldset class="contenedor__recaptcha">
-                  <div class="g-recaptcha" data-sitekey="6LfL90kgAAAAAESzVF-LUvSIl6RNVx13O3MsOD49"></div>
-                </fieldset>
+              <fieldset class="contenedor__recaptcha">
+                <div class="g-recaptcha" data-sitekey="6LfL90kgAAAAAESzVF-LUvSIl6RNVx13O3MsOD49"></div>
+              </fieldset>
 
               <div class="boton-container">
                 <i class="menu-icono tf-icons bx bx-check" onclick="updatePassword.submit()">Actualizar</i>
