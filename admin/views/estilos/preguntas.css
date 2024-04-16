@@ -165,6 +165,54 @@ ul {
 	list-style-type: disc;
 }
 
+/* Estilos para insertarOpRespuesta */
+/* Estilo para los inputs */
+.option {
+    display: flex;
+	flex-flow: row wrap;
+}
+
+.option__input,
+.option__select {
+    flex: 1;
+    margin-right: 10px;
+	margin-top: 15px;
+	padding: 10px;
+	font-size: 1.1rem;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.option__remove {
+	background-color: #e15773;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+	margin-top: 15px;
+}
+
+
+.question__add-option,
+.question__save-button {
+    background-color: #6A80C0; /* Color del botón guardar y agregar */
+    color: #fff;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+	font-size: 1.1rem;
+}
+
+.question__add-option:hover,
+.question__save-button:hover {
+    background-color: #586f9a; /* Color hover del botón guardar y agregar */
+}
+
+
 /* Responsive Design*/
 @media screen and (max-width: 1024px) {
 	.card-registro {
