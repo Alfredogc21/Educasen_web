@@ -58,28 +58,28 @@
   <div class="card">
     <div class="content">
       <h2 class="title">Matemáticas</h2>
-      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="introduccionMatematicas.php" class="botonCard">Introduccion</a><br>
       <a href="" class="botonCard">Practicar</a><br>
     </div>
   </div>
   <div class="card">
     <div class="content">
       <h2 class="title">Sociales y Ciudadanas</h2>
-      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="introduccionSociudadanas.php" class="botonCard">Introduccion</a><br>
       <a href="" class="botonCard">Practicar</a><br>
     </div>
   </div>
   <div class="card">
     <div class="content">
       <h2 class="title">Ciencias Naturales</h2>
-      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="introduccionNaturales.php" class="botonCard">Introduccion</a><br>
       <a href="" class="botonCard">Practicar</a><br>
     </div>
   </div>
   <div class="card">
     <div class="content">
       <h2 class="title">Inglés</h2>
-      <a href="" class="botonCard">Introduccion</a><br>
+      <a href="introduccionIngles.php" class="botonCard">Introduccion</a><br>
       <a href="" class="botonCard">Practicar</a><br>
     </div>
   </div>
