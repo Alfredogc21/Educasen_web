@@ -211,7 +211,7 @@ nav ul li ul li a:hover {
 .contenedorVideo__iframe {
     display: block;
     width: 100%;
-    margin: 30px auto;
+    margin: 30px auto 0px;
 }
 
 .contenedorBotones {
@@ -222,9 +222,23 @@ nav ul li ul li a:hover {
     border-radius: 20px;
     padding: 50px;
     text-align: center;
-
     flex-flow: row wrap;
     justify-content: space-between;
+    align-content: center;
+    overflow: hidden;
+}
+
+.contenedorDescarga {
+    display: flex;
+    width: 80%;
+    margin: 30px auto;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
     align-content: center;
     overflow: hidden;
 }
@@ -273,10 +287,14 @@ nav ul li ul li a:hover {
 /* ----------------------------------------------Responsive------------------------------------------- */
 
 @media screen and (max-width: 1200px) {
-    .contenedorBotones {
-        margin: 40px auto;
+    .contenedorBotones, .contenedorDescarga {
+        margin: 20px auto;
         flex-flow: column wrap;
         align-content: center;
+    }
+
+    .contenedorDescarga p {
+        font-size: 2rem;
     }
 
     .botones {
@@ -323,7 +341,7 @@ nav ul li ul li a:hover {
         display: block;
         width: 100%;
         height: 300px;
-        margin: 30px auto;
+        margin: 0px auto 30px;
     }
 
     .botones {
