@@ -63,22 +63,22 @@
             <p class="about__paragraph">La prueba Sociales y Ciudadanas evalúa tres competencias, en línea con los Estándares Básicos de Competencias en Ciencias Sociales y Competencias Ciudadanas del MEN de 2006:</p>
             <ol class="about__paragraph">
                 <li>Pensamiento social: Evalúa el uso de conceptos básicos de ciencias sociales y la comprensión de principios constitucionales y el orden político colombiano, centrándose en dos habilidades: </li>
-                    <ol class="iconoLi">
-                        <li>Capacidad para identificar y usar conceptos básicos de las ciencias sociales</li>
-                        <li>Capacidad para identificar dimensiones temporales y espaciales de eventos y problemáticas sociales.</li>
-                    </ol>
+                <ol class="iconoLi">
+                    <li>Capacidad para identificar y usar conceptos básicos de las ciencias sociales</li>
+                    <li>Capacidad para identificar dimensiones temporales y espaciales de eventos y problemáticas sociales.</li>
+                </ol>
 
                 <li>Interpretación y análisis de perspectivas: Evalúa el análisis crítico de información sobre política, economía y cultura, identificando perspectivas y valorando argumentos. Se evalúan dos habilidades:</li>
-                    <ol class="iconoLi">
-                        <li>Reconocimiento de diversas opiniones, posturas e intereses</li>
-                        <li>Análisis crítico de fuentes y argumentos</li>
-                    </ol>
+                <ol class="iconoLi">
+                    <li>Reconocimiento de diversas opiniones, posturas e intereses</li>
+                    <li>Análisis crítico de fuentes y argumentos</li>
+                </ol>
 
                 <li>Pensamiento reflexivo y sistémico: Evalúa la capacidad de los evaluados para comprender y evaluar modelos conceptuales en la toma de decisiones en problemáticas sociales. Se evalúan dos habilidades:</li>
-                    <ol class="iconoLi">
-                        <li>Identificar modelos conceptuales que orientan decisiones sociales</li>
-                        <li> Establecer relaciones entre dimensiones presentes en una situación problemática y sus posibles alternativas de solución</li>
-                    </ol>
+                <ol class="iconoLi">
+                    <li>Identificar modelos conceptuales que orientan decisiones sociales</li>
+                    <li> Establecer relaciones entre dimensiones presentes en una situación problemática y sus posibles alternativas de solución</li>
+                </ol>
             </ol>
         </div>
         <figure class="about__picture">
@@ -93,6 +93,15 @@
 
     <div class="contenedorVideo">
         <iframe class="contenedorVideo__iframe" width="1160" height="615" id="video" src="https://www.youtube.com/embed/pPia2_MVBkQ?si=zlk09ZoddgOW8jjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="contenedorVideo__parrafo">Video por <a href="https://www.youtube.com/@icfescol" target="_blank">icfescol</a> en YouTube.</p>
+    </div>
+
+    <div class="contenedorDescarga">
+        <p>Descargar Guía de orientación del Examen Saber 11.º</p>
+        <a href="views/documentos/Guia_de_Orientacion_Saber_11_2024-1.pdf" download="Guia_de_Orientacion_Saber_11_2024-1.pdf" class="botones"><i class="fa-solid fa-download"></i> 2024-1
+        </a>
+        <a href="views/documentos/Guia_de_Orientacion_Saber_11_2024-2.pdf" download="Guia_de_Orientacion_Saber_11_2024-2.pdf" class="botones"><i class="fa-solid fa-download"></i> 2024-2
+        </a>
     </div>
 
     <div class="contenedorBotones">
