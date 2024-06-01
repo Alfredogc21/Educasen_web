@@ -83,6 +83,15 @@
 
     <div class="contenedorVideo">
         <iframe class="contenedorVideo__iframe" width="1160" height="615" id="video" src="https://www.youtube.com/embed/TipIVtIYv3c?si=FneHWmIHKDZwIHHY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="contenedorVideo__parrafo">Video por <a href="https://www.youtube.com/@icfescol" target="_blank">icfescol</a> en YouTube.</p>
+    </div>
+
+    <div class="contenedorDescarga">
+        <p>Descargar Guía de orientación del Examen Saber 11.º</p>
+        <a href="views/documentos/Guia_de_Orientacion_Saber_11_2024-1.pdf" download="Guia_de_Orientacion_Saber_11_2024-1.pdf" class="botones"><i class="fa-solid fa-download"></i> 2024-1
+        </a>
+        <a href="views/documentos/Guia_de_Orientacion_Saber_11_2024-2.pdf" download="Guia_de_Orientacion_Saber_11_2024-2.pdf" class="botones"><i class="fa-solid fa-download"></i> 2024-2
+        </a>
     </div>
 
     <div class="contenedorBotones">
