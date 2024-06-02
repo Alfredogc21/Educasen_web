@@ -145,7 +145,7 @@ nav {
     position: absolute;
     top: 90px;
     left: -5px;
-    padding: 14px 0px;
+    padding: 5px 0px;
     visibility: hidden;
     opacity: 0;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
@@ -174,7 +174,6 @@ nav {
   nav ul li ul li a{
     display: block;
     color : #6A80C0;
-    padding: 6px;
     padding-left: 14px;
     margin-top: 10px;
     font-size: 14px;
