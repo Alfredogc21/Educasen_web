@@ -251,7 +251,7 @@
                   <div class="d-flex align-items-center row posicionCard">
                     <div class="col-sm-7">
                       <div class="card-body">
-                        <h5 class="card-title text-primary">Bienvenido estimado Alfredo 🚀</h5>
+                        <h5 class="card-title text-primary">Bienvenido estimado <?php echo $infoCorreo['nombres_completos']; ?> 🚀</h5>
                         <p class="mb-4">
                           Panel <span class="fw-bold">administrativo</span> de educasen. Aquí podrás gestionar los registros y consultas de la plataforma.
                         </p>
