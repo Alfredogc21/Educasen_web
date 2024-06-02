@@ -63,19 +63,19 @@
         </div>
 
         <figure class="about__picture">
-            <img src="views/imagenes/inglesNivelesDesempeño.png" class="about__img materialboxed">
+            <img src="views/imagenes/inglesNivelesDesempeno.png" class="about__img materialboxed">
         </figure>
     </section>
 
     <section class="afirmacionesEvidencia">
         <p class="parrafo1">La prueba está conformada por siete partes. A cada parte se le asocia un porcentaje particular de preguntas, como se describe a continuación.</p>
-        <img src="views/imagenes/inglesDistribuciónPreguntas.png" class="afirmacionesEvidencia__img materialboxed">
+        <img src="views/imagenes/inglesDistribucionPreguntas.png" class="afirmacionesEvidencia__img materialboxed">
     </section>
 
     <section class="contenedorP1">
         <p class="parrafo1">Estas categorías representan los recursos fundamentales con los que los estudiantes enfrentarán las situaciones planteadas en el examen. </p>
         <figure class="about__picture2">
-            <img src="views/imagenes/inglesDistribuciónPreguntas2.png" class="about__img2 materialboxed">
+            <img src="views/imagenes/inglesDistribucionPreguntas2.png" class="about__img2 materialboxed">
         </figure>
     </section>
 
