@@ -28,10 +28,10 @@
                     <ul>
                         <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
                         <li><a class="sidenav-close" href="#">Ayuda</a></li>
-                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
+                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
                     </ul>
                 </li>
-                <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
+                <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
                 <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
             </ul>
         </div>
@@ -39,22 +39,21 @@
 
     <!-- Cabecera menus para pantallas pequeñas  -->
     <ul class="sidenav" id="mobile-demo">
-        <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
-        <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
-        <li><a class="sidenav-close" href="#">Ayuda</a></li>
-        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
-        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         <div class="logoMobile">
             <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
         </div>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
+        <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
+        <li><a class="sidenav-close" href="#">Ayuda</a></li>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
     </ul>
 
     <!-- Contenido -->
     <section class="contenedorP1">
-        <h1 class="tituloParrafo1">Ingles <i class="fa-solid fa-book"></i></h1>
-        <p class="parrafo1">La prueba de Inglés evalúa la capacidad de comunicación en inglés de los estudiantes según los estándares del MEN. Los estudiantes son clasificados en cuatro niveles de desempeño, basados en el Marco Común Europeo de Referencia para las lenguas (MCER). Además, se incluye un nivel por debajo del primer nivel del MCER (A1) para aquellos con habilidades mínimas en vocabulario y estructuras básicas.</p>
+        <h1 class="tituloParrafo1">Inglés <i class="fa-solid fa-book"></i></h1>
+        <p class="parrafo1">La prueba de Inglés evalúa la capacidad de comunicación en inglés de los estudiantes según los estándares del MEN. Los estudiantes son clasificados en cuatro niveles de desempeño, basados en el Marco Común Europeo de Referencia para las Lenguas (MCER). Además, se incluye un nivel por debajo del primer nivel del MCER (A1) para aquellos con habilidades mínimas en vocabulario y estructuras básicas.</p>
     </section>
 
     <section class="about container2">
@@ -69,7 +68,7 @@
     </section>
 
     <section class="afirmacionesEvidencia">
-        <p class="parrafo1">La prueba está conformada por siete partes. A cada parte se le asocia un porcentaje particular de preguntas, como se describe a continuación</p>
+        <p class="parrafo1">La prueba está conformada por siete partes. A cada parte se le asocia un porcentaje particular de preguntas, como se describe a continuación.</p>
         <img src="views/imagenes/inglesDistribuciónPreguntas.png" class="afirmacionesEvidencia__img materialboxed">
     </section>
 
@@ -106,7 +105,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+                    <h5 class="white-text"> <strong>Institución Educativa Central</strong></h5>
                     <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
@@ -121,7 +120,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
+                <p class="copy">Copyright © 2024 Alfredo Gomez Culma y el ICFES</p>
                 <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
             </div>
         </div>

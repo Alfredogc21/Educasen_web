@@ -28,10 +28,10 @@
                     <ul>
                         <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
                         <li><a class="sidenav-close" href="#">Ayuda</a></li>
-                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
+                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
                     </ul>
                 </li>
-                <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
+                <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
                 <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
             </ul>
         </div>
@@ -39,28 +39,27 @@
 
     <!-- Cabecera menus para pantallas pequeñas  -->
     <ul class="sidenav" id="mobile-demo">
-        <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
-        <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
-        <li><a class="sidenav-close" href="#">Ayuda</a></li>
-        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
-        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         <div class="logoMobile">
             <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
         </div>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
+        <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
+        <li><a class="sidenav-close" href="#">Ayuda</a></li>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
     </ul>
 
     <!-- Contenido -->
     <section class="contenedorP1">
         <h1 class="tituloParrafo1">Ciencias Naturales <i class="fa-solid fa-book"></i></h1>
-        <p class="parrafo1">La prueba de Ciencias Naturales evalúa la habilidad para entender y aplicar conceptos científicos en razonamiento y la resolución de problemas, así como para explicar fenómenos naturales. También incluye el proceso de indagación sobre la naturaleza.</p>
+        <p class="parrafo1">La prueba de Ciencias Naturales evalúa la habilidad para entender y aplicar conceptos científicos en el razonamiento y la resolución de problemas, así como para explicar fenómenos naturales. También incluye el proceso de indagación sobre la naturaleza.</p>
     </section>
 
     <section class="about container2">
         <div class="about__evalua">
             <h2 class="title title--border">¿Cuáles competencias evalúa la prueba?</h2>
-            <p class="about__paragraph">La prueba Ciencias Naturales evalúa tres competencias que están alineadas con lo propuesto en los Estándares Básicos de Competencias (EBC):</p>
+            <p class="about__paragraph">La prueba de Ciencias Naturales evalúa tres competencias que están alineadas con lo propuesto en los Estándares Básicos de Competencias (EBC):</p>
             <ol class="about__paragraph">
                 <li>Explicación de fenómenos: Evalúa la capacidad para construir explicaciones y comprender argumentos y modelos que den razón de fenómenos, así como para establecer la validez o coherencia de afirmaciones o argumentos relacionados con problemas científicos.</li>
 
@@ -75,7 +74,7 @@
     </section>
 
     <section class="afirmacionesEvidencia">
-        <p class="parrafo1">Para entender cómo se desarrollan las competencias en Ciencias Naturales, es clave considerar los contextos y temas relevantes. La prueba se diseña con base en escenarios conceptuales y temáticas específicas. Estos componentes se derivan de los Estándares Básicos de Competencias y abordan:</p>
+        <p class="parrafo1">Para entender cómo se desarrollan las tres competencias, es clave considerar los contextos y temas relevantes. La prueba se diseña con base en escenarios conceptuales y temáticas específicas en los que se involucran estas competencias. Los componentes que se derivan de lo establecido en los Estándares Básicos de Competencias (EBC) abordan:</p>
         <img src="views/imagenes/cienciasNaturalesComponentesEvaluadas.png" class="afirmacionesEvidencia__img materialboxed">
     </section>
 
@@ -112,7 +111,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+                    <h5 class="white-text"> <strong>Institución Educativa Central</strong></h5>
                     <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
@@ -127,7 +126,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
+                <p class="copy">Copyright © 2024 Alfredo Gomez Culma y el ICFES</p>
                 <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
             </div>
         </div>

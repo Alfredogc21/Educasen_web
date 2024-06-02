@@ -28,10 +28,10 @@
                     <ul>
                         <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
                         <li><a class="sidenav-close" href="#">Ayuda</a></li>
-                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
+                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
                     </ul>
                 </li>
-                <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
+                <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
                 <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
             </ul>
         </div>
@@ -39,16 +39,15 @@
 
     <!-- Cabecera menus para pantallas pequeñas  -->
     <ul class="sidenav" id="mobile-demo">
-        <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
-        <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
-        <li><a class="sidenav-close" href="#">Ayuda</a></li>
-        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
-        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         <div class="logoMobile">
             <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
         </div>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
+        <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
+        <li><a class="sidenav-close" href="#">Ayuda</a></li>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
     </ul>
 
     <!-- Contenido -->
@@ -77,7 +76,7 @@
                 <li>Pensamiento reflexivo y sistémico: Evalúa la capacidad de los evaluados para comprender y evaluar modelos conceptuales en la toma de decisiones en problemáticas sociales. Se evalúan dos habilidades:</li>
                 <ol class="iconoLi">
                     <li>Identificar modelos conceptuales que orientan decisiones sociales</li>
-                    <li> Establecer relaciones entre dimensiones presentes en una situación problemática y sus posibles alternativas de solución</li>
+                    <li>Establecer relaciones entre dimensiones presentes en una situación problemática y sus posibles alternativas de solución</li>
                 </ol>
             </ol>
         </div>
@@ -116,7 +115,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+                    <h5 class="white-text"> <strong>Institución Educativa Central</strong></h5>
                     <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
@@ -131,7 +130,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
+                <p class="copy">Copyright © 2024 Alfredo Gomez Culma y el ICFES</p>
                 <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
             </div>
         </div>

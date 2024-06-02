@@ -28,10 +28,10 @@
                     <ul>
                         <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
                         <li><a class="sidenav-close" href="#">Ayuda</a></li>
-                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
+                        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
                     </ul>
                 </li>
-                <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
+                <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
                 <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
             </ul>
         </div>
@@ -39,21 +39,20 @@
 
     <!-- Cabecera menus para pantallas pequeñas  -->
     <ul class="sidenav" id="mobile-demo">
-        <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
-        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
-        <li><a class="sidenav-close" href="#video">Video explicativo</a></li>
-        <li><a class="sidenav-close" href="#">Ayuda</a></li>
-        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
-        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesion</a></li>
         <div class="logoMobile">
             <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
         </div>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+        <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
+        <li><a class="sidenav-close" href="#video">Vídeo explicativo</a></li>
+        <li><a class="sidenav-close" href="#">Ayuda</a></li>
+        <li><a class="sidenav-close" href="menuPrincipal.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
     </ul>
 
     <!-- Contenido -->
     <section class="contenedorP1">
-        <h1 class="tituloParrafo1">Matematicas <i class="fa-solid fa-book"></i></h1>
+        <h1 class="tituloParrafo1">Matemáticas <i class="fa-solid fa-book"></i></h1>
         <p class="parrafo1">La competencia de matemáticas en el examen Saber 11 se refiere a la habilidad para usar herramientas matemáticas y comprender información presentada en diferentes formatos, como tablas o gráficos. Los evaluados deben ser capaces de extraer información relevante, establecer relaciones matemáticas e identificar tendencias y patrones. Esta competencia también implica utilizar diversos registros de representación (simbólico, natural, gráfico) de manera coherente, relacionándose con los estándares de comunicación, representación y razonamiento definidos por el MEN.</p>
     </section>
 
@@ -84,7 +83,7 @@
             <img src="views/imagenes/mathContenidocurricular.png" class="about__img2 materialboxed">
         </figure>
         <p class="parrafo1">Estas categorías representan los recursos fundamentales con los que los estudiantes enfrentarán las situaciones planteadas en el examen. </p>
-        <p class="parrafo1">Cada categoría se divide en contenidos genéricos y no genéricos, siendo los genéricos fundamentales para la interacción crítica en la sociedad, mientras que los no genéricos son específicos del quehacer matemático. Es importante destacar que el uso de expresiones algebraicas se considera no genérico, ya que aunque es una herramienta fundamental, no es indispensable para la mayoría de problemas matemáticos cotidianos.</p>
+        <p class="parrafo1">Cada categoría se divide en contenidos genéricos y no genéricos, siendo los genéricos fundamentales para la interacción crítica en la sociedad, mientras que los no genéricos son específicos del quehacer matemático. Es importante destacar que el uso de expresiones algebraicas se considera no genérico, ya que, aunque es una herramienta fundamental, no es indispensable para la mayoría de los problemas matemáticos cotidianos.</p>
         <p class="parrafo1">A continuación, te mostramos algunos de los temas importantes y específicos que se ven en la prueba de Matemáticas, divididos en las diferentes áreas que hemos mencionado antes:</p>
         <div class="contenedorImagenes">
             <picture class="pictureConteneroImagenes">
@@ -124,7 +123,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+                    <h5 class="white-text"> <strong>Institución Educativa Central</strong></h5>
                     <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
@@ -139,7 +138,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
+                <p class="copy">Copyright © 2024 Alfredo Gomez Culma y el ICFES</p>
                 <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100px" height="90px" class="logoAbajo right"></a>
             </div>
         </div>
