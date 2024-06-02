@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="views/estilos/registrarylogin.css">
+  <link rel="stylesheet" href="views/estilos/actualizarInfo.css">
   <title>Actualizar informacion</title>
 
   <!--Import materialize.css-->
