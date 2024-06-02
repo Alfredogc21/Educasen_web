@@ -1,9 +1,9 @@
 body {
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* -------------------------------------------------Sidenav------------------------------------------------- */
@@ -28,7 +28,7 @@ body {
   background: rgb(243, 243, 243);
   text-align: center;
 }
-  
+
 .logoMobile img {
   width: 30%;
   height: 30%;
@@ -47,124 +47,128 @@ body {
 }
 
 .card-registro {
-    width: 45%;
-    background-color: #fff;
-    margin: 50px auto 0;
-    box-shadow: 1px 1px 46px 2px #000;
-    padding: 20px;
-    border-radius: 10px;
+  width: 45%;
+  background-color: #fff;
+  margin: 50px auto 0;
+  box-shadow: 1px 1px 46px 2px #000;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .fondoLading {
-    width: 200px;
-    margin-right: auto;
-    margin-left: auto;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .fondoLading__lottie {
-    position: relative;
-    left: -40px;
+  position: relative;
+  left: -40px;
 }
 
 .tituloCard {
-    text-align: center;
-    font-size: 30px;
-    margin: 0;
-    font-weight: bold;
-    text-shadow: 4x 4px 5px #000;
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 4x 4px 5px #000;
 }
 
-.linkTengoCuenta {
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    margin: 10px auto;
-    color: #000;
+.contenedor__recaptcha {
+  width: 55%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 920px) {
-    .card-registro {
-        width: 90%;
-        margin-top: 120px;
-    }
-}
-    
-/* Modificar los nav en los menus que estan despues de iniciar sesion o los modulos protegidos */
-nav {
-    height: 100%;
-  }
-  
-  nav > ul {
-    height: 100%;
-    display: flex;
-  }
-  
-  nav ul li {
-    height: 100%;
-    list-style: none;
-    position: relative;
-  }
-  
-  /* Submenu */
-  nav ul li ul{
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 90px;
-    left: -5px;
-    padding: 14px 0px;
-    visibility: hidden;
-    opacity: 0;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    z-index: 10;
-    transition: all 300ms ease;
-  }
-  
-  nav ul li:hover ul{
-    visibility: visible;
-    opacity: 1;
-    top: 70px;
-  }
-  
-  nav ul li ul::before{
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #fff;
-    position: absolute;
-    top: -12px;
-    left: 20px;
-  }
-  
-  nav ul li ul li a{
-    display: block;
-    color : #6A80C0;
-    padding: 6px;
-    padding-left: 14px;
-    margin-top: 10px;
-    font-size: 14px;
-    text-transform: uppercase;
-    transition: all 300ms ease;
-  } 
-  
-  nav ul li ul li a:hover{
-    background-color: #6A80C0;
-    color: #fff;
-    transform: scale(1.1);
-    padding-left: 36px;
-    font-size: 14px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  .card-registro {
+    width: 90%;
+    margin-top: 120px;
   }
 
-  /* ------------------------------------------------Footer---------------------------------------------- */
+  .contenedor__recaptcha {
+    width: 35%;
+    margin: 0 auto;
+  }
+}
+
+/* Modificar los nav en los menus que estan despues de iniciar sesion o los modulos protegidos */
+nav {
+  height: 100%;
+}
+
+nav>ul {
+  height: 100%;
+  display: flex;
+}
+
+nav ul li {
+  height: 100%;
+  list-style: none;
+  position: relative;
+}
+
+/* Submenu */
+nav ul li ul {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top: 90px;
+  left: -5px;
+  padding: 14px 0px;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  transition: all 300ms ease;
+}
+
+nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  top: 70px;
+}
+
+nav ul li ul::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+}
+
+nav ul li ul li a {
+  display: block;
+  color: #6A80C0;
+  padding: 6px;
+  padding-left: 14px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 300ms ease;
+}
+
+nav ul li ul li a:hover {
+  background-color: #6A80C0;
+  color: #fff;
+  transform: scale(1.1);
+  padding-left: 36px;
+  font-size: 14px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------------------------Footer---------------------------------------------- */
 /*
 /* Color de fondo del footer */
 .colorFooter {
-  background: #6A80C0;  /* reserva para navegadores antiguos */
+  background: #6A80C0;
+  /* reserva para navegadores antiguos */
   padding: 68px;
 }
 
@@ -178,7 +182,7 @@ nav {
 
 /* Ultima letras del footer */
 .copy {
-  margin:0;
+  margin: 0;
   height: 0px;
   position: relative;
   top: 22px;
