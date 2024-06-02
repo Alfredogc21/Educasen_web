@@ -74,7 +74,7 @@ try {
                         </div>
                         <div style='padding: 20px;'>
                             <p>Tienes 10 minutos para clic en el siguiente enlace y restablecer su contraseña:</p>
-                            <a href='https://alfredohostg.online/web/actualizarPassword.php?email=$correoB&token=$token' style='background-color: #6A80C0; color: #fff; padding: 10px; text-decoration: none; display: inline-block; border-radius: 5px;'>Restablecer Contraseña</a>
+                            <a href='https://webappagc.com/pruebas/web/actualizarPassword.php?email=$correoB&token=$token' style='background-color: #6A80C0; color: #fff; padding: 10px; text-decoration: none; display: inline-block; border-radius: 5px;'>Restablecer Contraseña</a>
                         </div>
                     </body>
                     </html>
