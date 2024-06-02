@@ -27,26 +27,25 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="sidenav-close" href="./index.php">Inicio</a></li>
-        <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
+        <li><a class="sidenav-close" href="./login.php">Iniciar sesión</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Cabecera menus para pantallas pequeñas  -->
   <ul class="sidenav" id="mobile-demo">
-    <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-    <li><a class="sidenav-close" href="index.php">Inicio</a></li>
-    <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
     <div class="logoMobile">
       <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
     </div>
+    <li><a class="sidenav-close" href="index.php">Inicio</a></li>
+    <li><a class="sidenav-close" href="./login.php">Iniciar sesión</a></li>
   </ul>
   <!------------------------------------------------------------------------------------------------------------>
 
   <div class="contenedor-card">
     <div class="card-registro">
 
-      <h1 class="tituloCard">Iniciar sesion</h1>
+      <h1 class="tituloCard">Iniciar sesión</h1>
       <figure class="fondoLading">
         <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_mjlh3hcy.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player>
       </figure>
@@ -74,7 +73,7 @@
         <br>
 
         <div class="col s10 offset-s1 center-align">
-          <i class="#7986cb indigo lighten-2 btn" onclick="login.submit()">Iniciar sesion</i>
+          <i class="#7986cb indigo lighten-2 btn" onclick="login.submit()">Iniciar sesión</i>
         </div>
         <?php if (!empty($errores)) : ?>
           <div class="error">
@@ -106,7 +105,7 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+          <h5 class="white-text"> <strong>Institución Educativa Central</strong></h5>
           <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
         </div>
         <div class="col l4 offset-l2 s10">
@@ -121,7 +120,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
+        <p class="copy">Copyright © 2024 Alfredo Gomez Culma y el ICFES</p>
         <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100" height="90" class="logoAbajo right" alt="Logo de la institucion"></a>
       </div>
     </div>

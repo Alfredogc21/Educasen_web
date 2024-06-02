@@ -45,7 +45,7 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a class="sidenav-close" href="#">Inicio</a></li>
-          <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
+          <li><a class="sidenav-close" href="./login.php">Iniciar sesión</a></li>
           <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
         </ul>
       </div>
@@ -53,13 +53,12 @@
 
     <!-- Cabecera menus para pantallas pequeñas  -->
     <ul class="sidenav" id="mobile-demo">
-      <img class="" src="views/imagenes/file.png" width="300" height="120" alt="logoICFES">
-      <li><a class="sidenav-close" href="index.php">Inicio</a></li>
-      <li><a class="sidenav-close" href="./login.php">Iniciar sesion</a></li>
-      <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
       <div class="logoMobile">
         <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
       </div>
+      <li><a class="sidenav-close" href="index.php">Inicio</a></li>
+      <li><a class="sidenav-close" href="./login.php">Iniciar sesión</a></li>
+      <li><a class="sidenav-close" href="#quienesSomos">Quienes somos</a></li>
     </ul>
 
     <!------------------------------------------------------------------------------------------------------------>
@@ -118,7 +117,7 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text"> <strong>Institucion Educativa Central</strong></h5>
+            <h5 class="white-text"> <strong>Institución Educativa Central</strong></h5>
             <p class="grey-text text-lighten-4">Saldaña - Tolima</p>
           </div>
           <div class="col l4 offset-l2 s10">
@@ -133,7 +132,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-          <p class="copy">Copyright © - 2024 Alfredo Gomez Culma Derechos Reservados</p>
+          <p class="copy">Copyright © 2024 Alfredo Gomez Culma y el ICFES</p>
           <a> <img src="views/imagenes/logoIECentral-removebg.png" width="100" height="90" class="logoAbajo right" alt="Logo de la institucion"></a>
         </div>
       </div>
