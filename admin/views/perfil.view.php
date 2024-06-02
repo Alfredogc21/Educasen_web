@@ -244,7 +244,7 @@
         <section class="contenedor-card">
           <div class="card-registro">
             <figure class="contenedor-figure">
-              <img src="../views/imagenes/man-with-laptop-light.png" class="contenedor-figure--img" alt="Imagen perfil">
+              <img src="../views/imagenes/logoDibujo.svg" class="contenedor-figure--img" alt="Imagen perfil">
             </figure>
 
             <div class="contenedor-title">
