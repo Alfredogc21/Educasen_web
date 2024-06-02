@@ -9,7 +9,7 @@ if (isset($_SESSION['usuarios'])) {
     require 'conexion/conexion.php';
 
     //Hacemos la consulta para traer los datos del usuario
-    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, correo, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
+    $statement = $conexion->prepare('SELECT id, nombres_completos, estados_usuarios_id, fecharegistro, correo, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $statement->execute(array(':correo' => $correo));
     $resultado = $statement->fetch();
 
@@ -19,6 +19,7 @@ if (isset($_SESSION['usuarios'])) {
         $correo = $resultado['correo'];
         $id = $resultado['id'];
         $estados_usuarios_id = $resultado['estados_usuarios_id'];
+        $fechaRegistro = $resultado['fecharegistro'];
     }
 
     if($resultado['roles_id'] == 2){ // Si es estudiante
