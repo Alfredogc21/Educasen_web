@@ -53,10 +53,17 @@ if (isset($_SESSION['usuarios'])) {
 			$statement = $conexion->prepare('INSERT INTO imagenes_examen (id, imagen, materias_id, opcion_pregunta_id, preguntas_id) VALUES (null, :imagen, :materia, :Oppregunta, :pregunta)');
 			$statement->execute(array(':imagen' => $_FILES['foto']['name'], ':materia' => $materia, ':Oppregunta' => $Oppregunta, ':pregunta' => $pregunta));
 
-			$success .= "<script> Swal.fire(
-			'Opeación exitosa',
-			'La imagen se subio correctamente',
-			'success')</script>";
+			$success .= "<script>
+			Swal.fire({
+				title: 'Operación exitosa',
+				text: 'La imagen se subió correctamente',
+				icon: 'success'
+			}).then((result) => {
+				if (result.isConfirmed || result.isDismissed) {
+					window.location.href = 'agregarPregunta.php';
+				}
+			});
+		</script>";
 		} else {
 			$errores = "El archivo no es una imagen o el archivo es muy pesado";
 			$errores .= "<script> Swal.fire(
