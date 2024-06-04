@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="views/estilos/pruebasycalificaciones.css">
+  <link rel="stylesheet" href="views/estilos/pruebas.css">
   <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
   <title>Examen introductorio</title>
 

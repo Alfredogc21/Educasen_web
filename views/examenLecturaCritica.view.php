@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="views/estilos/pruebasycalificaciones.css">
+  <link rel="stylesheet" href="views/estilos/pruebas.css">
   <link rel="shortcut icon" href="views/imagenes/favicon.ico" type="image/x-icon">
   <title>Examen - Lectura Critica</title>
 
@@ -64,14 +64,14 @@
       <img class="imagenEnunciadoPregunta materialboxed" src="views/imagenes/fotos/<?php echo $resultadoImagen[0]['imagen']; ?>" alt="Imagen de la pregunta">
       <div class="contenedor__Opciones">
         <h3 class="contenedor__parrafo"><?php echo $resultadoPregunta[0]['enunciado_pregunta'] . '<br>'; ?></h3> <!-- Mostrar la pregunta -->
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="preguntas">
+        <form class="contenidoOpciones" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="preguntas">
           <?php
           $fila = '';
           //Recorre las respuestas de acuerdo a la pregunta
           foreach ($resultadoRespuestas as $fila) {
             echo '<p><label>
               <input class="with-gap" type="radio" name="respuesta" value="' . $fila['validacion_pregunta_id'] . '"/>
-              <span>' . $fila['contenido_respuestas'] . '<br>' . '</span>
+              <span class="enunciadoSpan">' . $fila['contenido_respuestas'] . '<br>' . '</span>
               </label> </p>';
           }
           ?>
