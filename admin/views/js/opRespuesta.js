@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const select = document.createElement('select');
         select.classList.add('option__select');
         select.name = 'validation[]';
+        select.required = true;
+        select.addEventListener('change', handleSelectChange); // Agrega el evento change
         const option1 = document.createElement('option');
         option1.value = '';
         option1.textContent = 'Seleccione si es correcta o incorrecta';
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         select.appendChild(option3);
 
         const removeButton = document.createElement('button');
+        removeButton.type = 'button'; // Asegúrate de que el botón no envíe el formulario
         removeButton.textContent = 'Eliminar';
         removeButton.classList.add('option__remove');
         removeButton.addEventListener('click', function() {
@@ -57,6 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function handleSelectChange(event) {
+        if (event.target.value === '1') { // Si se selecciona "Correcto"
+            const selects = document.querySelectorAll('.option__select');
+            selects.forEach(select => {
+                if (select !== event.target) { // Si no es el select que se cambió
+                    select.value = '2'; // Marca como "Incorrecto"
+                }
+            });
+        }
+    }
+
     // Inicializar funcionalidad de eliminar opción
     const removeButtons = document.querySelectorAll('.option__remove');
     removeButtons.forEach(removeButton => {
@@ -65,5 +79,11 @@ document.addEventListener('DOMContentLoaded', function() {
             option.remove();
             reindexOptions();
         });
+    });
+
+    // Inicializar funcionalidad de cambio en selects ya existentes
+    const selects = document.querySelectorAll('.option__select');
+    selects.forEach(select => {
+        select.addEventListener('change', handleSelectChange);
     });
 });
