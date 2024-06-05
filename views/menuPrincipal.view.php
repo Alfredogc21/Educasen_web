@@ -60,7 +60,7 @@
         <div class="content">
           <h2 class="title">Matemáticas</h2>
           <a href="introduccionMatematicas.php" class="botonCard">Introducción</a><br>
-          <a href="" class="botonCard">Practicar</a><br>
+          <a href="examenMatematicas.php" class="botonCard">Practicar</a><br>
         </div>
       </div>
       <div class="card">
