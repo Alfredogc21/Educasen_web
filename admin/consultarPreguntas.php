@@ -51,15 +51,15 @@ if (isset($_SESSION['usuarios'])) {
     //Actualizamos el nombre, el estado y el email
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar que se hayan recibido los datos necesarios
-        if (isset($_POST["nombre"], $_POST["competencias"], $_POST['tipoPregunta'] , $_POST["id"])) {
+        if (isset($_POST["nombre"], $_POST["competencias"], $_POST['tipoPreguntaForm'] , $_POST["id"])) {
             try {
 
                 // Sanitizar y validar los datos recibidos
                 $nombre = htmlspecialchars(trim($_POST["nombre"]));
                 $competencias = intval($_POST["competencias"]);
-                $tipoPregunta = intval($_POST["tipoPregunta"]);
+                $tipoPregunta = intval($_POST["tipoPreguntaForm"]);
                 $id = intval($_POST["id"]);
-
+                
                 // Actualizar los datos de la pregunta
                 $sqlActualizarPregunta = $conexion->prepare('UPDATE preguntas SET enunciado_pregunta = :nombre, materia_id = :competencias, opcion_pregunta_id = :tipoPregunta WHERE id = :id');
                 $sqlActualizarPregunta->execute(array(':nombre' => $nombre, ':competencias' => $competencias, ':tipoPregunta' => $tipoPregunta, ':id' => $id));
