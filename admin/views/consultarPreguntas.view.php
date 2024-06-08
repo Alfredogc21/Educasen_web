@@ -250,9 +250,9 @@
                             <label for="filtroCompetencias">Competencia</label>
                             <select id="filtroCompetencias" name="filtroCompetencias">
                                 <option value="">Todos</option>
-                                <option value="Lectura crítica">Lectura crítica</option>
+                                <option value="Lectura Crítica">Lectura Crítica</option>
                                 <option value="Matemáticas">Matemáticas</option>
-                                <option value="Sociales y ciudadanas">Sociales y ciudadanas</option>
+                                <option value="Ciencias sociales y competencias ciudadanas">Ciencias sociales y competencias ciudadanas</option>
                                 <option value="Ciencias naturales">Ciencias naturales</option>
                                 <option value="Inglés">Inglés</option>
                             </select>

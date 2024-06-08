@@ -67,7 +67,7 @@
         <div class="content">
           <h2 class="title">Sociales y Ciudadanas</h2>
           <a href="introduccionSociudadanas.php" class="botonCard">Introducción</a><br>
-          <a href="" class="botonCard">Practicar</a><br>
+          <a href="examenSocialesCiudadanas.php" class="botonCard">Practicar</a><br>
         </div>
       </div>
       <div class="card">
