@@ -244,7 +244,7 @@
                 <div class="contenedor-card">
                     <div class="card-registro">
                         <!-- Formulario de registro -->
-                        <form class="formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                        <form class="formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
                             <fieldset>
                                 <legend class="tituloCard">Opciones de respuesta</legend>
                                 <p class="contenedor-card__descripcion">Agrega las opciones de respuesta a la pregunta</p>
@@ -253,13 +253,22 @@
                                 </figure>
                             </fieldset>
 
-                            <!-- Mostramos la competencia -->
+                            <!-- Seleccionar la pregunta -->
                             <fieldset class="contenedor-card__fieldset">
                                 <select id="pregunta" class="inputs inputs--selects" name="pregunta" required>
                                     <option value="" disabled selected>Seleccione la pregunta</option>
                                     <?php
                                     echo '<option value="' . $resultado_pregunta['id'] . '">' . $resultado_pregunta['enunciado_pregunta'] . '</option>';
                                     ?>
+                                </select>
+
+                                <br>
+
+                                <!-- Seleccionar tipo de contenido -->
+                                <select id="tipo_contenido" class="inputs inputs--selects" name="tipo_contenido" required>
+                                    <option value="" disabled selected>Seleccione el tipo de contenido</option>
+                                    <option value="1">Texto</option>
+                                    <option value="2">Imagen</option>
                                 </select>
 
                                 <br>
