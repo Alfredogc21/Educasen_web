@@ -87,7 +87,7 @@
                   <label>
                     <input class="with-gap" type="radio" name="respuesta" value="<?php echo $fila['validacion_pregunta_id']; ?>" />
                     <span class="enunciadoSpan">
-                      <img class="contenedor__imgrespuestas--img" src="views/imagenes/fotosORespuestas/<?php echo $fila['contenido_respuestas']; ?>" alt="Imagen de respuesta" style="max-width: 100%; height: auto;">
+                      <img class="contenedor__imgrespuestas--img materialboxed" src="views/imagenes/fotosORespuestas/<?php echo $fila['contenido_respuestas']; ?>" alt="Imagen de respuesta" style="max-width: 100%; height: auto;">
                       <br>
                     </span>
                   </label>
