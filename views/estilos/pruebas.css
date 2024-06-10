@@ -171,8 +171,20 @@ nav ul li ul li a:hover{
   text-align: left;
 }
 
+.contenedor__imgrespuestas {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+  border: none;
+}
 
+.contenedor__imgrespuestas--img {
+  display: block;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 05px;
 
+}
 
 
 /* ------------------------------------------------Footer---------------------------------------------- */
@@ -214,7 +226,11 @@ nav ul li ul li a:hover{
 
   .imagenEnunciadoPregunta {
     width: 90%;
+  }
 
+  .contenedor__imgrespuestas {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
   }
 
   .titulo {

@@ -74,7 +74,7 @@
         <div class="content">
           <h2 class="title">Ciencias Naturales</h2>
           <a href="introduccionNaturales.php" class="botonCard">Introducción</a><br>
-          <a href="" class="botonCard">Practicar</a><br>
+          <a href="examenCienciasNaturales.php" class="botonCard">Practicar</a><br>
         </div>
       </div>
       <div class="card">
