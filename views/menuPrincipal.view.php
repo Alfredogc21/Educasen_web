@@ -81,7 +81,7 @@
         <div class="content">
           <h2 class="title">Inglés</h2>
           <a href="introduccionIngles.php" class="botonCard">Introducción</a><br>
-          <a href="" class="botonCard">Practicar</a><br>
+          <a href="examenIngles.php" class="botonCard">Practicar</a><br>
         </div>
       </div>
     </main>
