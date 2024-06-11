@@ -53,7 +53,7 @@
   </ul>
 
   <!------------------------------------------------------------------------------------------------------------>
-  <h1 class="titulo">Examen - Matemáticas</h1>
+  <h1 class="titulo">Prueba de Matemáticas</h1>
   <?php if ($errores) : ?>
     <div class="error">
       <?php echo $errores; ?>

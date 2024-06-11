@@ -53,7 +53,7 @@
   </ul>
 
   <!------------------------------------------------------------------------------------------------------------>
-  <h1 class="titulo">Examen - Lectura Crítica</h1>
+  <h1 class="titulo">Prueba de Lectura Crítica</h1>
   <?php if ($errores) : ?>
     <div class="error">
       <?php echo $errores; ?>
