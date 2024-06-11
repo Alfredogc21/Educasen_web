@@ -83,7 +83,7 @@
 
   <div class="contenedorPreguntas">
     <div class="contenedorPreguntas__Correstas preguntas"><!-- Mostrar enunciado de la pregunta cuando validacion es correcta -->
-      <h3>Preguntas correctas</h3>
+      <h4>Preguntas correctas: <?php echo $correctas; ?></h4>
       <?php
       if ($resultadoCalificacion) :
         foreach ($resultadoCalificacion as $key => $value) {
@@ -96,7 +96,7 @@
       ?>
     </div>
     <div class="contenedorPreguntas__Incorrectas preguntas"><!-- Mostrar enunciado de la pregunta cuando validacion es incorrecto -->
-      <h3>Preguntas incorrectas</h3>
+      <h4>Preguntas incorrectas: <?php echo $incorrectas; ?></h4>
       <?php
       if ($resultadoCalificacion) :
         foreach ($resultadoCalificacion as $key => $value) {

@@ -26,13 +26,12 @@ if (isset($_SESSION['usuarios'])) {
     $resultadoOpPregunta = $sql_opPregunta->fetchAll();
 
     $resultadoCalificacion = null;
+    $correctas = 0;
+    $incorrectas = 0;
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $materia = isset($_POST['materia']) ? $_POST['materia'] : null; // Lo que recibe el select de materias
         $oppreguntas = isset($_POST['oppreguntas']) ? $_POST['oppreguntas'] : null; // Lo que recibe el select de opcion pregunta
-
-        $correctas = 0;
-        $incorrectas = 0;
         
         // Mostrar las calificaciones
         $sql_calificacion = $conexion->prepare('SELECT nombres_materias, enunciado_pregunta, validacion_pregunta_id FROM calificacion, preguntas, materias WHERE preguntas_id = preguntas.id AND preguntas.materia_id = materias.id AND usuarios_id = :idUsuario AND materias.id = :materia AND calificacion.opcion_pregunta_id = :oppreguntas');
