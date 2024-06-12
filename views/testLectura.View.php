@@ -42,9 +42,9 @@
 
   <!-- Cabecera menus para pantallas pequeñas  -->
   <ul class="sidenav" id="mobile-demo">
-    <figure class="logoMobile">
+    <div class="logoMobile">
       <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
-    </figure>
+    </div>
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
     <li><a class="sidenav-close" href="perfil.php"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
