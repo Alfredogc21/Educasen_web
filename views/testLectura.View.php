@@ -119,6 +119,8 @@
   <script type="text/javascript" src="views/materialize/js/materialize.min.js"></script>
   <!-- Script para el testLecturaView -->
   <script src="views/js/introduccionLectura.js"></script>
+  <!-- Bloquear funciones -->
+  <script src="views/js/bloquearDerecho.js"></script>
 </body>
 
 </html>
