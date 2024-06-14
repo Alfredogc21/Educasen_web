@@ -35,7 +35,7 @@
             <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
           </ul>
         </li>
-        <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
+        <li><a class="sidenav-close" href="introduccionMatematicas.php">Regresar</a></li>
       </ul>
     </div>
   </nav>
@@ -48,7 +48,7 @@
     <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
     <li><a class="sidenav-close" href="perfil.php"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
     <li><a class="sidenav-close" href="#">Ayuda</a></li>
-    <li><a class="sidenav-close" href="introduccionLectura.php">Regresar</a></li>
+    <li><a class="sidenav-close" href="introduccionMatematicas.php">Regresar</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
   </ul>
 
