@@ -135,32 +135,15 @@
             </a>
           </li>
 
-          <!-- Formularios y Tablas -->
-          <li class="menu-header small text-uppercase"><span class="menu-header-text">Formularios &amp; tablas</span></li>
-          <!-- Tables -->
+          <!-- Resultados de estudiantes -->
+          <li class="menu-header small text-uppercase"><span class="menu-header-text">Resultados de estudiantes</span></li>
           <li class="menu-item">
-            <a href="#" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-table"></i>
-              <div>Tables</div>
-            </a>
-          </li>
-
-          <!-- Soporte -->
-          <li class="menu-header small text-uppercase"><span class="menu-header-text">Informacion</span></li>
-          <li class="menu-item">
-            <a href="#" target="_blank" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-support"></i>
-              <div data-i18n="Support">Soporte</div>
-            </a>
-          </li>
-
-          <!-- Documentacion -->
-          <li class="menu-item">
-            <a href="#" target="_blank" class="menu-link">
+            <a href="resultadosEstudiantes.php" class="menu-link">
               <i class="menu-icon tf-icons bx bx-file"></i>
-              <div data-i18n="Documentation">Documentacion</div>
+              <div>Consultar</div>
             </a>
           </li>
+
         </ul>
       </aside>
       <!-- / Menu -->
