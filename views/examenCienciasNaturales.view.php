@@ -28,10 +28,10 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="sidenav-close" href="menuPrincipal.php">Materias</a></li>
+        <li><a class="sidenav-close" href="inteligenciaArtificial.php">Inteligencia Artificial</a></li>
         <li><a class="sidenav-close" href="#"><?php echo 'Usuario: ' . $nombreUsuario; ?></a>
           <ul>
             <li><a class="sidenav-close" href="ajustes.php">Perfil</a></li>
-            <li><a class="sidenav-close" href="#">Ayuda</a></li>
             <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
           </ul>
         </li>

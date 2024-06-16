@@ -28,8 +28,8 @@
 
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
+        <li><a class="sidenav-close" href="inteligenciaArtificial.php">Inteligencia Artificial</a></li>
         <li><a class="sidenav-close" href="ajustes.php"><?php echo 'Usuario: ' . $nombreUsuario; ?></a></li>
-        <li><a class="sidenav-close" href="#">Ayuda</a></li>
         <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
       </ul>
     </div>
@@ -40,8 +40,8 @@
     <div class="logoMobile">
       <img src="views/imagenes/favicon.svg" class="logoMobile" alt="educasen" width="200" height="200">
     </div>
+    <li><a class="sidenav-close" href="inteligenciaArtificial.php">Inteligencia Artificial</a></li>
     <li><a class="sidenav-close" href="ajustes.php"><?php echo $nombreUsuario; ?></a></li>
-    <li><a class="sidenav-close" href="#">Ayuda</a></li>
     <li><a class="sidenav-close" href="cerrar.php">Cerrar sesión</a></li>
   </ul>
 
