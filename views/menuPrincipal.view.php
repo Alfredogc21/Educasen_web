@@ -13,12 +13,7 @@
   <link type="text/css" rel="stylesheet" href="views/materialize/css/materialize.min.css" media="screen,projection" />
 </head>
 
-<body class="welcome">
-  <!------------------------------------------------------------------------------------------------------------>
-  <!-- Animacion inicial -->
-  <span id="splash-overlay" class="splash"></span>
-  <span id="welcome" class="z-depth-4"></span>
-
+<body>
   <!-- Cabecera menu -->
   <nav role="navigation">
     <div class="nav-wrapper">
