@@ -11,30 +11,30 @@ if (isset($_SESSION['usuarios'])) {
     require '../conexion/conexion.php';
 
     //Hacemos la consulta para traer los datos del usuario y determinar el rol
-    $sqlRolUser = $conexion->prepare('SELECT nombres_completos, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
+    $sqlRolUser = $conexion->prepare('SELECT id, nombres_completos, roles_id FROM usuarios WHERE correo = :correo LIMIT 1');
     $sqlRolUser->execute(array(':correo' => $correo));
     $infoCorreo = $sqlRolUser->fetch();
 
-    //Hacemos la consulta para traer los datos de los estudiantes
-    $sqlEstudiantes = $conexion->prepare('SELECT usuarios.id AS id, usuarios.nombres_completos as Nombre, usuarios.fecharegistro AS fecha_registro, grados.nombre_grado AS grado, estados_usuarios.nombres_estados AS estados, usuarios.correo AS email FROM usuarios INNER JOIN grados ON usuarios.grado_id = grados.id INNER JOIN estados_usuarios ON usuarios.estados_usuarios_id = estados_usuarios.id ORDER BY usuarios.id DESC LIMIT 50');
-    $sqlEstudiantes->execute();
-    $sqlEstudiante = $sqlEstudiantes->fetchAll();
+    //Hacemos la consulta para traer el tipo de validacion
+    $sqlTipoValidacion = $conexion->prepare('SELECT * FROM validacion_pregunta');
+    $sqlTipoValidacion->execute();
+    $tipoValidaciones = $sqlTipoValidacion->fetchAll();
 
-    //Consulta para traer los grados
-    $sqlGrados = $conexion->prepare('SELECT * FROM grados');
-    $sqlGrados->execute();
-    $resultadoGrado = $sqlGrados->fetchAll();
+    //Hacemos la consulta para traer las preguntas
+    $sqlpreguntas = $conexion->prepare('SELECT * FROM preguntas ORDER BY id DESC LIMIT 5');
+    $sqlpreguntas->execute();
+    $preguntas = $sqlpreguntas->fetchAll();
 
-    //Consultar estados
-    $sqlEstados = $conexion->prepare('SELECT * from estados_usuarios');
-    $sqlEstados->execute();
-    $resultadoEstados = $sqlEstados->fetchAll();
+    //Hacemos la consulta para traer los datos de las opciones de respuesta
+    $sqlORespuesta = $conexion->prepare('SELECT contenido.id AS id, contenido.contenido_respuestas AS contenido, preguntas.enunciado_pregunta AS preguntas, validacion_pregunta.nombre AS validacion, tipo_contenido.nombre AS tipo_contenido FROM opcion_respuesta AS contenido LEFT JOIN preguntas ON contenido.preguntas_id = preguntas.id LEFT JOIN validacion_pregunta ON contenido.validacion_pregunta_id = validacion_pregunta.id LEFT JOIN tipo_contenido ON contenido.tipo_contenido_id = tipo_contenido.id ORDER BY contenido.id DESC LIMIT 20');
+    $sqlORespuesta->execute();
+    $sqlORespuestas = $sqlORespuesta->fetchAll();
 
     // Cantidad de registros por página
     $registrosPorPagina = 10;
 
     // Total de registros obtenidos de la consulta SQL
-    $totalRegistros = count($sqlEstudiante);
+    $totalRegistros = count($sqlORespuestas);
 
     // Calcular el número total de páginas
     $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
@@ -46,32 +46,31 @@ if (isset($_SESSION['usuarios'])) {
     $indiceInicio = ($paginaActual - 1) * $registrosPorPagina;
 
     // Obtener una porción de los resultados de la consulta SQL para mostrar en la página actual
-    $sqlEstudiantesPaginados = array_slice($sqlEstudiante, $indiceInicio, $registrosPorPagina);
+    $sqlORespuestasPaginadas = array_slice($sqlORespuestas, $indiceInicio, $registrosPorPagina);
 
-    //Actualizamos el nombre, el grado y el email
+    //Actualizamos el nombre, el estado y el email
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar que se hayan recibido los datos necesarios
-        if (isset($_POST["nombre"], $_POST["grado"], $_POST["email"], $_POST['estados'] , $_POST["id"])) {
+        if (isset($_POST["nombre"], $_POST["preguntas"], $_POST['validacionRespuesta'] , $_POST["id"])) {
             try {
 
                 // Sanitizar y validar los datos recibidos
-                $nombre = htmlspecialchars(trim($_POST["nombre"]));
-                $grado = intval($_POST["grado"]);
-                $estados = intval($_POST["estados"]);
-                $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
+                $nombreRespuesta = htmlspecialchars(trim($_POST["nombre"]));
+                $recibirPregunta = intval($_POST["preguntas"]);
+                $recibirValidacion = intval($_POST["validacionRespuesta"]);
                 $id = intval($_POST["id"]);
-
-                // Realizar la consulta de actualización en la base de datos
-                $actualizarInfo = $conexion->prepare("UPDATE usuarios SET nombres_completos = :nombre, grado_id = :grado, estados_usuarios_id = :estados, correo = :email WHERE id = :id");
-                $actualizarInfo->execute(array(':nombre' => $nombre, ':grado' => $grado, ':email' => $email, ':estados' => $estados, ':id' => $id));
+                
+                // Actualizar los datos de la pregunta
+                $sqlActualizarRespuesta = $conexion->prepare('UPDATE opcion_respuesta SET contenido_respuestas = :conRespuesta, preguntas_id = :pregunta, validacion_pregunta_id  = :validacion WHERE id = :id');
+                $sqlActualizarRespuesta->execute(array(':conRespuesta' => $nombreRespuesta, ':pregunta' => $recibirPregunta, ':validacion' => $recibirValidacion, ':id' => $id));
 
                 // Limpiar los valores de los campos del formulario al recargar la página
                 echo "<script>
                     window.onload = function() {
                         document.getElementById('id').value = '';
                         document.getElementById('nombre').value = '';
-                        document.getElementById('grado').value = '';
-                        document.getElementById('email').value = '';
+                        document.getElementById('preguntas').value = '';
+                        document.getElementById('validacionRespuesta').value = '';
                     }
                     </script>";
 
@@ -79,7 +78,7 @@ if (isset($_SESSION['usuarios'])) {
                 $success .= "<script> 
                     Swal.fire({
                         title: 'Información actualizada',
-                        text: 'Se actualizó la información del estudiante',
+                        text: 'Se actualizó la información de la respuesta',
                         icon: 'success',
                         showCancelButton: false,
                         confirmButtonText: 'Aceptar'
@@ -101,7 +100,7 @@ if (isset($_SESSION['usuarios'])) {
     if ($infoCorreo['roles_id'] == 2) { // Si es estudiante
         header('Location: ../menuPrincipal.php');
     } else if ($infoCorreo['roles_id'] == 1) { // Si es administrador
-        require 'views/consultarEstudiantes.view.php';
+        require 'views/consultarORespuestas.view.php';
     }
 } else {
     header('Location: ../login.php');

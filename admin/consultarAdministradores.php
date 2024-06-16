@@ -16,7 +16,7 @@ if (isset($_SESSION['usuarios'])) {
     $infoCorreo = $sqlRolUser->fetch();
 
     //Hacemos la consulta para traer los datos de los administradores
-    $sqlAdministradores = $conexion->prepare('SELECT usuarios.id AS id, usuarios.nombres_completos as Nombre, usuarios.fecharegistro AS fecha_registro, estados_usuarios.nombres_estados AS estados, usuarios.correo AS email FROM usuarios INNER JOIN estados_usuarios ON usuarios.estados_usuarios_id = estados_usuarios.id WHERE roles_id = 1 ORDER BY usuarios.id DESC;;');
+    $sqlAdministradores = $conexion->prepare('SELECT usuarios.id AS id, usuarios.nombres_completos as Nombre, usuarios.fecharegistro AS fecha_registro, estados_usuarios.nombres_estados AS estados, usuarios.correo AS email FROM usuarios INNER JOIN estados_usuarios ON usuarios.estados_usuarios_id = estados_usuarios.id WHERE roles_id = 1 ORDER BY usuarios.id DESC LIMIT 20');
     $sqlAdministradores->execute();
     $sqlAdmin = $sqlAdministradores->fetchAll();
 
