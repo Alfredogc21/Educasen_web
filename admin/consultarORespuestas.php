@@ -60,7 +60,7 @@ if (isset($_SESSION['usuarios'])) {
                 $recibirValidacion = intval($_POST["validacionRespuesta"]);
                 $id = intval($_POST["id"]);
                 
-                // Actualizar los datos de la pregunta
+                // Actualizar los datos de la respuesta
                 $sqlActualizarRespuesta = $conexion->prepare('UPDATE opcion_respuesta SET contenido_respuestas = :conRespuesta, preguntas_id = :pregunta, validacion_pregunta_id  = :validacion WHERE id = :id');
                 $sqlActualizarRespuesta->execute(array(':conRespuesta' => $nombreRespuesta, ':pregunta' => $recibirPregunta, ':validacion' => $recibirValidacion, ':id' => $id));
 

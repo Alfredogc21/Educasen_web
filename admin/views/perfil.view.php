@@ -260,7 +260,6 @@
             <div class="contenedor-btn">
               <a href="actualizarCorreo.php" class="contenedor-btn--link">Actualizar correo</a>
               <a href="actualizarPassword.php" class="contenedor-btn--link">Actualizar contraseña</a>
-              <a href="eliminar.php" class="contenedor-btn--link">Eliminar cuenta</a>
             </div>
           </div>
         </section>
