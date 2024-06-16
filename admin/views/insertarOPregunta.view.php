@@ -126,16 +126,15 @@
                     <li class="menu-item">
                         <a href="consultarPreguntas.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-file-find"></i>
-                            <div>Consultar</div>
+                            <div>Consultar preguntas</div>
                         </a>
                     </li>
 
-                    <!-- Agregar preguntas -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Preguntas</span></li>
+                    <!-- Consultar respuesta -->
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="consultarORespuestas.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
-                            <div>Agregar preguntas</div>
+                            <div>Consultar respuestas</div>
                         </a>
                     </li>
 

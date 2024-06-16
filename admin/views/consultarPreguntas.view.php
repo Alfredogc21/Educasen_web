@@ -123,19 +123,18 @@
                     </li>
 
                     <!-- Consultar preguntas -->
-                    <li class="menu-item active open active" >
+                    <li class="menu-item active open active">
                         <a href="consultarPreguntas.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-file-find"></i>
-                            <div>Consultar</div>
+                            <div>Consultar preguntas</div>
                         </a>
                     </li>
 
-                    <!-- Agregar preguntas -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Preguntas</span></li>
+                    <!-- Consultar respuesta -->
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="consultarORespuestas.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
-                            <div>Agregar preguntas</div>
+                            <div>Consultar respuestas</div>
                         </a>
                     </li>
 
@@ -321,20 +320,20 @@
                         <label for="competencias">Competencias</label>
                         <select id="competencias" name="competencias">
                             <option value="" disabled selected>Seleccione la competencia</option>
-                            <?php 
-                                foreach ($competencias as $competencia) {
-                                    echo '<option value="' . $competencia['id'] . '">' . $competencia['nombres_materias'] . '</option>';
-                                }
+                            <?php
+                            foreach ($competencias as $competencia) {
+                                echo '<option value="' . $competencia['id'] . '">' . $competencia['nombres_materias'] . '</option>';
+                            }
                             ?>
                         </select>
 
                         <label for="tipoPreguntaForm">Tipo pregunta</label>
                         <select id="tipoPreguntaForm" name="tipoPreguntaForm">
                             <option value="" disabled selected>Seleccione el tipo de pregunta</option>
-                            <?php 
-                                foreach ($tipoPregunta as $tipo) {
-                                    echo '<option value="' . $tipo['id'] . '">' . $tipo['nombre_tipo_pregunta'] . '</option>';
-                                }
+                            <?php
+                            foreach ($tipoPregunta as $tipo) {
+                                echo '<option value="' . $tipo['id'] . '">' . $tipo['nombre_tipo_pregunta'] . '</option>';
+                            }
                             ?>
                         </select>
 

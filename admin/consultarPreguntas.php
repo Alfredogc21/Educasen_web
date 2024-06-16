@@ -26,7 +26,7 @@ if (isset($_SESSION['usuarios'])) {
     $competencias = $sqlCompetencias->fetchAll();
 
     //Hacemos la consulta para traer los datos de preguntas
-    $sqlpreguntas = $conexion->prepare('SELECT preguntas.id AS id, preguntas.enunciado_pregunta AS preguntas, materias.nombres_materias AS competencias, opcion_pregunta.nombre_tipo_pregunta AS tipo_pregunta FROM preguntas INNER JOIN materias ON preguntas.materia_id = materias.id INNER JOIN opcion_pregunta ON preguntas.opcion_pregunta_id = opcion_pregunta.id ORDER BY preguntas.id DESC');
+    $sqlpreguntas = $conexion->prepare('SELECT preguntas.id AS id, preguntas.enunciado_pregunta AS preguntas, materias.nombres_materias AS competencias, opcion_pregunta.nombre_tipo_pregunta AS tipo_pregunta FROM preguntas INNER JOIN materias ON preguntas.materia_id = materias.id INNER JOIN opcion_pregunta ON preguntas.opcion_pregunta_id = opcion_pregunta.id ORDER BY preguntas.id DESC LIMIT 30');
     $sqlpreguntas->execute();
     $sqlQuestions = $sqlpreguntas->fetchAll();
 
