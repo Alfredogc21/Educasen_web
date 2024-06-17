@@ -15,8 +15,8 @@ class PDF extends FPDF
         $this->Cell(45); // Movernos a la derecha
         $this->SetTextColor(0, 0, 0); // color
         // creamos una celda o fila
-        $this->Cell(100, 15, utf8_decode('INSTITUCIÓN EDUCATIVA CENTRAL'), 0, 1, 'C', 0); // AnchoCelda, AltoCelda, titulo, borde(1-0), saltoLinea(1-0), posicion(L-C-R), ColorFondo(1-0)
-        $this->Cell(180, 15, utf8_decode('Reporte de Calificaciones de (' . $_SESSION['nombreOpPregunta'] . ')'), 1, 1, 'C', 0);
+        $this->Cell(100, 15, mb_convert_encoding('INSTITUCIÓN EDUCATIVA CENTRAL' , 'ISO-8859-1', 'UTF-8'), 0, 1, 'C', 0); // AnchoCelda, AltoCelda, titulo, borde(1-0), saltoLinea(1-0), posicion(L-C-R), ColorFondo(1-0)
+        $this->Cell(180, 15, mb_convert_encoding('Reporte de Calificaciones de (' . $_SESSION['nombreOpPregunta'] . ')'  , 'ISO-8859-1', 'UTF-8'), 1, 1, 'C', 0);
         $this->Ln(3); // Salto de línea
         $this->SetTextColor(103); // color
 
@@ -24,7 +24,7 @@ class PDF extends FPDF
         $this->SetTextColor(0, 0, 0); // color
         $this->Cell(50); // mover a la derecha
         $this->SetFont('Arial', 'B', 15);
-        $this->Cell(100, 10, utf8_decode("Resultados de " . $_SESSION['estudiante'] . " en " . $_SESSION['materia']), 0, 1, 'C', 0);
+        $this->Cell(100, 10, mb_convert_encoding("Resultados de " . $_SESSION['estudiante'] . " en " . $_SESSION['materia']  , 'ISO-8859-1', 'UTF-8'), 0, 1, 'C', 0);
         $this->Ln(7);
 
         // Mostrar los textos de correctas e incorrectas solo en la primera página
@@ -39,13 +39,13 @@ class PDF extends FPDF
 
             // Posicionar y dibujar cada sección
             $this->SetX($this->lMargin); // Posición a la izquierda
-            $this->Cell($sectionWidth, 10, utf8_decode('Correctas: ' . $_SESSION['correctas']), 0, 0, 'L');
+            $this->Cell($sectionWidth, 10, mb_convert_encoding('Correctas: ' . $_SESSION['correctas'], 'ISO-8859-1', 'UTF-8'), 0, 0, 'L');
 
             $this->SetX($this->lMargin + $sectionWidth); // Posición en el centro
-            $this->Cell($sectionWidth, 10, utf8_decode('Total de preguntas contestadas: ' . $_SESSION['totalPreguntas']), 0, 0, 'C');
+            $this->Cell($sectionWidth, 10, mb_convert_encoding('Total de preguntas contestadas: ' . $_SESSION['totalPreguntas'] , 'ISO-8859-1', 'UTF-8'), 0, 0, 'C');
 
             $this->SetX($this->lMargin + 2 * $sectionWidth); // Posición a la derecha
-            $this->Cell($sectionWidth, 10, utf8_decode('Incorrectas: ' . $_SESSION['incorrectas']), 0, 1, 'R');
+            $this->Cell($sectionWidth, 10, mb_convert_encoding('Incorrectas: ' . $_SESSION['incorrectas'] , 'ISO-8859-1', 'UTF-8'), 0, 1, 'R');
 
             $this->Ln(7);
             $this->mostrarTotales = false;
@@ -63,9 +63,9 @@ class PDF extends FPDF
 
         // Mover a la posición inicial y dibujar las celdas
         $this->SetX($startX);
-        $this->Cell($cellWidth, 10, utf8_decode('ENUNCIADO DE LA PREGUNTA'), 1, 0, 'C', 1);
-        $this->Cell($cellWidth, 10, utf8_decode('CALIFICACIÓN'), 1, 0, 'C', 1);
-        $this->Cell($cellWidth, 10, utf8_decode('FECHA CONTESTADA'), 1, 0, 'C', 1);
+        $this->Cell($cellWidth, 10, mb_convert_encoding('ENUNCIADO DE LA PREGUNTA' , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 1);
+        $this->Cell($cellWidth, 10, mb_convert_encoding('CALIFICACIÓN' , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 1);
+        $this->Cell($cellWidth, 10, mb_convert_encoding('FECHA CONTESTADA' , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 1);
         $this->Ln();
     }
 
@@ -74,12 +74,12 @@ class PDF extends FPDF
     {
         $this->SetY(-15); // Posición: a 1,5 cm del final
         $this->SetFont('Arial', 'I', 8); // tipo fuente, negrita(B-I-U-BIU), tamañoTexto
-        $this->Cell(0, 10, utf8_decode('Página ') . $this->PageNo() . '/{nb}', 0, 0, 'C'); // pie de pagina(numero de pagina)
+        $this->Cell(0, 10, mb_convert_encoding('Página ' , 'ISO-8859-1', 'UTF-8') . $this->PageNo() . '/{nb}', 0, 0, 'C'); // pie de pagina(numero de pagina)
 
         $this->SetY(-15); // Posición: a 1,5 cm del final
         $this->SetFont('Arial', 'I', 8); // tipo fuente, cursiva, tamañoTexto
         $hoy = date('d/m/Y');
-        $this->Cell(355, 10, utf8_decode($hoy), 0, 0, 'C'); // pie de pagina(fecha de pagina)
+        $this->Cell(355, 10, mb_convert_encoding($hoy , 'ISO-8859-1', 'UTF-8'), 0, 0, 'C'); // pie de pagina(fecha de pagina)
     }
 
     // Función para dibujar la tabla de resultados
@@ -97,16 +97,16 @@ class PDF extends FPDF
             $cellHeight = 10;
 
             // Calcular la altura requerida para la celda de enunciado_pregunta
-            $nbLines = $this->NbLines($cellWidth, utf8_decode($row['enunciado_pregunta']));
+            $nbLines = $this->NbLines($cellWidth, mb_convert_encoding($row['enunciado_pregunta'] , 'ISO-8859-1', 'UTF-8'));
             $cellHeight = $nbLines * 10; // Ajustar la altura según el número de líneas
 
             // Comprobar si hay suficiente espacio en la página
             if ($this->GetY() + $cellHeight > $this->PageBreakTrigger) {
                 $this->AddPage($this->CurOrientation);
                 $this->SetX($startX);
-                $this->Cell($cellWidth, 10, utf8_decode('ENUNCIADO DE LA PREGUNTA'), 1, 0, 'C', 1);
-                $this->Cell($cellWidth, 10, utf8_decode('CALIFICACIÓN'), 1, 0, 'C', 1);
-                $this->Cell($cellWidth, 10, utf8_decode('FECHA CONTESTADA'), 1, 0, 'C', 1);
+                $this->Cell($cellWidth, 10, mb_convert_encoding('ENUNCIADO DE LA PREGUNTA' , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 1);
+                $this->Cell($cellWidth, 10, mb_convert_encoding('CALIFICACIÓN' , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 1);
+                $this->Cell($cellWidth, 10, mb_convert_encoding('FECHA CONTESTADA' , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 1);
                 $this->Ln();
             }
 
@@ -115,7 +115,7 @@ class PDF extends FPDF
             // Mover a la posición inicial para centrar
             $this->SetX($startX);
             // Dibujar la celda de enunciado_pregunta
-            $this->MultiCell($cellWidth, 10, utf8_decode($row['enunciado_pregunta']), 1, 'C', false);
+            $this->MultiCell($cellWidth, 10, mb_convert_encoding($row['enunciado_pregunta'] , 'ISO-8859-1', 'UTF-8'), 1, 'C', false);
 
             // Guardar la altura de la celda de enunciado_pregunta
             $enunciadoHeight = $this->GetY() - $startY;
@@ -125,8 +125,8 @@ class PDF extends FPDF
 
             // Dibujar las celdas de opcion_pregunta y fecha_contestada con la misma altura que enunciado_pregunta
             $this->SetXY($startX + $cellWidth, $startY);
-            $this->Cell($cellWidth, $maxHeight, utf8_decode($row['nombre_validacion']), 1, 0, 'C', 0);
-            $this->Cell($cellWidth, $maxHeight, utf8_decode($row['fecha_contestada']), 1, 0, 'C', 0);
+            $this->Cell($cellWidth, $maxHeight, mb_convert_encoding($row['nombre_validacion'] , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 0);
+            $this->Cell($cellWidth, $maxHeight, mb_convert_encoding($row['fecha_contestada'] , 'ISO-8859-1', 'UTF-8'), 1, 0, 'C', 0);
 
             // Establecer la posición Y para la siguiente fila
             $this->SetY($startY + $maxHeight);
