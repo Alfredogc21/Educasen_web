@@ -351,9 +351,16 @@
                                 <?php endif; ?>
                             </section>
 
-                            <p class="contenedor__totalizador">Total de preguntas contestadas: <?php echo count($resultadoCalificacion); ?></p>
+                            <p class="contenedor__totalizador">Total de preguntas contestadas: <?php echo isset($resultadoCalificacion) ? count($resultadoCalificacion) : 0; ?></p>
                         </div>
 
+                        <!-- Boton imprimir pdf -->
+                        <a href="generar_pdf.php" target="_blank">
+                            <button class="menu-icono">
+                                <i class='bx bxs-file-pdf'></i> Imprimir PDF
+                            </button>
+                        </a>
+                        
                     </div>
                 </section>
             </div>

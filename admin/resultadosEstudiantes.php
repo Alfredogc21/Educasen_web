@@ -42,11 +42,9 @@ if (isset($_SESSION['usuarios'])) {
         $estudiante = isset($_POST['estudiante']) ? $_POST['estudiante'] : null; // Lo que recibe el select de estudiantes
 
         // Mostrar las calificaciones
-        $sql_calificacion = $conexion->prepare('SELECT preguntas.enunciado_pregunta, opcion_pregunta.nombre_tipo_pregunta, calificacion.fecharegistro AS fecha_contestada, calificacion.validacion_pregunta_id, materias.nombres_materias FROM calificacion INNER JOIN preguntas ON calificacion.preguntas_id = preguntas.id INNER JOIN opcion_pregunta ON calificacion.opcion_pregunta_id = opcion_pregunta.id INNER JOIN materias ON preguntas.materia_id = materias.id WHERE calificacion.usuarios_id = :idUsuario AND preguntas.materia_id = :materia AND calificacion.opcion_pregunta_id = :oppreguntas');
+        $sql_calificacion = $conexion->prepare('SELECT preguntas.enunciado_pregunta, opcion_pregunta.nombre_tipo_pregunta, calificacion.fecharegistro AS fecha_contestada, calificacion.validacion_pregunta_id, materias.nombres_materias, validacion_pregunta.nombre AS nombre_validacion FROM calificacion INNER JOIN preguntas ON calificacion.preguntas_id = preguntas.id INNER JOIN opcion_pregunta ON calificacion.opcion_pregunta_id = opcion_pregunta.id INNER JOIN materias ON preguntas.materia_id = materias.id INNER JOIN validacion_pregunta ON calificacion.validacion_pregunta_id = validacion_pregunta.id WHERE calificacion.usuarios_id = :idUsuario AND preguntas.materia_id = :materia AND calificacion.opcion_pregunta_id = :oppreguntas');
         $sql_calificacion->execute(array(':idUsuario' => $estudiante, ':materia' => $materia, ':oppreguntas' => $oppreguntas));
         $resultadoCalificacion = $sql_calificacion->fetchAll();
-
-        // print_r($resultadoCalificacion);
 
         // contar las correctas e incorrectas
         for ($i = 0; $i < count($resultadoCalificacion); $i++) {
@@ -57,24 +55,39 @@ if (isset($_SESSION['usuarios'])) {
             }
         }
 
+        //Nombre estudiante
+        $sql_nombreEstudiante = $conexion->prepare('SELECT nombres_completos FROM usuarios WHERE id = :idUsuario');
+        $sql_nombreEstudiante->execute(array(':idUsuario' => $estudiante));
+        $nombreEstudiante = $sql_nombreEstudiante->fetch();
+
+        //Nombre de la materia
+        $sql_nombreMateria = $conexion->prepare('SELECT nombres_materias FROM materias WHERE id = :idMateria');
+        $sql_nombreMateria->execute(array(':idMateria' => $materia));
+        $nombreMateria = $sql_nombreMateria->fetch();
+
+        //Nombre de opcion pregunta
+        $sql_nombreOpPregunta = $conexion->prepare('SELECT nombre_tipo_pregunta FROM opcion_pregunta WHERE id = :idOpPregunta');
+        $sql_nombreOpPregunta->execute(array(':idOpPregunta' => $oppreguntas));
+        $nombreOpPregunta = $sql_nombreOpPregunta->fetch();
+
+        //Total de preguntas contestadas
+        $totalPreguntas = $correctas + $incorrectas;
+
+        // Guardar los parámetros en variables de sesión para el PDF
+        $_SESSION['estudiante'] = $nombreEstudiante['nombres_completos'];
+        $_SESSION['materia'] = $nombreMateria['nombres_materias'];
+        $_SESSION['correctas'] = $correctas;
+        $_SESSION['incorrectas'] = $incorrectas;
+        $_SESSION['nombreOpPregunta'] = $nombreOpPregunta['nombre_tipo_pregunta'];
+        $_SESSION['totalPreguntas'] = $totalPreguntas;
+
+        $_SESSION['tipopregunta'] = $oppreguntas;
+        $_SESSION['resultadoCalificacion'] = $resultadoCalificacion;
+
+        // Renderizar la vista con los resultados y el botón para generar el PDF
+        require 'views/resultadosEstudiantes.view.php';
+        exit();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // Dependiendo del rol asi mismo es el enrutamiento
     if ($infoCorreo['roles_id'] == 2) { // Si es estudiante
