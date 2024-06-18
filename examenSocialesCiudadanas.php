@@ -54,7 +54,7 @@ if (isset($_SESSION['usuarios'])) {
         }
 
         //recargar la pagina
-        header('Refresh: 0.1 ; URL=examenLecturaCritica.php');
+        header('Refresh: 0.1 ; URL=examenSocialesCiudadanas.php');
     }
 
     if($resultadoUsername['roles_id'] == 2){ // Si es estudiante

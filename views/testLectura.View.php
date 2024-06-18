@@ -78,7 +78,7 @@
 
           <!-- Boton de enviar los datos -->
           <div class="col s10 offset-s1 center-align">
-            <i class="#7986cb indigo lighten-2 btn" onclick="preguntas.submit()">Enviar datos</i>
+            <i class="#7986cb indigo lighten-2 btn" onclick="preguntas.submit()">Siguiente</i>
           </div>
         </form>
 
